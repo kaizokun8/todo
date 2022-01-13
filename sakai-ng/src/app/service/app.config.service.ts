@@ -6,8 +6,8 @@ import { AppConfig } from '../api/appconfig';
 export class ConfigService {
 
     config: AppConfig = {
-        theme: 'lara-light-indigo',
-        dark: false,
+        theme: 'arya-blue',
+        dark: true,
         inputStyle: 'outlined',
         ripple: true
     };
