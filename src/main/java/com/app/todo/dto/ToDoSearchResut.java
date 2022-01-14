@@ -1,5 +1,6 @@
-package com.app.todo.model;
+package com.app.todo.dto;
 
+import com.app.todo.model.Todo;
 import com.app.todo.view.View;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;

@@ -2,7 +2,7 @@ package com.app.todo.controller;
 
 import com.app.todo.dto.TodoFilters;
 import com.app.todo.model.Priority;
-import com.app.todo.model.ToDoSearchResut;
+import com.app.todo.dto.ToDoSearchResut;
 import com.app.todo.model.Todo;
 import com.app.todo.repository.TodoSearchService;
 import com.app.todo.repository.TodoRepository;
@@ -113,8 +113,6 @@ public class controller {
                                       @RequestParam(required = false) Boolean done,
                                       @RequestParam(required = false) Integer page,
                                       @RequestParam(required = false) Integer pageSize) {
-
-        System.out.println("getTodos");
 
         TodoFilters todoFilters = new TodoFilters(title, description,
                 priority, startCreationTime, endCreationTime,

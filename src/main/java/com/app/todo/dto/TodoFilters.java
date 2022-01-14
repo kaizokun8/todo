@@ -18,7 +18,7 @@ public class TodoFilters {
 
     private String description;
 
-    private Collection<Priority> priorities;
+    private Collection<Priority> priority;
 
     private Long startCreationTime;
 

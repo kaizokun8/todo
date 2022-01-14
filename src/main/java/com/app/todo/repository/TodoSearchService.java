@@ -40,8 +40,8 @@ public class TodoSearchService {
             predicates.add(cb.like(cb.lower(root.get("description")), like));
         }
 
-        if (!CollectionUtils.isEmpty(todoFilters.getPriorities())) {
-            predicates.add(root.get("priority").in(todoFilters.getPriorities()));
+        if (!CollectionUtils.isEmpty(todoFilters.getPriority())) {
+            predicates.add(root.get("priority").in(todoFilters.getPriority()));
         }
 
         if (todoFilters.getStartCreationTime() != null) {
