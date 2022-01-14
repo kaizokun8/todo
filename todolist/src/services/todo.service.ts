@@ -1,4 +1,4 @@
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {from, Observable} from 'rxjs';
 import {environment} from '../environments/environment'
 import {Todo} from "../app/model/Todo";
@@ -6,6 +6,7 @@ import {Injectable} from "@angular/core";
 import {TodoFilters} from "../app/dto/TodoFilters";
 import {HttpUtil} from "../app/util/HttpUtil";
 import {ToDoSearchResult} from "../app/dto/ToDoSearchResult";
+import {ParamMap} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -26,18 +27,20 @@ export class TodoService {
     }
   }
 
-  getTodo(id: number): Observable<Todo> {
+  getTodo(id: string | null): Observable<Todo> {
 
-    return this.http.get<Todo>(`${this.baseUrl}/todo/${id}`);
+    if (id === null) {
+      return new Observable<Todo>();
+    }
+
+    return this.http.get<Todo>(`${this.baseUrl}/todos/${id}`);
   }
 
-  getTodos(todoFilters: TodoFilters): Observable<ToDoSearchResult> {
+  getTodos(paramMap: ParamMap): Observable<ToDoSearchResult> {
 
-    let queryParams = HttpUtil.fromClassToQueryParams(todoFilters);
+    let params = HttpUtil.fromParamMaptoHttpParams(paramMap);
 
-    console.log("getTodos : " + queryParams);
-
-    return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos?${queryParams}`);
+    return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {params});
   }
 
 }

@@ -1,13 +1,7 @@
 import {Todo} from "../model/Todo";
 
-export class ToDoSearchResult {
+export interface ToDoSearchResult {
 
-  public total: number = 0;
-  public todos: Array<Todo> = []
-
-  constructor() {
-  }
-
-
-
+   total: number
+   todos: Array<Todo>
 }

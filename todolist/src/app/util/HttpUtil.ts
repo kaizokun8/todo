@@ -1,30 +1,13 @@
+import {ParamMap} from "@angular/router";
+
 export class HttpUtil {
 
-  public static fromClassToQueryParams(o: Object) {
+  public static fromParamMaptoHttpParams(paramMap: ParamMap): { [k: string]: any } {
 
-    let query: Array<string> = [];
+    let params: { [k: string]: any } = {};
 
-    Object.keys(o).forEach((key) => {
+    paramMap.keys.forEach((key) => params[key] = paramMap.getAll(key));
 
-      let value = o[key as keyof Object];
-
-      if (!value) {
-        return;
-      }
-
-      if (Array.isArray(value)) {
-
-        value.forEach((v) => query.push(encodeURIComponent(key) + "=" + encodeURIComponent(v)));
-
-      } else if (typeof value === 'object') {
-
-        query.push(this.fromClassToQueryParams(value));
-
-      } else if (['string', 'boolean', 'number'].includes(typeof value)) {
-
-        query.push(encodeURIComponent(key) + "=" + encodeURIComponent(value + ""))
-      }
-    })
-    return query.join("&");
+    return params;
   }
 }

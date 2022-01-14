@@ -6,9 +6,10 @@ import {Component} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
 import {TodoFilters} from "../../../dto/TodoFilters";
 import {Priority} from "../../../model/priority";
-import {Todo} from "../../../model/Todo";
-import {Observable} from "rxjs";
+import {map, Observable, switchMap} from "rxjs";
 import {ToDoSearchResult} from "../../../dto/ToDoSearchResult";
+import {ActivatedRoute, ParamMap} from "@angular/router";
+import {Todo} from "../../../model/Todo";
 
 @Component({
   selector: 'todoList',
@@ -18,30 +19,23 @@ import {ToDoSearchResult} from "../../../dto/ToDoSearchResult";
 
 export class TodoListComponent {
 
-  constructor(private todoService: TodoService) {
+  todos!: Array<Todo>;
+  total!: number;
 
-    console.log("TodoListComponent")
+  constructor(private todoService: TodoService, private route: ActivatedRoute) {
 
-    let todoFilter = new TodoFilters();
+    this.route.queryParamMap
+      //transforme l'observable retourné par paramMap
+      .pipe(
+        //switch vers un autre observable retourné par le service
+        switchMap(params => this.todoService.getTodos(params))
+        //s'inscrit à l'observable final
+      ).subscribe(rs => {
 
-    todoFilter.title = "";
-    todoFilter.description = "";
-    todoFilter.scheduled = true;
-    todoFilter.done = false;
-    todoFilter.startTime = 1642175864000;
-    todoFilter.endTime = 1642179464001;
-    todoFilter.priority = [Priority.LOW, Priority.MIDDLE, Priority.HIGH, Priority.EXTREME];
-
-    let getTodos$: Observable<ToDoSearchResult> = todoService.getTodos(todoFilter);
-
-    getTodos$.subscribe((searchResult: ToDoSearchResult) => {
-
-      console.log(searchResult);
-
-      console.log("total : " + searchResult.total);
-
-      searchResult.todos.forEach(todo => console.log(todo));
+      this.todos = rs.todos;
+      this.total = rs.total;
     });
+
   }
 
 }

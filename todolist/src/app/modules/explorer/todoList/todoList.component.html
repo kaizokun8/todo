@@ -1,0 +1,7 @@
+<h1>Todo list</h1>
+<router-outlet></router-outlet>
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let todo of todos">
+    <todo style="width: 100%" [todo]="todo"></todo>
+  </mat-grid-tile>
+</mat-grid-list>

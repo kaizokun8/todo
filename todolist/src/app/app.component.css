@@ -1,0 +1,5 @@
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+.example-spacer {
+  flex: 1 1 auto;
+}
