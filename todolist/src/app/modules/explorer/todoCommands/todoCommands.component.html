@@ -1,0 +1,9 @@
+<button *ngIf="fromList" mat-icon-button routerLink="/todos/{{todo.id}}">
+  <mat-icon>visibility</mat-icon>
+</button>
+<button mat-icon-button routerLink="/form/edit/{{todo.id}}">
+  <mat-icon>edit</mat-icon>
+</button>
+<button mat-icon-button routerLink="/">
+  <mat-icon>delete</mat-icon>
+</button>

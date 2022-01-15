@@ -1,0 +1,78 @@
+<form (ngSubmit)="save()">
+
+  <mat-card class="example-card" style="max-width: 100%">
+    <mat-card-title>Formulaire</mat-card-title>
+    <mat-card-content>
+      <input type="hidden" [formControl]="id">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Priority</mat-label>
+        <mat-select [formControl]="priority">
+          <mat-option *ngFor="let priority of priorities" [value]="priority">
+            {{priorityLabel(priority)}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title of the task" [formControl]="title">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Description of the task ..." [formControl]="description"></textarea>
+      </mat-form-field>
+
+      <mat-checkbox [checked]="scheduled.value"
+                    (change)="setScheduled($event.checked)">
+        Scheduled
+      </mat-checkbox>
+
+      <ng-container *ngIf="scheduled.value">
+        <section>
+          <!--
+                    <mat-form-field appearance="fill">
+                      <mat-label>Enter a date range</mat-label>
+                      <mat-date-range-input [formGroup]="todoDateRange" [rangePicker]="picker">
+                        <input matStartDate formControlName="start" placeholder="Start date">
+                        <input matEndDate formControlName="end" placeholder="End date">
+                      </mat-date-range-input>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-date-range-picker #picker></mat-date-range-picker>
+
+                          <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                          <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+
+                    </mat-form-field>-->
+        </section>
+        <section>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter a starting date</mat-label>
+            <input matInput [ngxMatDatetimePicker]="endPicker"
+                   placeholder="Choose a date & time" [formControl]="startDate">
+            <mat-datepicker-toggle matSuffix [for]="$any(endPicker)"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #endPicker></ngx-mat-datetime-picker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter a starting date</mat-label>
+            <input matInput [ngxMatDatetimePicker]="startPicker"
+                   placeholder="Choose a date & time" [formControl]="endDate">
+            <mat-datepicker-toggle matSuffix [for]="$any(startPicker)"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #startPicker></ngx-mat-datetime-picker>
+          </mat-form-field>
+
+        </section>
+      </ng-container>
+
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <section>
+        <button mat-raised-button type="submit" color="primary">Submit</button>
+      </section>
+    </mat-card-actions>
+    <mat-card-footer>
+    </mat-card-footer>
+  </mat-card>
+</form>

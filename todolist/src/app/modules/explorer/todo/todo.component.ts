@@ -14,10 +14,10 @@ import {map, switchMap} from "rxjs";
   styleUrls: ['./todo.component.css']
 })
 
-
 export class TodoComponent implements OnInit {
 
   @Input() todo!: Todo;
+  @Input() fromList: boolean = false;
 
   constructor(private todoService: TodoService, private route: ActivatedRoute) {
   }

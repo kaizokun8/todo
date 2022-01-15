@@ -13,3 +13,5 @@ export interface Todo {
   endTime: number;
   done: boolean;
 }
+
+export type TodoForm = Omit<Todo, 'creationTime' | 'updateTime' | 'done'>

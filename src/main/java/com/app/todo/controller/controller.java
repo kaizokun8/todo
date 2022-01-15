@@ -122,7 +122,7 @@ public class controller {
 
         Collection<Todo> todos = todoSearchService.getTodos(todoFilters);
 
-        ToDoSearchResut toDoSearchResut = new ToDoSearchResut(total, todos);
+        ToDoSearchResut toDoSearchResut = new ToDoSearchResut(total, todos, scheduled);
 
         return new ResponseEntity<>(toDoSearchResut, HttpStatus.OK);
     }

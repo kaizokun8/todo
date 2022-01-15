@@ -21,11 +21,6 @@ public class ToDoSearchResut {
 
     private Collection<Todo> todos;
 
-    public Long getTotal() {
-        return total;
-    }
+    private boolean scheduled;
 
-    public Collection<Todo> getTodos() {
-        return todos;
-    }
 }

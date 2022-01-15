@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormTodoComponent} from "./modules/admin/formTodo/formTodo.component";
+import {FormTodoComponent} from "./modules/explorer/formTodo/formTodo.component";
 import {TodoComponent} from "./modules/explorer/todo/todo.component";
 import {TodoListComponent} from "./modules/explorer/todoList/todoList.component";
 import {HttpClientModule} from "@angular/common/http";
@@ -17,10 +17,27 @@ import {TodoFilterComponent} from "./modules/explorer/todoFilter/todoFilter.comp
 import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatTableModule} from "@angular/material/table";
+import {TodoTableComponent} from "./modules/explorer/todoTable/todoTable.component";
+import {TodoCommandsComponent} from "./modules/explorer/todoCommands/todoCommands.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule
+} from "@angular-material-components/datetime-picker";
 
 @NgModule({
   declarations: [
-    AppComponent, FormTodoComponent, TodoComponent, TodoListComponent, TodoFilterComponent
+    AppComponent, FormTodoComponent, TodoComponent,
+    TodoListComponent, TodoFilterComponent, TodoTableComponent,
+    TodoCommandsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +51,19 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatMenuModule,
     MatCardModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatInputModule,
+    MatTableModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
