@@ -5,14 +5,13 @@
 <div class="grid">
 
   <div class="col-12 text-right m-2">
-    <button (click)="listView()" mat-mini-fab aria-label="Example icon button with a home icon">
+    <button routerLink="/todos" [queryParams]="listViewQueryParams" mat-mini-fab aria-label="Example icon button with a home icon">
       <mat-icon>view_headline</mat-icon>
     </button>
-    <button (click)="gridView()" mat-mini-fab aria-label="Example icon button with a home icon">
+    <button routerLink="/todos" [queryParams]="gridViewQueryParams" mat-mini-fab aria-label="Example icon button with a home icon">
       <mat-icon>grid_on</mat-icon>
     </button>
   </div>
-
 </div>
 
 <div class="grid" *ngIf="todosScheduled && todosScheduled.length > 0">
@@ -24,13 +23,13 @@
     </h2>
   </div>
 
-  <ng-container *ngIf="isGrid()">
+  <ng-container *ngIf="viewType === 'grid'">
     <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoScheduled of todosScheduled">
       <todo [fromList]="true" [todo]="todoScheduled"></todo>
     </div>
   </ng-container>
 
-  <ng-container *ngIf="isList()">
+  <ng-container *ngIf="viewType === 'list'">
     <div class="col-12">
       <todoTable [todoList]="todosScheduled" [scheduled]="true"></todoTable>
     </div>
@@ -47,12 +46,12 @@
     </h2>
   </div>
 
-  <ng-container *ngIf="isGrid()">
+  <ng-container *ngIf="viewType === 'grid'">
     <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoUnscheduled of todosUnscheduled">
       <todo [fromList]="true" [todo]="todoUnscheduled"></todo>
     </div>
   </ng-container>
-  <ng-container *ngIf="isList()">
+  <ng-container *ngIf="viewType === 'list'">
 
   </ng-container>
 </div>

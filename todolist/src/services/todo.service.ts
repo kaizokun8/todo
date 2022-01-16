@@ -39,7 +39,7 @@ export class TodoService {
 
   filterTodos(paramMap: ParamMap): Observable<ToDoSearchResult> {
 
-    let params = HttpUtil.fromParamMaptoHttpParams(paramMap);
+    let params = HttpUtil.fromParamMapToObject(paramMap);
 
     return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {params});
   }

@@ -1,1 +1,1 @@
-export const LIST = "LIST", GRID = "GRID";
+export const LIST = "list", GRID = "grid";

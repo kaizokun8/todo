@@ -10,6 +10,7 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {Todo} from "../../../model/Todo";
 import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
 import {GRID, LIST} from "../../../../shared/View";
+import {HttpUtil} from "../../../util/HttpUtil";
 
 @Component({
   selector: 'todoList',
@@ -27,7 +28,19 @@ export class TodoListComponent {
 
   viewType: string = LIST;
 
+  listViewQueryParams: { [k: string]: any } = {};
+
+  gridViewQueryParams: { [k: string]: any } = {};
+
   constructor(private todoService: TodoService, private route: ActivatedRoute) {
+
+    this.route.queryParamMap.subscribe((params) => {
+      this.viewType = params.get('view') ?? LIST;
+      let paramObject = HttpUtil.fromParamMapToObject(params)
+      this.listViewQueryParams = {...paramObject, ['view']: LIST}
+      this.gridViewQueryParams = {...paramObject, ['view']: GRID};
+    });
+
     //recherche de todos par parametre de requete
     this.route.queryParamMap
       //transforme l'observable retourné par paramMap
@@ -50,7 +63,7 @@ export class TodoListComponent {
     });
     //recherche par default sans parametres, todos du jour plus non programmés
     this.route.queryParamMap
-      .pipe(switchMap(paramMap =>
+      .pipe(switchMap((paramMap) =>
         paramMap.keys.length === 0 ?
           this.todoService.getUnscheduledAndTodayScheduledTodos() :
           new Observable<AllToDoSearchResult>()
@@ -60,23 +73,7 @@ export class TodoListComponent {
       this.todosUnscheduled = rs.unscheduled.todos;
       this.totalUnscheduled = rs.unscheduled.total;
     });
-
   }
 
-  listView() {
-    this.viewType = LIST;
-  }
-
-  isList() {
-    return this.viewType === LIST;
-  }
-
-  gridView() {
-    this.viewType = GRID;
-  }
-
-  isGrid() {
-    return this.viewType === GRID;
-  }
 
 }
