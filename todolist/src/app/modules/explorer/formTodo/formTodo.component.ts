@@ -7,9 +7,19 @@ import {TodoService} from "../../../../services/todo.service";
 import {ActivatedRoute} from "@angular/router";
 import {Observable, switchMap} from "rxjs";
 import {Todo} from "../../../model/Todo";
-import {FormControl, FormGroup} from "@angular/forms";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NgForm,
+  ValidationErrors,
+  Validators
+} from "@angular/forms";
 import {Priority, PriorityLabels} from "../../../model/priority";
 import {CREATE, EDIT} from "../../../../shared/Action";
+import {User} from "../../../model/User";
+import {DateControlValidator} from "../../../validator/DateControlValidator";
 
 @Component({
   selector: 'formTodo',
@@ -19,24 +29,38 @@ import {CREATE, EDIT} from "../../../../shared/Action";
 
 export class FormTodoComponent {
 
+  initTodo: Todo = {
+    id: null,
+    title: '',
+    description: '',
+    priority: Priority.LOW,
+    creationTime: 0,
+    updateTime: 0,
+    scheduled: true,
+    startTime: new Date().getTime(),
+    endTime: new Date().getTime(),
+    done: false
+  };
 
-  id = new FormControl();
-  priority = new FormControl();
-  title = new FormControl();
-  description = new FormControl();
-  scheduled = new FormControl();
-
-  todoDateRange = new FormGroup({
-    start: new FormControl(),
-    end: new FormControl(),
-  });
+  todoForm!: FormGroup;
 
   priorities: Array<Priority> = [Priority.LOW, Priority.MIDDLE, Priority.HIGH, Priority.EXTREME];
 
-  startDate = new FormControl();
-  endDate = new FormControl();
+  static endDateGreaterThanStartDate(group: AbstractControl): ValidationErrors | null {
 
-  constructor(private todoService: TodoService, private route: ActivatedRoute) {
+    const start: Date = group.get("start")!.value;
+    const end: Date = group.get("end")!.value;
+    return (end && (start?.getTime() < end?.getTime())) ? null : {startGreaterThanEnd: true};
+  }
+
+  static endDateSameDayThanStartDate(group: AbstractControl): ValidationErrors | null {
+
+    const start: Date = group.get("start")!.value;
+    const end: Date = group.get("end")!.value;
+    return (end && (start?.getDay() === end?.getDay())) ? null : {startNotSameDayThanEnd: true};
+  }
+
+  constructor(private todoService: TodoService, private route: ActivatedRoute, private fb: FormBuilder) {
 
     route.paramMap.pipe(switchMap((paramsMap) => {
 
@@ -44,20 +68,7 @@ export class FormTodoComponent {
 
         if (action === CREATE) {
 
-          let todo: Todo = {
-            id: null,
-            title: "",
-            description: "",
-            priority: Priority.LOW,
-            creationTime: 0,
-            updateTime: 0,
-            scheduled: true,
-            startTime: new Date().getTime(),
-            endTime: new Date().getTime(),
-            done: false
-          }
-
-          return new Observable<Todo>(observer => observer.next(todo));
+          return new Observable<Todo>(o => o.next(this.initTodo));
 
         } else if (action === EDIT) {
 
@@ -68,15 +79,20 @@ export class FormTodoComponent {
     )).subscribe((todo: Todo) => {
 
       if (todo) {
-        this.id.setValue(todo.id);
-        this.priority.setValue(todo.priority);
-        this.title.setValue(todo.title);
-        this.description.setValue(todo.description);
-        this.scheduled.setValue(todo.scheduled);
-        this.startDate.setValue(todo.startTime ? new Date(todo.startTime) : new Date());
-        this.endDate.setValue(todo.endTime ? new Date(todo.endTime) : new Date())
-        //this.todoDateRange.get('start')?.setValue(todo.startTime ? new Date(todo.startTime) : new Date());
-        //this.todoDateRange.get('end')?.setValue(todo.endTime ? new Date(todo.endTime) : new Date());
+
+        this.todoForm = fb.group({
+          id: todo.id,
+          priority: todo.priority,
+          title: fb.control(todo.title, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
+          description: todo.description,
+          scheduled: todo.scheduled,
+          range: fb.group({
+            start: fb.control(todo.startTime ? new Date(todo.startTime) : new Date(), [Validators.required, DateControlValidator.isGreaterThanNow]),
+            end: todo.endTime ? new Date(todo.endTime) : new Date()
+          }, {validators: [FormTodoComponent.endDateGreaterThanStartDate, FormTodoComponent.endDateSameDayThanStartDate]})
+
+        })
+
       }
 
     });
@@ -84,35 +100,90 @@ export class FormTodoComponent {
 
   save() {
 
+    let values = this.todoForm.value;
+
+    console.log(values);
+
     let todo: Todo = {
-      id: this.id.value,
-      title: this.title.value,
-      description: this.description.value,
-      priority: this.priority.value,
+      id: values.id,
+      title: values.title,
+      description: values.description,
+      priority: values.priority,
       creationTime: 0,
       updateTime: 0,
-      scheduled: this.scheduled.value,
-      //startTime: this.todoDateRange.get('start')?.value?.getTime() ?? 0,
-      //endTime: this.todoDateRange.get('end')?.value?.getTime() ?? 0,
-      startTime: this.startDate.value?.getTime() ?? 0,
-      endTime: this.endDate.value?.getTime() ?? 0,
+      scheduled: values.scheduled,
+      startTime: values.range.start instanceof Date ? values.range.start.getTime() : 0,
+      endTime: values.range.end instanceof Date ? values.range.end.getTime() : 0,
       done: false
     }
 
     this.todoService.saveTodo(todo).subscribe((todo) => {
 
-      window.location.href = `/todos/${todo.id}`;
+      //window.location.href = `/todos/${todo.id}`;
 
     })
-
-  }
-
-  setScheduled(checked: boolean) {
-    this.scheduled.setValue(checked);
   }
 
   priorityLabel(priority: Priority) {
 
     return PriorityLabels[priority];
   }
+
+  isTitleInvalid() {
+    return this.todoForm.get('title')?.invalid;
+  }
+
+  getTitleErrorMessage() {
+
+    let title = this.todoForm.get('title')
+
+    if (title?.hasError('required')) {
+      return 'The title is required'
+    }
+    if (title?.hasError('minlength')) {
+      return 'The title cannot be less than three characters'
+    }
+    if (title?.hasError('maxlength')) {
+      return 'The title cannot be more than 255 characters'
+    }
+    return '';
+  }
+
+  isRangeInvalid() {
+    return this.todoForm.get('range')?.invalid;
+  }
+
+  getDateRangeErrorMessage() {
+
+    let range = this.todoForm.get('range');
+
+    if (range?.hasError('startGreaterThanEnd')) {
+      return 'The start date is greater or equal to the end date';
+    }
+
+    if (range?.hasError('startNotSameDayThanEnd')) {
+      return 'The start date is not the same day than the end date';
+    }
+
+    return '';
+  }
+
+  isStartInvalid() {
+
+    return this.todoForm.get('range')?.get('start')?.invalid;
+  }
+
+  getStartErrorMessage() {
+
+    let start = this.todoForm.get('range')?.get('start')
+
+    if (start?.hasError('required')) {
+      return 'The start date is required';
+    }
+    if (start?.hasError('lessThanNow')) {
+      return 'The start date must be in the future';
+    }
+    return '';
+  }
+
 }

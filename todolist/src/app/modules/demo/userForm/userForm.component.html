@@ -1,0 +1,17 @@
+<!-- Binding unidirectionel -->
+<form (ngSubmit)="save(form.value)" #form="ngForm">
+  <input type="email" name="email" ng-model="email"><br/>
+  <input name="username" ngModel placeholder="user name"><br/>
+  <input type="password" name="password" ngModel><br/>
+  <button type="submit">Register</button>
+</form>
+<br/>
+<!-- Binding bidirectionel -->
+<form (ngSubmit)="saveB()">
+  <input type="email" name="email" [ngModel]="user.email" (ngModelChange)="user.email = $event"><br/>
+  <input type="text" name="username" [(ngModel)]="user.username"><br/>
+  <input type="password" name="password" [(ngModel)]="user.password"><br/>
+  <button type="submit">Register</button>
+</form>
+
+

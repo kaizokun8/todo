@@ -10,7 +10,9 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {Todo} from "../../../model/Todo";
 import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
 import {GRID, LIST} from "../../../../shared/View";
-import {HttpUtil} from "../../../util/HttpUtil";
+import {RouterUtil} from "../../../util/RouterUtil";
+import {TodoFilters} from "../../../dto/TodoFilters";
+import {TodoFiltersImp} from "../../../dto/TodoFiltersImp";
 
 @Component({
   selector: 'todoList',
@@ -36,7 +38,7 @@ export class TodoListComponent {
 
     this.route.queryParamMap.subscribe((params) => {
       this.viewType = params.get('view') ?? LIST;
-      let paramObject = HttpUtil.fromParamMapToObject(params)
+      let paramObject = RouterUtil.fromParamMapToObject(params)
       this.listViewQueryParams = {...paramObject, ['view']: LIST}
       this.gridViewQueryParams = {...paramObject, ['view']: GRID};
     });
@@ -47,7 +49,7 @@ export class TodoListComponent {
       .pipe(
         //switch vers un autre observable retourné par le service
         switchMap(paramMap =>
-          paramMap.keys.length > 0 ?
+          this.getFilterKeysLength(paramMap) > 0 ?
             this.todoService.filterTodos(paramMap) :
             new Observable<ToDoSearchResult>()
         )
@@ -64,7 +66,7 @@ export class TodoListComponent {
     //recherche par default sans parametres, todos du jour plus non programmés
     this.route.queryParamMap
       .pipe(switchMap((paramMap) =>
-        paramMap.keys.length === 0 ?
+        this.getFilterKeysLength(paramMap) === 0 ?
           this.todoService.getUnscheduledAndTodayScheduledTodos() :
           new Observable<AllToDoSearchResult>()
       )).subscribe((rs: AllToDoSearchResult) => {
@@ -75,5 +77,18 @@ export class TodoListComponent {
     });
   }
 
+  /**
+   * compte le nombre de parametres utilisés pour filtrer les todos.
+   * */
+  private getFilterKeysLength(paramMap: ParamMap): number {
+
+    let todoFilters: TodoFilters = new TodoFiltersImp();
+
+    let keys = Object.keys(todoFilters)
+
+    let paramsInMap = keys.filter(key => paramMap.has(key));
+
+    return paramsInMap.length;
+  }
 
 }

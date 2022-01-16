@@ -1,10 +1,9 @@
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {forkJoin, from, map, Observable, switchMap} from 'rxjs';
+import {HttpClient} from "@angular/common/http";
+import {forkJoin, from, map, Observable,} from 'rxjs';
 import {environment} from '../environments/environment'
 import {Todo} from "../app/model/Todo";
 import {Injectable} from "@angular/core";
-import {TodoFilters} from "../app/dto/TodoFilters";
-import {HttpUtil} from "../app/util/HttpUtil";
+import {RouterUtil} from "../app/util/RouterUtil";
 import {ToDoSearchResult} from "../app/dto/ToDoSearchResult";
 import {ParamMap} from "@angular/router";
 import {AllToDoSearchResult} from "../app/dto/AllToDoSearchResult";
@@ -39,7 +38,7 @@ export class TodoService {
 
   filterTodos(paramMap: ParamMap): Observable<ToDoSearchResult> {
 
-    let params = HttpUtil.fromParamMapToObject(paramMap);
+    let params = RouterUtil.fromParamMapToObject(paramMap);
 
     return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {params});
   }

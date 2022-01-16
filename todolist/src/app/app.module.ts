@@ -32,12 +32,13 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule
 } from "@angular-material-components/datetime-picker";
+import {UserFormComponent} from "./modules/demo/userForm/userForm.component";
 
 @NgModule({
   declarations: [
     AppComponent, FormTodoComponent, TodoComponent,
     TodoListComponent, TodoFilterComponent, TodoTableComponent,
-    TodoCommandsComponent
+    TodoCommandsComponent, UserFormComponent
   ],
   imports: [
     BrowserModule,

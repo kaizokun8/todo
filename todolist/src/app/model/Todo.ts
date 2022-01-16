@@ -9,8 +9,8 @@ export interface Todo {
   creationTime: number;
   updateTime: number;
   scheduled: boolean;
-  startTime: number;
-  endTime: number;
+  startTime: number | null;
+  endTime: number | null;
   done: boolean;
 }
 

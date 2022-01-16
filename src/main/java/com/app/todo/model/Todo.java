@@ -17,6 +17,7 @@ import javax.persistence.Lob;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -32,6 +33,7 @@ public class Todo {
     private Long id;
 
     @NotEmpty
+    @Size(min = 3, max = 255)
     private String title;
 
     @Lob
