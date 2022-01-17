@@ -4,15 +4,13 @@
 
 import {Component} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
-import {map, Observable, switchMap} from "rxjs";
+import { Observable, switchMap} from "rxjs";
 import {ToDoSearchResult} from "../../../dto/ToDoSearchResult";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {Todo} from "../../../model/Todo";
 import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
-import {GRID, LIST} from "../../../../shared/View";
-import {RouterUtil} from "../../../util/RouterUtil";
+import {LIST} from "../../../../shared/View";
 import {TodoFilters} from "../../../dto/TodoFilters";
-import {TodoFiltersImp} from "../../../dto/TodoFiltersImp";
 
 @Component({
   selector: 'todoList',
@@ -30,18 +28,9 @@ export class TodoListComponent {
 
   viewType: string = LIST;
 
-  listViewQueryParams: { [k: string]: any } = {};
-
-  gridViewQueryParams: { [k: string]: any } = {};
-
   constructor(private todoService: TodoService, private route: ActivatedRoute) {
 
-    this.route.queryParamMap.subscribe((params) => {
-      this.viewType = params.get('view') ?? LIST;
-      let paramObject = RouterUtil.fromParamMapToObject(params)
-      this.listViewQueryParams = {...paramObject, ['view']: LIST}
-      this.gridViewQueryParams = {...paramObject, ['view']: GRID};
-    });
+    this.route.queryParamMap.subscribe((params) => this.viewType = params.get('view') ?? LIST);
 
     //recherche de todos par parametre de requete
     this.route.queryParamMap
@@ -58,9 +47,13 @@ export class TodoListComponent {
       if (rs.scheduled) {
         this.todosScheduled = rs.todos;
         this.totalScheduled = rs.total;
+        this.todosUnscheduled = [];
+        this.totalUnscheduled = 0;
       } else {
         this.todosUnscheduled = rs.todos;
         this.totalUnscheduled = rs.total;
+        this.todosScheduled = [];
+        this.totalScheduled = 0;
       }
     });
     //recherche par default sans parametres, todos du jour plus non programmés
@@ -82,7 +75,7 @@ export class TodoListComponent {
    * */
   private getFilterKeysLength(paramMap: ParamMap): number {
 
-    let todoFilters: TodoFilters = new TodoFiltersImp();
+    let todoFilters = new TodoFilters();
 
     let keys = Object.keys(todoFilters)
 

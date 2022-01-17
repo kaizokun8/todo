@@ -7,3 +7,5 @@ export const PriorityLabels = {
   [Priority.HIGH]: "High",
   [Priority.EXTREME]: "Extreme",
 }
+
+export const Priorities = [Priority.LOW, Priority.MIDDLE, Priority.HIGH, Priority.EXTREME];

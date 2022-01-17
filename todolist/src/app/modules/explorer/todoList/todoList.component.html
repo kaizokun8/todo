@@ -5,55 +5,72 @@
 <div class="grid">
 
   <div class="col-12 text-right m-2">
-    <button routerLink="/todos" [queryParams]="listViewQueryParams" mat-mini-fab aria-label="Example icon button with a home icon">
+    <button routerLink="/todos" [queryParams]="{view:'list'}" queryParamsHandling="merge" mat-mini-fab
+            class="m-1" color="primary"
+            aria-label="Example icon button with a home icon">
       <mat-icon>view_headline</mat-icon>
     </button>
-    <button routerLink="/todos" [queryParams]="gridViewQueryParams" mat-mini-fab aria-label="Example icon button with a home icon">
+    <button routerLink="/todos" [queryParams]="{view:'grid'}" queryParamsHandling="merge" mat-mini-fab
+            class="m-1" color="primary"
+            aria-label="Example icon button with a home icon">
       <mat-icon>grid_on</mat-icon>
     </button>
   </div>
-</div>
-
-<div class="grid" *ngIf="todosScheduled && todosScheduled.length > 0">
 
   <div class="col-12">
     <h2>
-      <mat-icon>eventavailable</mat-icon>
-      Scheduled
+      <mat-icon style="vertical-align: middle">event_available</mat-icon>
+      <span style="vertical-align: middle">Scheduled</span>
     </h2>
   </div>
 
-  <ng-container *ngIf="viewType === 'grid'">
-    <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoScheduled of todosScheduled">
-      <todo [fromList]="true" [todo]="todoScheduled"></todo>
-    </div>
+  <ng-container *ngIf="todosScheduled && todosScheduled.length > 0; else noScheduled">
+
+    <ng-container *ngIf="viewType === 'grid'">
+      <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoScheduled of todosScheduled">
+        <todo [fromList]="true" [todo]="todoScheduled"></todo>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="viewType === 'list'">
+      <div class="col-12">
+        <todoTable [todoList]="todosScheduled" [scheduled]="true"></todoTable>
+      </div>
+    </ng-container>
   </ng-container>
 
-  <ng-container *ngIf="viewType === 'list'">
+  <ng-template #noScheduled>
     <div class="col-12">
-      <todoTable [todoList]="todosScheduled" [scheduled]="true"></todoTable>
+      <p>No scheduled todos</p>
     </div>
-  </ng-container>
+  </ng-template>
 
-</div>
-
-<div class="grid" *ngIf="todosUnscheduled && todosUnscheduled.length > 0">
-
-  <div class="col-12">
+  <div class="col-12 mt-2">
     <h2>
-      <mat-icon>eventbusy</mat-icon>
-      Unscheduled
+      <mat-icon style="vertical-align: middle">event_busy</mat-icon>
+      <span style="vertical-align: middle">Unscheduled</span>
     </h2>
   </div>
 
-  <ng-container *ngIf="viewType === 'grid'">
-    <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoUnscheduled of todosUnscheduled">
-      <todo [fromList]="true" [todo]="todoUnscheduled"></todo>
+  <ng-container *ngIf="todosUnscheduled && todosUnscheduled.length > 0; else noUnscheduled">
+
+    <ng-container *ngIf="viewType === 'grid'">
+      <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoUnscheduled of todosUnscheduled">
+        <todo [fromList]="true" [todo]="todoUnscheduled"></todo>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="viewType === 'list'">
+      <div class="col-12">
+        <todoTable [todoList]="todosUnscheduled" [scheduled]="false"></todoTable>
+      </div>
+    </ng-container>
+
+  </ng-container>
+
+  <ng-template #noUnscheduled>
+    <div class="col-12">
+      <p>No unscheduled todos</p>
     </div>
-  </ng-container>
-  <ng-container *ngIf="viewType === 'list'">
+  </ng-template>
 
-  </ng-container>
 </div>
-
-

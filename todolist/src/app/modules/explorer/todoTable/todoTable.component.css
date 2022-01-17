@@ -1,0 +1,37 @@
+.mat-column-id{
+  width: 32px;
+  text-align: center;
+  padding-right: 24px;
+  border-right: 1px solid currentColor;
+}
+
+.mat-column-priority{
+  width: 100px;
+  text-align: center;
+}
+
+.mat-column-startTime{
+  width: 200px;
+  text-align: center;
+}
+
+.mat-column-endTime{
+  width: 200px;
+  text-align: center;
+}
+
+.mat-column-creationTime{
+  width: 200px;
+  text-align: center;
+}
+
+.mat-column-done{
+  width: 100px;
+  text-align: center;
+}
+
+.mat-column-admin{
+  width: 200px;
+  text-align: center;
+}
+

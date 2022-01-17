@@ -1,16 +1,16 @@
 import {Priority} from "../model/priority";
 
-export interface TodoFilters {
+export class TodoFilters {
 
-  title: string | null;
-  description: string | null;
-  priority: Array<Priority> | null;
-  startCreationTime: number | null;
-  endCreationTime: number | null;
-  startTime: number | null;
-  endTime: number | null;
-  scheduled: boolean | null;
-  done: boolean | null;
-  page: number | null;
-  pageSize: number | null;
+  priority: Array<Priority> | null = null;
+  title: string | null = null;
+  description: string | null = null;
+  done: boolean | null = null;
+  startTime: number | null = null;
+  endTime: number | null = null;
+  scheduled: boolean | null = null;
+  startCreationTime: number | null = null;
+  endCreationTime: number | null = null;
+  page: number | null = null;
+  pageSize: number | null = null;
 }

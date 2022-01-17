@@ -1,14 +1,15 @@
-<form (ngSubmit)="save()" [formGroup]="todoForm">
+<form *ngIf="todoForm" (ngSubmit)="save()" [formGroup]="todoForm">
 
   <mat-card class="example-card" style="max-width: 100%">
 
     <input type="hidden" formControlName="id">
 
-    <mat-card-title>Formulaire</mat-card-title>
+    <mat-card-title *ngIf="isAdd()">Create a new task</mat-card-title>
+    <mat-card-title *ngIf="isEdit()">Update an existing task</mat-card-title>
 
     <mat-card-content>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="full-width" appearance="fill">
         <mat-label>Priority</mat-label>
         <mat-select formControlName="priority">
           <mat-option *ngFor="let priority of priorities" [value]="priority">
@@ -17,49 +18,49 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="full-width" appearance="fill">
         <mat-label>Title</mat-label>
         <input matInput placeholder="Title of the task" formControlName="title">
         <mat-error *ngIf="isTitleInvalid()">{{getTitleErrorMessage()}}</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="full-width" appearance="fill">
         <mat-label>Description</mat-label>
         <textarea matInput placeholder="Description of the task ..." formControlName="description"></textarea>
       </mat-form-field>
 
-      <mat-checkbox formControlName="scheduled">
-        Scheduled
-      </mat-checkbox>
+      <ng-container formGroupName="range">
 
-      <ng-container *ngIf="todoForm.value.scheduled">
-        <section formGroupName="range">
-          <mat-form-field appearance="fill" class="mt-2 mr-2">
-            <mat-label>Enter a starting date and time</mat-label>
-            <input matInput [ngxMatDatetimePicker]="endPicker" formControlName="start">
-            <mat-datepicker-toggle matSuffix [for]="$any(endPicker)"></mat-datepicker-toggle>
-            <ngx-mat-datetime-picker #endPicker></ngx-mat-datetime-picker>
-          </mat-form-field>
+        <mat-checkbox formControlName="scheduled">
+          Scheduled
+        </mat-checkbox>
 
-          <mat-form-field appearance="fill" class="mt-2 mr-2">
-            <mat-label>Enter a end date and time</mat-label>
-            <input matInput [ngxMatDatetimePicker]="startPicker" formControlName="end">
-            <mat-datepicker-toggle matSuffix [for]="$any(startPicker)"></mat-datepicker-toggle>
-            <ngx-mat-datetime-picker #startPicker></ngx-mat-datetime-picker>
-          </mat-form-field>
-        </section>
-        <section>
-          <mat-error *ngIf="isStartInvalid()">{{getStartErrorMessage()}}</mat-error>
-          <mat-error *ngIf="isRangeInvalid()">{{getDateRangeErrorMessage()}}</mat-error>
-        </section>
+        <ng-container *ngIf="todoForm.value.range.scheduled">
+          <section>
+            <mat-form-field appearance="fill" class="mt-2 mr-2">
+              <mat-label>Enter a starting date and time</mat-label>
+              <input matInput [ngxMatDatetimePicker]="endPicker" formControlName="start">
+              <mat-datepicker-toggle matSuffix [for]="$any(endPicker)"></mat-datepicker-toggle>
+              <ngx-mat-datetime-picker #endPicker></ngx-mat-datetime-picker>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="mt-2 mr-2">
+              <mat-label>Enter a end date and time</mat-label>
+              <input matInput [ngxMatDatetimePicker]="startPicker" formControlName="end">
+              <mat-datepicker-toggle matSuffix [for]="$any(startPicker)"></mat-datepicker-toggle>
+              <ngx-mat-datetime-picker #startPicker></ngx-mat-datetime-picker>
+            </mat-form-field>
+          </section>
+          <section *ngIf="isRangeInvalid()">
+            <mat-error *ngFor="let rangeError of getDateRangeErrorMessages()">{{rangeError}}</mat-error>
+          </section>
+        </ng-container>
       </ng-container>
 
     </mat-card-content>
     <mat-divider inset></mat-divider>
     <mat-card-actions>
-      <section>
-        <button mat-raised-button type="submit" color="primary" [disabled]="todoForm.invalid">Submit</button>
-      </section>
+      <button class="m-2" mat-raised-button type="submit" color="primary" [disabled]="todoForm.invalid">Submit</button>
     </mat-card-actions>
     <mat-card-footer>
     </mat-card-footer>

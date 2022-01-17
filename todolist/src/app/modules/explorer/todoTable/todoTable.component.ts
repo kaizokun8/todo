@@ -23,8 +23,9 @@ export class TodoTableComponent implements OnInit{
   ngOnInit(): void {
 
     this.displayedColumns.push('id');
-    this.displayedColumns.push('title');
     this.displayedColumns.push('priority');
+    this.displayedColumns.push('title');
+
     if (this.scheduled) {
       this.displayedColumns.push('startTime');
       this.displayedColumns.push('endTime');

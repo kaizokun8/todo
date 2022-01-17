@@ -1,1 +1,88 @@
-<h2>filter</h2>
+<form *ngIf="formFilter" (ngSubmit)="filter()" [formGroup]="formFilter">
+
+  <mat-card class="example-card" style="max-width: 100%">
+
+    <mat-card-title>Filter tasks</mat-card-title>
+
+    <mat-card-content>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Priorities</mat-label>
+        <mat-select formControlName="priority" multiple>
+          <mat-option *ngFor="let priority of priorities" [value]="priority">
+            {{priorityLabel(priority)}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title of the task" formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Part of the description of the task" formControlName="description">
+      </mat-form-field>
+
+      <ng-container formGroupName="creationDateRange">
+        <section>
+          <mat-form-field appearance="fill" class="mt-2 mr-2">
+            <mat-label>Enter a starting date and time</mat-label>
+            <input matInput [ngxMatDatetimePicker]="startPicker" formControlName="startCreationDate">
+            <mat-datepicker-toggle matSuffix [for]="$any(startPicker)"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #startPicker></ngx-mat-datetime-picker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mt-2 mr-2">
+            <mat-label>Enter a end date and time</mat-label>
+            <input matInput [ngxMatDatetimePicker]="endPicker" formControlName="endCreationDate">
+            <mat-datepicker-toggle matSuffix [for]="$any(endPicker)"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #endPicker></ngx-mat-datetime-picker>
+          </mat-form-field>
+        </section>
+        <section *ngIf="isCreationRangeInvalid()">
+          <mat-error *ngFor="let rangeError of getCreationDateRangeErrorMessages()">{{rangeError}}</mat-error>
+        </section>
+      </ng-container>
+
+      <mat-checkbox formControlName="done" class="m-2">Done</mat-checkbox>
+
+      <ng-container formGroupName="dateRange">
+
+        <mat-checkbox formControlName="scheduled">
+          Scheduled
+        </mat-checkbox>
+
+        <ng-container *ngIf="formFilter.value.dateRange.scheduled">
+          <section>
+            <mat-form-field appearance="fill" class="mt-2 mr-2">
+              <mat-label>Enter a starting date and time</mat-label>
+              <input matInput [ngxMatDatetimePicker]="startPickerB" formControlName="startDate">
+              <mat-datepicker-toggle matSuffix [for]="$any(startPickerB)"></mat-datepicker-toggle>
+              <ngx-mat-datetime-picker #startPickerB></ngx-mat-datetime-picker>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="mt-2 mr-2">
+              <mat-label>Enter a end date and time</mat-label>
+              <input matInput [ngxMatDatetimePicker]="endPickerB" formControlName="endDate">
+              <mat-datepicker-toggle matSuffix [for]="$any(endPickerB)"></mat-datepicker-toggle>
+              <ngx-mat-datetime-picker #endPickerB></ngx-mat-datetime-picker>
+            </mat-form-field>
+          </section>
+          <!--section *ngIf="isRangeInvalid()">
+            <mat-error *ngFor="let rangeError of getDateRangeErrorMessages()">{{rangeError}}</mat-error>
+          </section-->
+        </ng-container>
+      </ng-container>
+
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button class="m-2" mat-raised-button type="submit" color="primary" [disabled]="formFilter.invalid">Submit
+      </button>
+    </mat-card-actions>
+    <mat-card-footer>
+    </mat-card-footer>
+  </mat-card>
+</form>
