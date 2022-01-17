@@ -8,13 +8,13 @@
         <p *ngIf="!fromList && !todo.description">no description</p>
 
         <p style="text-align: right">
-      <span>
-        Created : {{ todo.creationTime | date:'dd/MM/yyyy HH:mm' }}
-      </span>
-          <br/>
-          <span *ngIf="!fromList && todo.updateTime">
-        Updated : {{ todo.updateTime | date:'dd/MM/yyyy HH:mm' }}
-      </span>
+          <span>
+            Created : {{ todo.creationTime | date:'dd/MM/yyyy HH:mm' }}
+          </span>
+              <br/>
+              <span *ngIf="!fromList && todo.updateTime">
+            Updated : {{ todo.updateTime | date:'dd/MM/yyyy HH:mm' }}
+          </span>
         </p>
       </mat-card-content>
       <mat-divider inset></mat-divider>

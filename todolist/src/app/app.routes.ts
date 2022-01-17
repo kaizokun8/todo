@@ -13,6 +13,7 @@ export const ROUTES: Routes = [
     path: 'todos', component: TodoListComponent,
     children: [
       {path: 'filter', component: TodoFilterComponent},
+      {path: 'search', component: TodoFilterComponent},
     ]
   },
   {path: 'todos/:id', component: TodoComponent},

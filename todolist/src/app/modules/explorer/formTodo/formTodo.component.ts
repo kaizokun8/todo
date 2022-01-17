@@ -91,6 +91,21 @@ export class FormTodoComponent {
       done: false
     };
 
+    this.todoForm = fb.group({
+      id: null,
+      priority: null,
+      title: fb.control(null, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
+      description: null,
+      range: fb.group({
+        scheduled: null,
+        start: fb.control(null),
+        end: null
+      }, {
+        validators: [
+          FormTodoComponent.endDateGreaterThanStartDate, FormTodoComponent.endDateSameDayThanStartDate,
+          FormTodoComponent.startDateIsToday, FormTodoComponent.startDateIsRequired]
+      })
+    });
 
     route.paramMap.pipe(switchMap((paramsMap) => {
 
@@ -110,21 +125,14 @@ export class FormTodoComponent {
 
       if (todo) {
 
-        this.todoForm = fb.group({
-          id: todo.id,
-          priority: todo.priority,
-          title: fb.control(todo.title, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
-          description: todo.description,
-          range: fb.group({
-            scheduled: todo.scheduled,
-            start: fb.control(todo.startTime ? new Date(todo.startTime) : new Date()),
-            end: todo.endTime ? new Date(todo.endTime) : new Date()
-          }, {
-            validators: [
-              FormTodoComponent.endDateGreaterThanStartDate, FormTodoComponent.endDateSameDayThanStartDate,
-              FormTodoComponent.startDateIsToday, FormTodoComponent.startDateIsRequired]
-          })
-        });
+        this.todoForm.get('id')?.setValue(todo.id);
+        this.todoForm.get('priority')?.setValue(todo.priority);
+        this.todoForm.get('title')?.setValue(todo.title);
+        this.todoForm.get('description')?.setValue(todo.description);
+        let range = this.todoForm.get('range');
+        range?.get('scheduled')?.setValue(todo.scheduled);
+        range?.get('start')?.setValue(todo.startTime ? new Date(todo.startTime) : new Date());
+        range?.get('end')?.setValue(todo.endTime ? new Date(todo.endTime) : new Date());
       }
 
     });

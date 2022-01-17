@@ -4,9 +4,9 @@
 
 import {Component} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
-import { Observable, switchMap} from "rxjs";
+import {Observable, switchMap} from "rxjs";
 import {ToDoSearchResult} from "../../../dto/ToDoSearchResult";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Todo} from "../../../model/Todo";
 import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
 import {LIST} from "../../../../shared/View";
@@ -28,7 +28,15 @@ export class TodoListComponent {
 
   viewType: string = LIST;
 
+  currentChild!: string | undefined;
+
   constructor(private todoService: TodoService, private route: ActivatedRoute) {
+
+    this.route.url.subscribe((v) => {
+      //au changement d'url recupere le chemin enfant courant pour l'attacher dynamiquement
+      //aux liens situés dans le template pointant vers l'url de chargement du composant courant.
+      this.currentChild = this.route.snapshot.firstChild?.routeConfig?.path;
+    })
 
     this.route.queryParamMap.subscribe((params) => this.viewType = params.get('view') ?? LIST);
 
@@ -37,10 +45,14 @@ export class TodoListComponent {
       //transforme l'observable retourné par paramMap
       .pipe(
         //switch vers un autre observable retourné par le service
-        switchMap(paramMap =>
-          this.getFilterKeysLength(paramMap) > 0 ?
-            this.todoService.filterTodos(paramMap) :
-            new Observable<ToDoSearchResult>()
+        switchMap(paramMap => {
+          console.log("TO DO LIST====")
+          console.log(paramMap)
+
+            return this.getFilterKeysLength(paramMap) > 0 ?
+              this.todoService.filterTodos(paramMap) :
+              new Observable<ToDoSearchResult>()
+          }
         )
         //s'inscrit à l'observable final
       ).subscribe(rs => {

@@ -48,8 +48,8 @@ export class TodoFilterComponent {
   constructor(private todoService: TodoService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) {
 
     this.formFilter = fb.group({
-      title:  '',
-      description:  '',
+      title: '',
+      description: '',
       priority: [],
       done: '',
       dateRange: fb.group({
@@ -73,10 +73,10 @@ export class TodoFilterComponent {
 
       this.formFilter.get('title')?.setValue(params.has('title') ? params.get('title') : '');
       this.formFilter.get('description')?.setValue(params.has('description') ? params.get('description') : '');
-      this.formFilter.get('priority')?.setValue( params.has('priority') ? params.getAll('priority') : []);
+      this.formFilter.get('priority')?.setValue(params.has('priority') ? params.getAll('priority') : []);
       this.formFilter.get('done')?.setValue(params.has('done') ? params.get('done') === 'true' : 'false')
       let dateRangeGroup = this.formFilter.get('dateRange');
-      dateRangeGroup?.get('scheduled')?.setValue(params.has('scheduled') ? params.get('scheduled') === 'true' : '');
+      dateRangeGroup?.get('scheduled')?.setValue(params.has('scheduled') ? params.get('scheduled') === 'true' : 'false');
       dateRangeGroup?.get('startDate')?.setValue(this.getDateFromTimeParam(params, 'startTime'));
       dateRangeGroup?.get('endDate')?.setValue(this.getDateFromTimeParam(params, 'endTime'));
       let creationDateRangeGroup = this.formFilter.get('creationDateRange');
@@ -125,8 +125,6 @@ export class TodoFilterComponent {
 
   filter() {
 
-    console.log(this.formFilter.value);
-
     let filters: TodoFilters = new TodoFilters();
 
     filters.title = this.formFilter.value.title;
@@ -140,9 +138,11 @@ export class TodoFilterComponent {
     filters.endCreationTime = this.formFilter.value.creationDateRange.endCreationDate?.getTime();
     filters.page = 0;
     filters.pageSize = 10;
+    console.log("FILTER====")
+    console.log(this.formFilter.value);
     console.log(filters)
 
-    this.router.navigate(["/todos/filter"], {queryParams: filters});
+    this.router.navigate(["/todos/filter"], {queryParams: filters, queryParamsHandling: 'merge'});
 
   }
 }
