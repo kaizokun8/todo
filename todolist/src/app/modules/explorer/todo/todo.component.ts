@@ -4,9 +4,10 @@
 
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Todo} from "../../../model/Todo";
 import {map, switchMap} from "rxjs";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'todo',
@@ -20,7 +21,10 @@ export class TodoComponent implements OnInit {
   @Input() fromList: boolean = false;
   @Output('delete') readonly delete = new EventEmitter<Todo>();
 
-  constructor(private todoService: TodoService, private route: ActivatedRoute) {
+  constructor(private todoService: TodoService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private location: Location) {
   }
 
   ngOnInit(): void {
@@ -42,12 +46,11 @@ export class TodoComponent implements OnInit {
   }
 
   onDelete(todo: Todo) {
-    console.log("todo onDelete " + todo.id);
-    if (this.delete) {
-      console.log("pass to parent")
+    //si le todo est affiché depuis une liste on transmet l'evenement au parent
+    if (this.fromList) {
       this.delete.emit(todo);
     } else {
-      console.log("no parent")
+      this.location.back();
     }
   }
 

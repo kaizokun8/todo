@@ -17,6 +17,9 @@ import {
 } from "@angular/forms";
 import {Priority, PriorityLabels, Priorities} from "../../../model/priority";
 import {CREATE, EDIT} from "../../../../shared/Action";
+import {Store} from "@ngrx/store";
+import {Notification} from "../../../model/Notification";
+import {setNotificationList} from "../../../store/notification.actions";
 
 @Component({
   selector: 'formTodo',
@@ -66,7 +69,10 @@ export class FormTodoComponent {
     return scheduled && !start ? {startDateMissing: true} : null;
   }
 
-  constructor(private todoService: TodoService, private route: ActivatedRoute, private fb: FormBuilder) {
+  constructor(private todoService: TodoService,
+              private route: ActivatedRoute,
+              private fb: FormBuilder,
+              private store: Store) {
 
     let start = new Date();
     start.setHours(0)
@@ -96,9 +102,10 @@ export class FormTodoComponent {
       priority: null,
       title: fb.control(null, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
       description: null,
+      done: false,
       range: fb.group({
-        scheduled: null,
-        start: fb.control(null),
+        scheduled: false,
+        start: null,
         end: null
       }, {
         validators: [
@@ -129,6 +136,7 @@ export class FormTodoComponent {
         this.todoForm.get('priority')?.setValue(todo.priority);
         this.todoForm.get('title')?.setValue(todo.title);
         this.todoForm.get('description')?.setValue(todo.description);
+        this.todoForm.get('done')?.setValue(todo.done);
         let range = this.todoForm.get('range');
         range?.get('scheduled')?.setValue(todo.scheduled);
         range?.get('start')?.setValue(todo.startTime ? new Date(todo.startTime) : new Date());
@@ -152,13 +160,39 @@ export class FormTodoComponent {
       scheduled: values.range.scheduled,
       startTime: (values.range.scheduled && values.range.start instanceof Date) ? values.range.start.getTime() : 0,
       endTime: (values.range.scheduled && values.range.end instanceof Date) ? values.range.end.getTime() : 0,
-      done: null
+      done: values.done
     }
 
-    this.todoService.saveTodo(todo).subscribe((todo) => {
+    this.todoService.saveTodo(todo).subscribe({
+      next: (todo) => {
 
-      //window.location.href = `/todos/${todo.id}`;
+        //window.location.href = `/todos/${todo.id}`;
 
+        let action = this.action === CREATE ? 'created' : 'updated';
+
+        let notifications: Array<Notification> = [{
+          severity: 'success',
+          summary: `Task ${action}`,
+          detail: `The task "${todo.id}#${todo.title}" has been successfully ${action} ! `
+        }];
+
+        this.store.dispatch(setNotificationList({notifications}))
+      },
+      error: () => {
+
+        let action = this.action === CREATE ? 'creating' : 'updating';
+
+        let notifications: Array<Notification> = [{
+          severity: 'error',
+          summary: `Error`,
+          detail: `An error occured while ${action} the task "${todo.id}#${todo.title}" ! `
+        }];
+
+        this.store.dispatch(setNotificationList({notifications}))
+      },
+      complete: () => {
+
+      }
     })
   }
 

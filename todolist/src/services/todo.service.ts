@@ -1,5 +1,5 @@
-import {HttpClient} from "@angular/common/http";
-import {forkJoin, from, map, Observable,} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {forkJoin, from, map, Observable, switchMap,} from 'rxjs';
 import {environment} from '../environments/environment'
 import {Todo} from "../app/model/Todo";
 import {Injectable} from "@angular/core";
@@ -20,9 +20,9 @@ export class TodoService {
 
   deleteTodo(todo: Todo): Observable<Todo> {
 
-    // return this.http.delete<Todo>(`${this.baseUrl}/todos/${todo.id}`);
-    return new Observable<Todo>(o => o.next(todo));
-
+    return this.http.delete<Todo>(`${this.baseUrl}/todos/${todo.id}`);
+    //return new Observable<Todo>( o => o.error("error"))s
+    //return new Observable<Todo>(o => o.next(todo));
   }
 
   saveTodo(todo: Todo): Observable<Todo> {
@@ -32,6 +32,10 @@ export class TodoService {
     } else {
       return this.http.post<Todo>(`${this.baseUrl}/todos`, todo);
     }
+  }
+
+  switchDone(todo: Todo): Observable<Boolean> {
+    return this.http.put<boolean>(`${this.baseUrl}/todos/${todo.id}/done`, {done: !todo.done});
   }
 
   getTodo(id: string | null): Observable<Todo> {

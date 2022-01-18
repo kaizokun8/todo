@@ -2,7 +2,7 @@
  * Created by jbe on 15/01/2022
  */
 
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Todo} from "../../../model/Todo";
 import {scheduled} from "rxjs";
 
@@ -16,6 +16,7 @@ export class TodoTableComponent implements OnInit {
 
   @Input("todoList") todoList!: Array<Todo>;
   @Input("scheduled") scheduled!: boolean;
+  @Output('delete') readonly delete = new EventEmitter<Todo>();
 
   displayedColumns: Array<String> = [];
 
@@ -35,6 +36,7 @@ export class TodoTableComponent implements OnInit {
   }
 
   onDelete(todo: Todo) {
-    console.log("table onDelete " + todo.id)
+    this.delete.emit(todo);
   }
+
 }

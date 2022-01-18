@@ -30,6 +30,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -48,8 +49,31 @@ public class controller {
 
         todo.setCreationTime(new Date().getTime());
         todo.setUpdateTime(new Date().getTime());
+        todo.setDone(false);
 
         return new ResponseEntity<>(this.todoRepository.save(todo), HttpStatus.CREATED);
+    }
+
+    @PutMapping(value = "/todos/{id}/done")
+    @Validated
+    public ResponseEntity<?> updateTodoDone(@PathVariable @TodoIdExist Long id, @RequestBody @NotNull Map<String, Object> done) {
+
+        if (!done.containsKey("done") || !(done.get("done") instanceof Boolean)) {
+
+            return new ResponseEntity<>("The body do not contain the done key or the value is not a boolean", HttpStatus.BAD_REQUEST);
+        }
+
+        Optional<Todo> optionalTodo = this.todoRepository.findById(id);
+
+        if (optionalTodo.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        Todo todo = optionalTodo.get();
+        todo.setDone((Boolean) done.get("done"));
+        todo = this.todoRepository.save(todo);
+
+        return new ResponseEntity<>(todo.isDone(), HttpStatus.OK);
     }
 
     @PutMapping(value = "/todos")
@@ -62,8 +86,10 @@ public class controller {
         todo.setTitle(todo_p.getTitle());
         todo.setDescription(todo_p.getDescription());
         todo.setPriority(todo_p.getPriority());
+        todo.setScheduled(todo_p.isScheduled());
         todo.setStartTime(todo_p.getStartTime());
         todo.setEndTime(todo_p.getEndTime());
+        todo.setDone(todo_p.isDone());
 
         todo = this.todoRepository.save(todo);
 
@@ -80,9 +106,9 @@ public class controller {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        this.todoRepository.delete(optionalTodo.get());
-
+        //this.todoRepository.delete(optionalTodo.get());
         return new ResponseEntity<>(HttpStatus.OK);
+        //return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping(value = "/todos/{id}")

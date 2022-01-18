@@ -8,10 +8,10 @@ export interface Todo {
   priority: Priority;
   creationTime: number | null;
   updateTime: number | null;
-  scheduled: boolean;
+  scheduled: Boolean;
   startTime: number | null;
   endTime: number | null;
-  done: boolean | null;
+  done: Boolean;
 }
 
 export type TodoForm = Omit<Todo, 'creationTime' | 'updateTime' | 'done'>

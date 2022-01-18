@@ -95,14 +95,10 @@ export class TodoListComponent {
 
   onDelete = (todo: Todo) => {
 
-    console.log("todolist delete "+todo.id)
-
-    /*
     if (todo.scheduled) {
       this.todosScheduled = this.todosScheduled?.filter(t => t.id !== todo.id);
     } else {
       this.todosUnscheduled = this.todosUnscheduled?.filter(t => t.id !== todo.id);
-    }*/
-
+    }
   }
 }

@@ -29,9 +29,13 @@
         <textarea matInput placeholder="Description of the task ..." formControlName="description"></textarea>
       </mat-form-field>
 
+      <mat-checkbox formControlName="done" class="m-2">
+        Done
+      </mat-checkbox>
+
       <ng-container formGroupName="range">
 
-        <mat-checkbox formControlName="scheduled">
+        <mat-checkbox formControlName="scheduled" class="m-2">
           Scheduled
         </mat-checkbox>
 

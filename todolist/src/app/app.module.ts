@@ -33,12 +33,22 @@ import {
   NgxMatTimepickerModule
 } from "@angular-material-components/datetime-picker";
 import {UserFormComponent} from "./modules/demo/userForm/userForm.component";
+import {ConfirmDialogComponent} from "./modules/explorer/confirmDialog/confirmDialog.component";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
+import {StoreModule} from "@ngrx/store";
+import {notificationReducer} from "./store/notification.reducer";
+import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
+import {MessageModule} from "primeng/message";
 
 @NgModule({
   declarations: [
     AppComponent, FormTodoComponent, TodoComponent,
     TodoListComponent, TodoFilterComponent, TodoTableComponent,
-    TodoCommandsComponent, UserFormComponent
+    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,9 +74,14 @@ import {UserFormComponent} from "./modules/demo/userForm/userForm.component";
     MatSelectModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
-    NgxMatNativeDateModule
+    NgxMatNativeDateModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    StoreModule.forRoot({notifications: notificationReducer}),
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
