@@ -46,9 +46,6 @@ export class TodoListComponent {
       .pipe(
         //switch vers un autre observable retourné par le service
         switchMap(paramMap => {
-          console.log("TO DO LIST====")
-          console.log(paramMap)
-
             return this.getFilterKeysLength(paramMap) > 0 ?
               this.todoService.filterTodos(paramMap) :
               new Observable<ToDoSearchResult>()
@@ -96,4 +93,16 @@ export class TodoListComponent {
     return paramsInMap.length;
   }
 
+  onDelete = (todo: Todo) => {
+
+    console.log("todolist delete "+todo.id)
+
+    /*
+    if (todo.scheduled) {
+      this.todosScheduled = this.todosScheduled?.filter(t => t.id !== todo.id);
+    } else {
+      this.todosUnscheduled = this.todosUnscheduled?.filter(t => t.id !== todo.id);
+    }*/
+
+  }
 }

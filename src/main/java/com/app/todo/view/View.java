@@ -29,6 +29,6 @@ public interface View {
     interface getTodo extends Id, Title, Scheduled, Description, Priority, SaveTime, Time, Done {
     }
 
-    interface getTodos extends Id, Title, Priority, SaveTime, Time {
+    interface getTodos extends Id, Title, Scheduled, Priority, SaveTime, Time, Done {
     }
 }

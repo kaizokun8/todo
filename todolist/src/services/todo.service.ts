@@ -18,6 +18,13 @@ export class TodoService {
 
   baseUrl: String = environment.todoResourceServerUrl;
 
+  deleteTodo(todo: Todo): Observable<Todo> {
+
+    // return this.http.delete<Todo>(`${this.baseUrl}/todos/${todo.id}`);
+    return new Observable<Todo>(o => o.next(todo));
+
+  }
+
   saveTodo(todo: Todo): Observable<Todo> {
 
     if (todo.id !== null) {

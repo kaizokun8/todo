@@ -2,7 +2,7 @@
  * Created by jbe on 14/01/2022
  */
 
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {Todo} from "../../../model/Todo";
@@ -18,6 +18,7 @@ export class TodoComponent implements OnInit {
 
   @Input() todo!: Todo;
   @Input() fromList: boolean = false;
+  @Output('delete') readonly delete = new EventEmitter<Todo>();
 
   constructor(private todoService: TodoService, private route: ActivatedRoute) {
   }
@@ -38,6 +39,16 @@ export class TodoComponent implements OnInit {
         switchMap(id => this.todoService.getTodo(id))
         //s'inscrit à l'observable final
       ).subscribe(todo => this.todo = todo);
+  }
+
+  onDelete(todo: Todo) {
+    console.log("todo onDelete " + todo.id);
+    if (this.delete) {
+      console.log("pass to parent")
+      this.delete.emit(todo);
+    } else {
+      console.log("no parent")
+    }
   }
 
 }

@@ -4,7 +4,7 @@
 <button *ngIf="!todo.done" mat-icon-button routerLink="/form/edit/{{todo.id}}">
   <mat-icon>edit</mat-icon>
 </button>
-<button *ngIf="!todo.done" mat-icon-button routerLink="/">
+<button *ngIf="!todo.done" (click)="onDelete()" mat-icon-button routerLink="/">
   <mat-icon>delete</mat-icon>
 </button>
 <button *ngIf="!todo.done" mat-icon-button routerLink="/">

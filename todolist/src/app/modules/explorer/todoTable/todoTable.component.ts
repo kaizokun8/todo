@@ -2,7 +2,7 @@
  * Created by jbe on 15/01/2022
  */
 
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Todo} from "../../../model/Todo";
 import {scheduled} from "rxjs";
 
@@ -12,10 +12,9 @@ import {scheduled} from "rxjs";
   styleUrls: ['./todoTable.component.css']
 })
 
-export class TodoTableComponent implements OnInit{
+export class TodoTableComponent implements OnInit {
 
   @Input("todoList") todoList!: Array<Todo>;
-
   @Input("scheduled") scheduled!: boolean;
 
   displayedColumns: Array<String> = [];
@@ -33,5 +32,9 @@ export class TodoTableComponent implements OnInit{
     this.displayedColumns.push('creationTime');
     this.displayedColumns.push('done');
     this.displayedColumns.push('admin');
+  }
+
+  onDelete(todo: Todo) {
+    console.log("table onDelete " + todo.id)
   }
 }
