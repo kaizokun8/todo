@@ -1,6 +1,6 @@
-<mat-card class="demo-inline-calendar-card">
+<mat-card *ngIf="display" class="demo-inline-calendar-card">
   <mat-calendar [selected]="selectedDate" (selectedChange)="onSelectChange($event)"
                 (monthSelected)="onMonthSelected($event)"
                 (selectedChange)="onSelectChange($event)"
-                [dateClass]="dateClass"></mat-calendar>
+                [dateClass]="dateClass "></mat-calendar>
 </mat-card>

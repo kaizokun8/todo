@@ -1,5 +1,6 @@
 package com.app.todo.controller;
 
+import com.app.todo.dto.TodoDto;
 import com.app.todo.dto.TodoFilters;
 import com.app.todo.model.Priority;
 import com.app.todo.dto.ToDoSearchResut;
@@ -26,10 +27,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -45,13 +50,37 @@ public class controller {
 
     @PostMapping(value = "/todos")
     @Validated(value = Views.OnCreate.class)
-    public ResponseEntity<?> createTodo(@Valid @RequestBody @NotNull Todo todo) {
+    public ResponseEntity<?> createTodo(@Valid @RequestBody @NotNull TodoDto todoDto) {
 
-        todo.setCreationTime(new Date().getTime());
-        todo.setUpdateTime(new Date().getTime());
+        Todo todo = TodoDto.toEntity(todoDto);
+
+        todo.setCreationDate(new Date());
+        todo.setUpdateDate(new Date());
         todo.setDone(false);
 
-        return new ResponseEntity<>(this.todoRepository.save(todo), HttpStatus.CREATED);
+        todo = this.todoRepository.save(todo);
+
+        return new ResponseEntity<>(TodoDto.toDto(todo), HttpStatus.CREATED);
+    }
+
+    @PutMapping(value = "/todos")
+    @Validated(value = Views.OnUpdate.class)
+    public ResponseEntity<?> updateTodo(@Valid @RequestBody @NotNull @TodoExist TodoDto todoDto) {
+
+        Todo todo = this.todoRepository.findById(todoDto.getId()).get();
+
+        todo.setUpdateDate(new Date());
+        todo.setTitle(todoDto.getTitle());
+        todo.setDescription(todoDto.getDescription());
+        todo.setPriority(todoDto.getPriority());
+        todo.setScheduled(todoDto.isScheduled());
+        todo.setStartDate(new Date(todoDto.getStartTime()));
+        todo.setEndDate(new Date(todoDto.getEndTime()));
+        todo.setDone(todoDto.isDone());
+
+        todo = this.todoRepository.save(todo);
+
+        return new ResponseEntity<>(TodoDto.toDto(todo), HttpStatus.OK);
     }
 
     @PutMapping(value = "/todos/{id}/done")
@@ -74,26 +103,6 @@ public class controller {
         todo = this.todoRepository.save(todo);
 
         return new ResponseEntity<>(todo.isDone(), HttpStatus.OK);
-    }
-
-    @PutMapping(value = "/todos")
-    @Validated(value = Views.OnUpdate.class)
-    public ResponseEntity<?> updateTodo(@Valid @RequestBody @NotNull @TodoExist Todo todo_p) {
-
-        Todo todo = this.todoRepository.findById(todo_p.getId()).get();
-
-        todo.setUpdateTime(new Date().getTime());
-        todo.setTitle(todo_p.getTitle());
-        todo.setDescription(todo_p.getDescription());
-        todo.setPriority(todo_p.getPriority());
-        todo.setScheduled(todo_p.isScheduled());
-        todo.setStartTime(todo_p.getStartTime());
-        todo.setEndTime(todo_p.getEndTime());
-        todo.setDone(todo_p.isDone());
-
-        todo = this.todoRepository.save(todo);
-
-        return new ResponseEntity<>(todo, HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/todos/{id}")
@@ -122,7 +131,23 @@ public class controller {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<>(optionalTodo.get(), HttpStatus.OK);
+        return new ResponseEntity<>(TodoDto.toDto(optionalTodo.get()), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/todos/scheduled-days/{month}/{year}")
+    public ResponseEntity<?> getScheduledDaysOfMonthAndYear(@PathVariable @NotNull @Min(0) @Max(11) Integer month,
+                                                            @PathVariable @NotNull @Min(1980) Integer year) {
+
+
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, 1, 0, 0, 0);
+        Date firstDay = cal.getTime();
+        cal.set(year, month + 1, 0, 0, 0, 0);
+        Date lastDay = cal.getTime();
+
+        List<Integer> rs = this.todoSearchService.getScheduledDaysOfMonthAndYear(firstDay, lastDay);
+
+        return new ResponseEntity<>(rs, HttpStatus.OK);
     }
 
     @GetMapping(value = "/todos")
@@ -140,15 +165,20 @@ public class controller {
                                       @RequestParam(required = false) Integer page,
                                       @RequestParam(required = false) Integer pageSize) {
 
+        Date startCreationDate = startCreationTime != null ? new Date(startCreationTime) : null;
+        Date endCreationDate = endCreationTime != null ? new Date(endCreationTime) : null;
+        Date startDate = startTime != null ? new Date(startTime) : null;
+        Date endDate = endTime != null ? new Date(endTime) : null;
+
         TodoFilters todoFilters = new TodoFilters(title, description,
-                priority, startCreationTime, endCreationTime,
-                startTime, endTime, scheduled, done, page, pageSize);
+                priority, startCreationDate, endCreationDate,
+                startDate, endDate, scheduled, done, page, pageSize);
 
         Long total = todoSearchService.countTodos(todoFilters);
 
         Collection<Todo> todos = todoSearchService.getTodos(todoFilters);
 
-        ToDoSearchResut toDoSearchResut = new ToDoSearchResut(total, todos, scheduled);
+        ToDoSearchResut toDoSearchResut = new ToDoSearchResut(total, TodoDto.toDtos(todos), scheduled);
 
         return new ResponseEntity<>(toDoSearchResut, HttpStatus.OK);
     }

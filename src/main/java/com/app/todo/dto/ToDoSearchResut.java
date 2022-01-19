@@ -1,6 +1,5 @@
 package com.app.todo.dto;
 
-import com.app.todo.model.Todo;
 import com.app.todo.view.View;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;
@@ -19,7 +18,7 @@ public class ToDoSearchResut {
 
     private Long total;
 
-    private Collection<Todo> todos;
+    private Collection<TodoDto> todos;
 
     private boolean scheduled;
 

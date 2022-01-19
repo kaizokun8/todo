@@ -1,4 +1,9 @@
-::ng-deep.example-custom-date-class {
+::ng-deep.highlighted-date {
+  background: orange;
+  border-radius: 100%;
+}
+
+::ng-deep.highlighted-date {
   background: orange;
   border-radius: 100%;
 }

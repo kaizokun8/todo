@@ -36,12 +36,14 @@ export class TodoFilterComponent {
   }
 
   getDateFromTimeParam(params: ParamMap, key: string): Date | null {
+
     if (params.has(key)) {
       let startTime = Number.parseInt(params.get(key)!);
       if (!Number.isNaN(startTime)) {
         return new Date(startTime);
       }
     }
+
     return null;
   }
 

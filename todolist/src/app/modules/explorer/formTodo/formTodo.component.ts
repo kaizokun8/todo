@@ -59,7 +59,16 @@ export class FormTodoComponent {
 
     const start: Date = group.get("start")!.value;
     const scheduled: Date = group.get("scheduled")!.value;
-    return scheduled && start && start?.getDay() !== new Date().getDay() ? {notToday: true} : null;
+
+    const date = new Date();
+
+    date.setHours(0);
+    date.setMinutes(0);
+    date.setSeconds(0);
+    date.setMilliseconds(0)
+
+    return (scheduled && start
+      && start?.getTime() < date.getTime()) ? {notTodayNorFuture: true} : null;
   }
 
   public static startDateIsRequired(group: AbstractControl): ValidationErrors | null {
@@ -238,8 +247,8 @@ export class FormTodoComponent {
       errorMessages.push('The start date is missing');
     } else {
 
-      if (range?.hasError('notToday')) {
-        errorMessages.push('The start date must be today');
+      if (range?.hasError('notTodayNorFuture')) {
+        errorMessages.push('The start date must be today or in the future');
       }
       if (range?.hasError('startGreaterThanEnd')) {
         errorMessages.push('The start date is greater or equal to the end date');

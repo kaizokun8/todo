@@ -2,7 +2,7 @@
  * Created by jbe on 19/01/2022
  */
 
-import {Component, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LIST} from "../../../../shared/View";
@@ -14,11 +14,15 @@ import {MatCalendarCellClassFunction, MatCalendarCellCssClasses} from "@angular/
   styleUrls: ['./todoCalendar.component.css']
 })
 
-export class TodoCalendarComponent {
+export class TodoCalendarComponent implements OnInit {
 
   selectedDate: Date | null = new Date();
 
   viewType: string = LIST;
+
+  highLightedDates: Set<number> = new Set<number>();
+
+  display = false;
 
   constructor(private todoService: TodoService, private router: Router, private route: ActivatedRoute) {
 
@@ -27,17 +31,22 @@ export class TodoCalendarComponent {
     this.onMonthSelected(this.selectedDate);
   }
 
+  ngOnInit(): void {
+
+    console.log("ON INIT")
+  }
+
   onSelectChange(date: Date | null) {
-    console.log("onSelectChange");
-    console.log(date);
     date?.setHours(0);
     date?.setMinutes(0);
     date?.setSeconds(0);
-    let startTime = date?.getTime();
+    date?.setMilliseconds(0);
+    let startTime = date?.getTime() ?? new Date().getTime();
     date?.setHours(23);
     date?.setMinutes(59);
     date?.setSeconds(59);
-    let endTime = date?.getTime();
+    date?.setMilliseconds(999);
+    let endTime = date?.getTime() ?? new Date().getTime();
     this.router.navigate(['/todos'], {
       queryParams: {
         startTime: startTime,
@@ -46,28 +55,38 @@ export class TodoCalendarComponent {
         view: this.viewType
       }
     })
+
+    this.selectedDate = date;
   }
 
   onMonthSelected(month: Date | null) {
-    console.log("onMonthSelected")
-    console.log(month)
+    /*
+    * récuperer le timestamp du premier jor du mois et celui du dernier
+    * recuperer toutes les taches programmées dont le timestamp de départ ce situe entre les deux
+    * extraire du timestamp de depart le jour du mois, et retourner la liste des jours du mois de manière distincts
+    * */
+
+    //let d = new Date(month?.getFullYear(), month?.getMonth(),0).getDate();
+    this.display = false;
+    this.todoService.getScheduledDaysOfMonthAndYears(month?.getMonth(), month?.getFullYear())
+      .subscribe((scheduledDays: Array<number>) => {
+        this.highLightedDates = new Set(scheduledDays);
+        this.display = true;
+      })
   }
 
   onYearSelected(year: Date) {
-    console.log("onYearSelected")
-    console.log(year)
+
   }
 
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
-    console.log(cellDate)
-    console.log(cellDate.getDate())
-    console.log(view)
-    // Only highligh dates inside the month view.
-    if (view === 'month') {
-      const date = cellDate.getDate();
 
-      // Highlight the 1st and 20th day of each month.
-      return date === 1 || date === 20 ? 'example-custom-date-class' : '';
+    // Only highlight dates inside the month view.
+    if (view === 'month') {
+
+      if (this.highLightedDates.has(cellDate.getDate())) {
+        return 'highlighted-date';
+      }
     }
 
     return '';

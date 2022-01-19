@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Collection;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,13 +21,13 @@ public class TodoFilters {
 
     private Collection<Priority> priority;
 
-    private Long startCreationTime;
+    private Date startCreationDate;
 
-    private Long endCreationTime;
+    private Date endCreationDate;
 
-    private Long startTime;
+    private Date startDate;
 
-    private Long endTime;
+    private Date endDate;
 
     private boolean schedule;
 

@@ -57,12 +57,10 @@ export class TodoService {
   getUnscheduledAndTodayScheduledTodos(): Observable<AllToDoSearchResult> {
 
     let todayStart = new Date();
-    todayStart.setHours(0, 0, 0);
+    todayStart.setHours(0, 0, 0, 0);
 
     let todayEnd = new Date();
-    todayEnd.setHours(23, 59, 59)
-
-    const paramsScheduled = {scheduled: true, startTime: todayStart.getTime(), endTime: todayEnd.getTime()};
+    todayEnd.setHours(23, 59, 59, 999)
 
     let scheduledTodos = this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`,
       {params: {scheduled: true, startTime: todayStart.getTime(), endTime: todayEnd.getTime()}});
@@ -74,4 +72,13 @@ export class TodoService {
       .pipe(map((rs: Array<ToDoSearchResult>) => ({scheduled: rs[0], unscheduled: rs[1]})))
   }
 
+  getScheduledDaysOfMonthAndYears(month: number | undefined, fullYear: number | undefined): Observable<Array<number>> {
+
+    if (month !== undefined && fullYear !== undefined) {
+
+      return this.http.get<Array<number>>(`${this.baseUrl}/todos/scheduled-days/${month}/${fullYear}`);
+    }
+
+    return new Observable<Array<number>>(o => o.next([]))
+  }
 }

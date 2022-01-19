@@ -14,6 +14,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.Collection;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +26,15 @@ public class TodoSearchService {
 
     @Autowired
     protected EntityManager entityManager;
+
+    public List<Integer> getScheduledDaysOfMonthAndYear(Date startDate, Date endDate) {
+
+        TypedQuery<Integer> query = this.entityManager.createQuery(
+                "select distinct extract(DAY from t.startDate) as year from Todo t where t.startDate >= :startDate and t.endDate <= :endDate and scheduled = true", Integer.class);
+        query.setParameter("startDate", startDate);
+        query.setParameter("endDate", endDate);
+        return query.getResultList();
+    }
 
     private Collection<Predicate> addPredicates(TodoFilters todoFilters, CriteriaBuilder cb, Root root) {
 
@@ -44,23 +54,23 @@ public class TodoSearchService {
             predicates.add(root.get("priority").in(todoFilters.getPriority()));
         }
 
-        if (todoFilters.getStartCreationTime() != null) {
-            predicates.add(cb.greaterThanOrEqualTo(root.get("creationTime"), todoFilters.getStartCreationTime()));
+        if (todoFilters.getStartCreationDate() != null) {
+            predicates.add(cb.greaterThanOrEqualTo(root.get("creationDate"), todoFilters.getStartCreationDate()));
         }
 
-        if (todoFilters.getEndCreationTime() != null) {
-            predicates.add(cb.lessThanOrEqualTo(root.get("creationTime"), todoFilters.getEndCreationTime()));
+        if (todoFilters.getEndCreationDate() != null) {
+            predicates.add(cb.lessThanOrEqualTo(root.get("creationDate"), todoFilters.getEndCreationDate()));
         }
 
         predicates.add(cb.equal(root.get("scheduled"), todoFilters.isSchedule()));
 
         if (todoFilters.isSchedule()) {
-            if (todoFilters.getStartTime() != null) {
-                predicates.add(cb.greaterThanOrEqualTo(root.get("startTime"), todoFilters.getStartTime()));
+            if (todoFilters.getStartDate() != null) {
+                predicates.add(cb.greaterThanOrEqualTo(root.get("startDate"), todoFilters.getStartDate()));
             }
 
-            if (todoFilters.getEndTime() != null) {
-                predicates.add(cb.lessThanOrEqualTo(root.get("endTime"), todoFilters.getEndTime()));
+            if (todoFilters.getEndDate() != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("endDate"), todoFilters.getEndDate()));
             }
         }
 
@@ -105,7 +115,7 @@ public class TodoSearchService {
         cq.distinct(true);
         if (todoFilters.isSchedule()) {
             //si on recherche les taches programmées on trie par date de demarrrage croissante
-            cq.orderBy(cb.asc(root.get("startTime")));
+            cq.orderBy(cb.asc(root.get("startDate")));
         } else {
             //si on recherche les taches non programmées on trie par priorité decroissante
             cq.orderBy(cb.desc(root.get("priorityOrdinal")));

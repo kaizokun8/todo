@@ -1,8 +1,6 @@
 package com.app.todo.model;
 
-import com.app.todo.repository.Views;
-import com.app.todo.view.View;
-import com.fasterxml.jackson.annotation.JsonView;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
@@ -14,48 +12,40 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
 @DynamicUpdate
 @NoArgsConstructor
 @Setter
+@Getter
 public class Todo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(groups = Views.OnUpdate.class)
-    @Null(groups = Views.OnCreate.class)
     private Long id;
 
-    @NotEmpty
-    @Size(min = 3, max = 255)
     private String title;
 
     @Lob
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
     private Priority priority;
 
     @Enumerated(EnumType.ORDINAL)
-    @NotNull
     private Priority priorityOrdinal;
 
-    private Long creationTime;
+    private Date creationDate;
 
-    private Long updateTime;
+    private Date updateDate;
 
     private boolean scheduled;
 
-    private Long startTime;
+    private Date startDate;
 
-    private Long endTime;
+    private Date endDate;
 
     private boolean done;
 
@@ -70,61 +60,6 @@ public class Todo {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
-    }
-
-    @JsonView(View.Id.class)
-    public Long getId() {
-        return id;
-    }
-
-    @JsonView(View.Title.class)
-    public String getTitle() {
-        return title;
-    }
-
-    @JsonView(View.Description.class)
-    public String getDescription() {
-        return description;
-    }
-
-    @JsonView(View.Priority.class)
-    public Priority getPriority() {
-        return priority;
-    }
-
-    @JsonView(View.Priority.class)
-    public Priority getPriorityOrdinal() {
-        return priorityOrdinal;
-    }
-
-    @JsonView(View.Scheduled.class)
-    public boolean isScheduled() {
-        return scheduled;
-    }
-
-    @JsonView(View.SaveTime.class)
-    public Long getCreationTime() {
-        return creationTime;
-    }
-
-    @JsonView(View.SaveTime.class)
-    public Long getUpdateTime() {
-        return updateTime;
-    }
-
-    @JsonView(View.Time.class)
-    public Long getStartTime() {
-        return startTime;
-    }
-
-    @JsonView(View.Time.class)
-    public Long getEndTime() {
-        return endTime;
-    }
-
-    @JsonView(View.Done.class)
-    public boolean isDone() {
-        return done;
     }
 
     public void setPriority(Priority priority) {
