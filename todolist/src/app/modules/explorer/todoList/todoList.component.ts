@@ -93,13 +93,4 @@ export class TodoListComponent {
 
     return paramsInMap.length;
   }
-
-  onDelete = (todo: Todo) => {
-
-    if (todo.scheduled) {
-      this.todosScheduled = this.todosScheduled?.filter(t => t.id !== todo.id);
-    } else {
-      this.todosUnscheduled = this.todosUnscheduled?.filter(t => t.id !== todo.id);
-    }
-  }
 }

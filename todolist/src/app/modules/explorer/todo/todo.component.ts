@@ -45,11 +45,9 @@ export class TodoComponent implements OnInit {
       ).subscribe(todo => this.todo = todo);
   }
 
-  onDelete(todo: Todo) {
+  onDelete() {
     //si le todo est affiché depuis une liste on transmet l'evenement au parent
-    if (this.fromList) {
-      this.delete.emit(todo);
-    } else {
+    if (!this.fromList) {
       this.location.back();
     }
   }

@@ -166,8 +166,6 @@ export class FormTodoComponent {
     this.todoService.saveTodo(todo).subscribe({
       next: (todo) => {
 
-        //window.location.href = `/todos/${todo.id}`;
-
         let action = this.action === CREATE ? 'created' : 'updated';
 
         let notifications: Array<Notification> = [{
@@ -176,7 +174,9 @@ export class FormTodoComponent {
           detail: `The task "${todo.id}#${todo.title}" has been successfully ${action} ! `
         }];
 
-        this.store.dispatch(setNotificationList({notifications}))
+        //this.store.dispatch(setNotificationList({notifications}));
+
+        window.location.href = `/todos/${todo.id}`;
       },
       error: () => {
 

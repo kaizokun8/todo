@@ -11,6 +11,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Store} from "@ngrx/store";
 import {setNotificationList} from "../../../store/notification/notification.actions";
 import {Notification} from "../../../model/Notification";
+import {removeTodo} from "../../../store/todo/todo.actions";
 
 @Component({
   selector: 'todoCommands',
@@ -51,7 +52,8 @@ export class TodoCommandsComponent {
 
               this.store.dispatch(setNotificationList({notifications}))
               //this.snackbar.open("The task has been successfully deleted ! ", "Keep going", {duration: 5000})
-              this.delete.emit(this.todo);
+              this.store.dispatch(removeTodo({todo: this.todo}));
+              this.delete.emit();
             },
             error: (err) => {
               console.log("error")
@@ -71,7 +73,6 @@ export class TodoCommandsComponent {
           })
       }
     })
-
   }
 
   onDone() {

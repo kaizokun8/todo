@@ -31,13 +31,13 @@
 
     <ng-container *ngIf="viewType === 'grid'">
       <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoScheduled of todosScheduled">
-        <todo [fromList]="true" [todo]="todoScheduled" (delete)="onDelete($event)"></todo>
+        <todo [fromList]="true" [todo]="todoScheduled"></todo>
       </div>
     </ng-container>
 
     <ng-container *ngIf="viewType === 'list'">
       <div class="col-12">
-        <todoTable [todoList]="todosScheduled" [scheduled]="true" (delete)="onDelete($event)"></todoTable>
+        <todoTable [todoList]="todosScheduled" [scheduled]="true"></todoTable>
       </div>
     </ng-container>
   </ng-container>
@@ -59,12 +59,12 @@
 
     <ng-container *ngIf="viewType === 'grid'">
       <div class="col-12 md:col-6 lg:col-3" *ngFor="let todoUnscheduled of todosUnscheduled">
-        <todo [fromList]="true" [todo]="todoUnscheduled" (delete)="onDelete($event)"></todo>
+        <todo [fromList]="true" [todo]="todoUnscheduled"></todo>
       </div>
     </ng-container>
     <ng-container *ngIf="viewType === 'list'">
       <div class="col-12">
-        <todoTable [todoList]="todosUnscheduled" [scheduled]="false" (delete)="onDelete($event)"></todoTable>
+        <todoTable [todoList]="todosUnscheduled" [scheduled]="false"></todoTable>
       </div>
     </ng-container>
 

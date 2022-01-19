@@ -48,6 +48,7 @@ export const todoReducer = createReducer(
     })
   ),
   on(removeTodo, (state, {todo}) => {
+
     if (todo.scheduled) {
       let scheduledList = state.scheduled?.filter(t => t.id !== todo.id);
       return {...state, scheduled: scheduledList, totalScheduled: scheduledList.length}

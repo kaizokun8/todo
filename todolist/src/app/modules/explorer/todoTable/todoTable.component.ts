@@ -35,8 +35,5 @@ export class TodoTableComponent implements OnInit {
     this.displayedColumns.push('admin');
   }
 
-  onDelete(todo: Todo) {
-    this.delete.emit(todo);
-  }
 
 }
