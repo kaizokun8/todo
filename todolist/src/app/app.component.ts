@@ -16,7 +16,6 @@ export class AppComponent {
 
   constructor(private store: Store, private messageService: MessageService) {
 
-
     this.notifications$.subscribe((notifications: readonly Notification[]) => {
 
       this.messageService.addAll(notifications.map((n) => ({

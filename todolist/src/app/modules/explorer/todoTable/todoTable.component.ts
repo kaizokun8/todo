@@ -14,7 +14,7 @@ import {scheduled} from "rxjs";
 
 export class TodoTableComponent implements OnInit {
 
-  @Input("todoList") todoList!: Array<Todo>;
+  @Input("todoList") todoList!: ReadonlyArray<Todo>;
   @Input("scheduled") scheduled!: boolean;
   @Output('delete') readonly delete = new EventEmitter<Todo>();
 

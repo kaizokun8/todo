@@ -19,7 +19,7 @@ import {Priority, PriorityLabels, Priorities} from "../../../model/priority";
 import {CREATE, EDIT} from "../../../../shared/Action";
 import {Store} from "@ngrx/store";
 import {Notification} from "../../../model/Notification";
-import {setNotificationList} from "../../../store/notification.actions";
+import {setNotificationList} from "../../../store/notification/notification.actions";
 
 @Component({
   selector: 'formTodo',

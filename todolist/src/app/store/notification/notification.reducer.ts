@@ -1,6 +1,6 @@
 import {createReducer, on} from "@ngrx/store";
 import {setNotificationList} from "./notification.actions";
-import {Notification} from "../model/Notification";
+import {Notification} from "../../model/Notification";
 
 export const initialState: ReadonlyArray<Notification> = [];
 

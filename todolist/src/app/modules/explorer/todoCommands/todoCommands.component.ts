@@ -9,7 +9,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {ConfirmDialogComponent} from "../confirmDialog/confirmDialog.component";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Store} from "@ngrx/store";
-import {setNotificationList} from "../../../store/notification.actions";
+import {setNotificationList} from "../../../store/notification/notification.actions";
 import {Notification} from "../../../model/Notification";
 
 @Component({

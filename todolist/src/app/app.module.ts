@@ -39,10 +39,10 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {StoreModule} from "@ngrx/store";
-import {notificationReducer} from "./store/notification.reducer";
+import {notificationReducer} from "./store/notification/notification.reducer";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
-import {MessageModule} from "primeng/message";
+import {todoReducer} from "./store/todo/todo.reducer";
 
 @NgModule({
   declarations: [
@@ -78,7 +78,7 @@ import {MessageModule} from "primeng/message";
     MatDialogModule,
     MatSnackBarModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    StoreModule.forRoot({notifications: notificationReducer}),
+    StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer}),
     ToastModule
   ],
   providers: [MessageService],

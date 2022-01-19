@@ -11,6 +11,13 @@ import {Todo} from "../../../model/Todo";
 import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
 import {LIST} from "../../../../shared/View";
 import {TodoFilters} from "../../../dto/TodoFilters";
+import {Store} from "@ngrx/store";
+import {selectTodos} from "../../../todolists.selector";
+import {
+  setScheduledAndUnscheduledTodos,
+  setScheduledOrUnscheduledTodos
+} from "../../../store/todo/todo.actions";
+import {TodoStoreState} from "../../../store/todo/todo.reducer";
 
 @Component({
   selector: 'todoList',
@@ -20,26 +27,35 @@ import {TodoFilters} from "../../../dto/TodoFilters";
 
 export class TodoListComponent {
 
-  todosScheduled!: Array<Todo>;
+  todosScheduled!: ReadonlyArray<Todo>;
   totalScheduled!: number;
 
-  todosUnscheduled!: Array<Todo>;
+  todosUnscheduled!: ReadonlyArray<Todo>;
   totalUnscheduled!: number;
 
   viewType: string = LIST;
 
   currentChild!: string | undefined;
 
-  constructor(private todoService: TodoService, private route: ActivatedRoute) {
+  todoStoreState$: Observable<TodoStoreState> = this.store.select(selectTodos);
+
+  constructor(private todoService: TodoService,
+              private route: ActivatedRoute,
+              private store: Store) {
+
+    this.todoStoreState$.subscribe((s) => {
+      this.totalScheduled = s.totalScheduled;
+      this.totalUnscheduled = s.totalUnscheduled;
+      this.todosScheduled = s.scheduled;
+      this.todosUnscheduled = s.unscheduled;
+    })
 
     this.route.url.subscribe((v) => {
       //au changement d'url recupere le chemin enfant courant pour l'attacher dynamiquement
       //aux liens situés dans le template pointant vers l'url de chargement du composant courant.
       this.currentChild = this.route.snapshot.firstChild?.routeConfig?.path;
     })
-
     this.route.queryParamMap.subscribe((params) => this.viewType = params.get('view') ?? LIST);
-
     //recherche de todos par parametre de requete
     this.route.queryParamMap
       //transforme l'observable retourné par paramMap
@@ -52,31 +68,16 @@ export class TodoListComponent {
           }
         )
         //s'inscrit à l'observable final
-      ).subscribe(rs => {
-      if (rs.scheduled) {
-        this.todosScheduled = rs.todos;
-        this.totalScheduled = rs.total;
-        this.todosUnscheduled = [];
-        this.totalUnscheduled = 0;
-      } else {
-        this.todosUnscheduled = rs.todos;
-        this.totalUnscheduled = rs.total;
-        this.todosScheduled = [];
-        this.totalScheduled = 0;
-      }
-    });
+      ).subscribe((todoSearchResult) =>
+      this.store.dispatch(setScheduledOrUnscheduledTodos({todoSearchResult})));
     //recherche par default sans parametres, todos du jour plus non programmés
     this.route.queryParamMap
       .pipe(switchMap((paramMap) =>
         this.getFilterKeysLength(paramMap) === 0 ?
           this.todoService.getUnscheduledAndTodayScheduledTodos() :
           new Observable<AllToDoSearchResult>()
-      )).subscribe((rs: AllToDoSearchResult) => {
-      this.todosScheduled = rs.scheduled.todos;
-      this.totalScheduled = rs.scheduled.total;
-      this.todosUnscheduled = rs.unscheduled.todos;
-      this.totalUnscheduled = rs.unscheduled.total;
-    });
+      )).subscribe((allTodoSearchResult) =>
+      this.store.dispatch(setScheduledAndUnscheduledTodos({allTodoSearchResult})));
   }
 
   /**
