@@ -43,12 +43,13 @@ import {notificationReducer} from "./store/notification/notification.reducer";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {todoReducer} from "./store/todo/todo.reducer";
+import {TodoCalendarComponent} from "./modules/explorer/todoCalendar/todoCalendar.component";
 
 @NgModule({
   declarations: [
     AppComponent, FormTodoComponent, TodoComponent,
     TodoListComponent, TodoFilterComponent, TodoTableComponent,
-    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent
+    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent
   ],
   imports: [
     BrowserModule,
