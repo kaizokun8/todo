@@ -1,7 +1,7 @@
 <div class="grid">
 
   <div class="col-12">
-    <mat-card class="example-card" style="max-width: 300px" *ngIf="todo">
+    <mat-card *ngIf="todo">
       <mat-card-title>{{ todo.title }}</mat-card-title>
       <mat-card-content>
         <p *ngIf="!fromList && todo.description">{{ todo.description }}</p>

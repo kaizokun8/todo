@@ -48,76 +48,121 @@ public class controller {
     @Autowired
     private TodoSearchService todoSearchService;
 
+    private void throwException() throws Exception {
+        if (true) {
+            throw new Exception("");
+        }
+    }
+
     @PostMapping(value = "/todos")
     @Validated(value = Views.OnCreate.class)
     public ResponseEntity<?> createTodo(@Valid @RequestBody @NotNull TodoDto todoDto) {
 
-        Todo todo = TodoDto.toEntity(todoDto);
+        try {
 
-        todo.setCreationDate(new Date());
-        todo.setUpdateDate(new Date());
-        todo.setDone(false);
+            Todo todo = TodoDto.toEntity(todoDto);
 
-        todo = this.todoRepository.save(todo);
+            todo.setCreationDate(new Date());
+            todo.setUpdateDate(new Date());
+            todo.setDone(false);
 
-        return new ResponseEntity<>(TodoDto.toDto(todo), HttpStatus.CREATED);
+            todo = this.todoRepository.save(todo);
+
+            return new ResponseEntity<>(TodoDto.toDto(todo), HttpStatus.CREATED);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            return new ResponseEntity<>("An error occured while" +
+                    " creating the task " + todoDto.getTitle() + "  !",
+                    HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping(value = "/todos")
     @Validated(value = Views.OnUpdate.class)
     public ResponseEntity<?> updateTodo(@Valid @RequestBody @NotNull @TodoExist TodoDto todoDto) {
 
-        Todo todo = this.todoRepository.findById(todoDto.getId()).get();
+        try {
 
-        todo.setUpdateDate(new Date());
-        todo.setTitle(todoDto.getTitle());
-        todo.setDescription(todoDto.getDescription());
-        todo.setPriority(todoDto.getPriority());
-        todo.setScheduled(todoDto.isScheduled());
-        todo.setStartDate(new Date(todoDto.getStartTime()));
-        todo.setEndDate(new Date(todoDto.getEndTime()));
-        todo.setDone(todoDto.isDone());
+            Todo todo = this.todoRepository.findById(todoDto.getId()).get();
 
-        todo = this.todoRepository.save(todo);
+            todo.setUpdateDate(new Date());
+            todo.setTitle(todoDto.getTitle());
+            todo.setDescription(todoDto.getDescription());
+            todo.setPriority(todoDto.getPriority());
+            todo.setScheduled(todoDto.isScheduled());
+            todo.setStartDate(new Date(todoDto.getStartTime()));
+            todo.setEndDate(new Date(todoDto.getEndTime()));
+            todo.setDone(todoDto.isDone());
 
-        return new ResponseEntity<>(TodoDto.toDto(todo), HttpStatus.OK);
+            todo = this.todoRepository.save(todo);
+
+            return new ResponseEntity<>(TodoDto.toDto(todo), HttpStatus.OK);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            return new ResponseEntity<>("An error occured while" +
+                    " updating the task #" + todoDto.getId() + "-" + todoDto.getTitle() + "  !",
+                    HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping(value = "/todos/{id}/done")
     @Validated
     public ResponseEntity<?> updateTodoDone(@PathVariable @TodoIdExist Long id, @RequestBody @NotNull Map<String, Object> done) {
 
-        if (!done.containsKey("done") || !(done.get("done") instanceof Boolean)) {
 
-            return new ResponseEntity<>("The body do not contain the done key or the value is not a boolean", HttpStatus.BAD_REQUEST);
+        try {
+
+            if (!done.containsKey("done") || !(done.get("done") instanceof Boolean)) {
+
+                return new ResponseEntity<>("The body do not contain the done key or the value is not a boolean", HttpStatus.BAD_REQUEST);
+            }
+
+            Optional<Todo> optionalTodo = this.todoRepository.findById(id);
+
+            if (optionalTodo.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+
+            Todo todo = optionalTodo.get();
+            todo.setDone((Boolean) done.get("done"));
+            todo = this.todoRepository.save(todo);
+
+            return new ResponseEntity<>(todo.isDone(), HttpStatus.OK);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("An error occured while updating " +
+                    "the done status of the task #" + id + " !", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-        Optional<Todo> optionalTodo = this.todoRepository.findById(id);
-
-        if (optionalTodo.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
-        Todo todo = optionalTodo.get();
-        todo.setDone((Boolean) done.get("done"));
-        todo = this.todoRepository.save(todo);
-
-        return new ResponseEntity<>(todo.isDone(), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/todos/{id}")
     @Validated(value = Views.OnCreate.class)
     public ResponseEntity<?> deleteTodo(@PathVariable @NotEmpty @TodoIdExist Long id) {
 
-        Optional<Todo> optionalTodo = this.todoRepository.findById(id);
+        try {
 
-        if (optionalTodo.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            this.throwException();
+
+            Optional<Todo> optionalTodo = this.todoRepository.findById(id);
+
+            if (optionalTodo.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+
+            //this.todoRepository.delete(optionalTodo.get());
+            return new ResponseEntity<>(HttpStatus.OK);
+            //return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            //return new ResponseEntity<>( HttpStatus.INTERNAL_SERVER_ERROR);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("An error occured while deleting the task #" + id + " !", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-        //this.todoRepository.delete(optionalTodo.get());
-        return new ResponseEntity<>(HttpStatus.OK);
-        //return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping(value = "/todos/{id}")

@@ -1,6 +1,6 @@
 <form *ngIf="formFilter" (ngSubmit)="filter()" [formGroup]="formFilter">
 
-  <mat-card class="example-card" style="max-width: 100%">
+  <mat-card style="max-width: 100%">
 
     <mat-card-title>Filter tasks</mat-card-title>
 
@@ -27,6 +27,7 @@
 
       <ng-container formGroupName="creationDateRange">
         <section>
+          <h3>Creation date</h3>
           <mat-form-field appearance="fill" class="mt-2 mr-2">
             <mat-label>Enter a starting date and time</mat-label>
             <input matInput [ngxMatDatetimePicker]="startPicker" formControlName="startCreationDate">
@@ -56,6 +57,7 @@
 
         <ng-container *ngIf="formFilter.value.dateRange.scheduled">
           <section>
+            <h3>Scheduling date</h3>
             <mat-form-field appearance="fill" class="mt-2 mr-2">
               <mat-label>Enter a starting date and time</mat-label>
               <input matInput [ngxMatDatetimePicker]="startPickerB" formControlName="startDate">

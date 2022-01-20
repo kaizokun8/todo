@@ -18,6 +18,7 @@ import {
   setScheduledOrUnscheduledTodos
 } from "../../../store/todo/todo.actions";
 import {TodoStoreState} from "../../../store/todo/todo.reducer";
+import {RouterUtil} from "../../../util/RouterUtil";
 
 @Component({
   selector: 'todoList',
@@ -62,8 +63,9 @@ export class TodoListComponent {
       .pipe(
         //switch vers un autre observable retourné par le service
         switchMap(paramMap => {
+            let params = RouterUtil.fromParamMapToObject(paramMap);
             return this.getFilterKeysLength(paramMap) > 0 ?
-              this.todoService.filterTodos(paramMap) :
+              this.todoService.filterTodos(params) :
               new Observable<ToDoSearchResult>()
           }
         )

@@ -55,7 +55,7 @@ export class FormTodoComponent {
     return (scheduled && end && start && start?.getDay() !== end?.getDay()) ? {startNotSameDayThanEnd: true} : null;
   }
 
-  public static startDateIsToday(group: AbstractControl): ValidationErrors | null {
+  public static startDateIsTodayOrFuture(group: AbstractControl): ValidationErrors | null {
 
     const start: Date = group.get("start")!.value;
     const scheduled: Date = group.get("scheduled")!.value;
@@ -119,10 +119,9 @@ export class FormTodoComponent {
       }, {
         validators: [
           FormTodoComponent.endDateGreaterThanStartDate, FormTodoComponent.endDateSameDayThanStartDate,
-          FormTodoComponent.startDateIsToday, FormTodoComponent.startDateIsRequired]
+          /*FormTodoComponent.startDateIsTodayOrFuture,*/ FormTodoComponent.startDateIsRequired]
       })
     });
-
 
     route.paramMap.pipe(switchMap((paramsMap) => {
 
@@ -132,8 +131,18 @@ export class FormTodoComponent {
 
           return route.queryParamMap.pipe(switchMap((params) => {
 
-            this.initTodo.startTime = params.has('startTime') ? Number.parseInt(params.get('startTime')!) : null;
-            this.initTodo.endTime = params.has('endTime') ? Number.parseInt(params.get('endTime')!) : null;
+            if (params.has('startTime')) {
+              let startTime = Number.parseInt(params.get('startTime')!);
+              if (!Number.isNaN(startTime) && startTime >= start.getTime()) {
+                this.initTodo.startTime = startTime;
+              }
+            }
+            if (params.has('endTime')) {
+              let endTime = Number.parseInt(params.get('endTime')!);
+              if (!Number.isNaN(endTime) && endTime > start.getTime()) {
+                this.initTodo.endTime = endTime;
+              }
+            }
 
             return new Observable<Todo>(o => o.next(this.initTodo));
           }))
@@ -194,16 +203,18 @@ export class FormTodoComponent {
         window.location.href = `/todos/${todo.id}`;
       },
       error: () => {
+        //gestion centralisée dans ErrorHandlerInterceptor
+        /*
+                let action = this.action === CREATE ? 'creating' : 'updating';
 
-        let action = this.action === CREATE ? 'creating' : 'updating';
+                let notifications: Array<Notification> = [{
+                  severity: 'error',
+                  summary: `Error`,
+                  detail: `An error occured while ${action} the task "${todo.id}#${todo.title}" ! `
+                }];
 
-        let notifications: Array<Notification> = [{
-          severity: 'error',
-          summary: `Error`,
-          detail: `An error occured while ${action} the task "${todo.id}#${todo.title}" ! `
-        }];
-
-        this.store.dispatch(setNotificationList({notifications}))
+                this.store.dispatch(setNotificationList({notifications}));
+        */
       },
       complete: () => {
 

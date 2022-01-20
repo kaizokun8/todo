@@ -22,6 +22,7 @@ import {removeTodo} from "../../../store/todo/todo.actions";
 export class TodoCommandsComponent {
 
   @Input() todo!: Todo;
+  @Input() iconSize!: string;
   @Input() fromList: boolean = false;
   @Output('delete') readonly delete = new EventEmitter<Todo>();
 
@@ -56,16 +57,15 @@ export class TodoCommandsComponent {
               this.delete.emit();
             },
             error: (err) => {
-              console.log("error")
-              console.log(err)
-
+              //erreur non géré au niveau de l'intercepteur générique
               let notifications: Array<Notification> = [{
                 severity: 'error',
                 summary: 'Task delete error',
-                detail: `An error occured when deleting the task "${this.todo.title}" ! `
+                detail: `An error occured when deleting the task "${this.todo.title}" !!! `
               }];
 
               this.store.dispatch(setNotificationList({notifications}))
+
             },
             complete: () => {
               console.log("complete")

@@ -6,7 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormTodoComponent} from "./modules/explorer/formTodo/formTodo.component";
 import {TodoComponent} from "./modules/explorer/todo/todo.component";
 import {TodoListComponent} from "./modules/explorer/todoList/todoList.component";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {ROUTES} from "./app.routes";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -45,46 +45,55 @@ import {MessageService} from "primeng/api";
 import {todoReducer} from "./store/todo/todo.reducer";
 import {TodoCalendarComponent} from "./modules/explorer/todoCalendar/todoCalendar.component";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {ApiInterceptor} from "../services/ApiInterceptor";
+import {ErrorHandlerInterceptor} from "../services/ErrorHandlerInterceptor";
+import {QuickSearchComponent} from "./modules/explorer/quickSearch/quickSearch.component";
+import {MatListModule} from "@angular/material/list";
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
     AppComponent, FormTodoComponent, TodoComponent,
     TodoListComponent, TodoFilterComponent, TodoTableComponent,
-    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent
+    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent, QuickSearchComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        RouterModule.forRoot(ROUTES),
-        RouterModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        MatMenuModule,
-        MatCardModule,
-        MatDividerModule,
-        MatGridListModule,
-        MatInputModule,
-        MatTableModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatCheckboxModule,
-        MatDatepickerModule,
-        ReactiveFormsModule,
-        MatNativeDateModule,
-        MatSelectModule,
-        NgxMatDatetimePickerModule,
-        NgxMatTimepickerModule,
-        NgxMatNativeDateModule,
-        MatDialogModule,
-        MatSnackBarModule,
-        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-        StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer}),
-        ToastModule,
-        ProgressSpinnerModule
-    ],
-  providers: [MessageService],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(ROUTES),
+    RouterModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatInputModule,
+    MatTableModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer}),
+    ToastModule,
+    ProgressSpinnerModule,
+    MatListModule,
+    MatTabsModule
+  ],
+  providers: [MessageService,
+    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,18 @@
+<div class="grid grid-nogutter">
+  <div class="col-12" style="height: 450px">
+    <mat-card style="height: 100%; height: 450px">
+      <mat-checkbox [formControl]="scheduled" class="m-2">Scheduled</mat-checkbox>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title of the task" [formControl]="title">
+      </mat-form-field>
+
+      <span *ngFor="let todo of todoList">
+        <span> {{todo.title}}</span><br/>
+        <todoCommands iconSize="16px" [fromList]="true" [todo]="todo"></todoCommands>
+        <mat-divider inset></mat-divider>
+        <br/>
+      </span>
+    </mat-card>
+  </div>
+</div>

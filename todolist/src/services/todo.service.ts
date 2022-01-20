@@ -1,4 +1,4 @@
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpContext, HttpContextToken, HttpErrorResponse} from "@angular/common/http";
 import {forkJoin, from, map, Observable, switchMap,} from 'rxjs';
 import {environment} from '../environments/environment'
 import {Todo} from "../app/model/Todo";
@@ -8,6 +8,7 @@ import {ToDoSearchResult} from "../app/dto/ToDoSearchResult";
 import {ParamMap} from "@angular/router";
 import {AllToDoSearchResult} from "../app/dto/AllToDoSearchResult";
 import axios from "axios";
+import {SHOULD_NOT_HANDLE_ERROR} from "./Context";
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,9 @@ export class TodoService {
   baseUrl: String = environment.todoResourceServerUrl;
 
   deleteTodo(todo: Todo): Observable<Todo> {
-
-    return this.http.delete<Todo>(`${this.baseUrl}/todos/${todo.id}`);
+    //test skip gestion error intercepteur
+    const context = new HttpContext().set(SHOULD_NOT_HANDLE_ERROR, true);
+    return this.http.delete<Todo>(`${this.baseUrl}/todos/${todo.id}`, {context});
     //return new Observable<Todo>( o => o.error("error"))s
     //return new Observable<Todo>(o => o.next(todo));
   }
@@ -48,9 +50,7 @@ export class TodoService {
     return this.http.get<Todo>(`${this.baseUrl}/todos/${id}`);
   }
 
-  filterTodos(paramMap: ParamMap): Observable<ToDoSearchResult> {
-
-    let params = RouterUtil.fromParamMapToObject(paramMap);
+  filterTodos(params:  { [k: string]: any }): Observable<ToDoSearchResult> {
 
     return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {params});
   }
