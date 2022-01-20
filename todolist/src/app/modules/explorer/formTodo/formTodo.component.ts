@@ -123,13 +123,20 @@ export class FormTodoComponent {
       })
     });
 
+
     route.paramMap.pipe(switchMap((paramsMap) => {
 
         this.action = paramsMap.get("action");
 
         if (this.action === CREATE) {
 
-          return new Observable<Todo>(o => o.next(this.initTodo));
+          return route.queryParamMap.pipe(switchMap((params) => {
+
+            this.initTodo.startTime = params.has('startTime') ? Number.parseInt(params.get('startTime')!) : null;
+            this.initTodo.endTime = params.has('endTime') ? Number.parseInt(params.get('endTime')!) : null;
+
+            return new Observable<Todo>(o => o.next(this.initTodo));
+          }))
 
         } else if (this.action === EDIT) {
 
@@ -140,7 +147,6 @@ export class FormTodoComponent {
     )).subscribe((todo: Todo) => {
 
       if (todo) {
-
         this.todoForm.get('id')?.setValue(todo.id);
         this.todoForm.get('priority')?.setValue(todo.priority);
         this.todoForm.get('title')?.setValue(todo.title);

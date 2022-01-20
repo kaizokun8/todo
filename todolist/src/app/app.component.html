@@ -8,7 +8,7 @@
         <span>TO DO LIST</span>
         <span class="example-spacer"></span>
 
-        <button mat-icon-button routerLink="/form/create"
+        <button mat-icon-button routerLink="/form/create" [queryParams]="dateParams"
                 class="example-icon favorite-icon" aria-label="Ajout de todo">
           <mat-icon>add_circle</mat-icon>
         </button>
