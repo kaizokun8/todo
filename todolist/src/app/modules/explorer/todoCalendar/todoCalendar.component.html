@@ -1,6 +1,14 @@
-<mat-card *ngIf="display" class="demo-inline-calendar-card">
-  <mat-calendar [selected]="selectedDate" (selectedChange)="onSelectChange($event)"
+<mat-card class="demo-inline-calendar-card">
+
+  <mat-calendar *ngIf="display" [selected]="selectedDate" startView="month" [startAt]="startDate"
                 (monthSelected)="onMonthSelected($event)"
                 (selectedChange)="onSelectChange($event)"
-                [dateClass]="dateClass "></mat-calendar>
+                [dateClass]="dateClass ">
+  </mat-calendar>
+
+  <div *ngIf="!display" style="width: 120px; height: 250px ;margin: auto; margin-top: 150px">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
 </mat-card>
+
+

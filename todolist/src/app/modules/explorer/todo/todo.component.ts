@@ -19,7 +19,6 @@ export class TodoComponent implements OnInit {
 
   @Input() todo!: Todo;
   @Input() fromList: boolean = false;
-  @Output('delete') readonly delete = new EventEmitter<Todo>();
 
   constructor(private todoService: TodoService,
               private route: ActivatedRoute,

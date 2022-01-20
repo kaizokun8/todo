@@ -44,6 +44,7 @@ import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {todoReducer} from "./store/todo/todo.reducer";
 import {TodoCalendarComponent} from "./modules/explorer/todoCalendar/todoCalendar.component";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 @NgModule({
   declarations: [
@@ -51,37 +52,38 @@ import {TodoCalendarComponent} from "./modules/explorer/todoCalendar/todoCalenda
     TodoListComponent, TodoFilterComponent, TodoTableComponent,
     TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(ROUTES),
-    RouterModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatCardModule,
-    MatDividerModule,
-    MatGridListModule,
-    MatInputModule,
-    MatTableModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    ReactiveFormsModule,
-    MatNativeDateModule,
-    MatSelectModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
-    NgxMatNativeDateModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer}),
-    ToastModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot(ROUTES),
+        RouterModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatCardModule,
+        MatDividerModule,
+        MatGridListModule,
+        MatInputModule,
+        MatTableModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+        ReactiveFormsModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        NgxMatDatetimePickerModule,
+        NgxMatTimepickerModule,
+        NgxMatNativeDateModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+        StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer}),
+        ToastModule,
+        ProgressSpinnerModule
+    ],
   providers: [MessageService],
   bootstrap: [AppComponent]
 })

@@ -14,7 +14,7 @@ import {MatCalendarCellClassFunction, MatCalendarCellCssClasses} from "@angular/
   styleUrls: ['./todoCalendar.component.css']
 })
 
-export class TodoCalendarComponent implements OnInit {
+export class TodoCalendarComponent {
 
   selectedDate: Date | null = new Date();
 
@@ -24,19 +24,18 @@ export class TodoCalendarComponent implements OnInit {
 
   display = false;
 
+  startDate: any;
+
   constructor(private todoService: TodoService, private router: Router, private route: ActivatedRoute) {
 
     this.route.queryParamMap.subscribe((params) => this.viewType = params.get('view') ?? LIST);
 
+    //premier appel à la methode onMonthSelect afin de charger les jours ayant une tache pour le moi courant
     this.onMonthSelected(this.selectedDate);
   }
 
-  ngOnInit(): void {
-
-    console.log("ON INIT")
-  }
-
   onSelectChange(date: Date | null) {
+
     date?.setHours(0);
     date?.setMinutes(0);
     date?.setSeconds(0);
@@ -59,18 +58,26 @@ export class TodoCalendarComponent implements OnInit {
     this.selectedDate = date;
   }
 
+  /**
+   * Lors de la selection du mois les dates comportant une tache sont chargées,
+   * afin de mettre en évidence dans le calendrier celles qui possedent une tache.
+   * Le probleme c'est que l'appel à la methode dateClass est apellée avant que la réponse http ne soit obtenue.
+   * Il faut donc forcer le calendrier à se recharger uen fois la reponse obtenue,
+   * en le masquant avant l'appel service et en le réaffichant une fois la reponse obtenue.
+   * Il faut également initialiser startDate avec la date du mois sans quoi le composant
+   * se remet sur l'année et le mois courant
+   * ainsi que selectedDate pour selectionner le premier jour du mois.
+   * */
   onMonthSelected(month: Date | null) {
-    /*
-    * récuperer le timestamp du premier jor du mois et celui du dernier
-    * recuperer toutes les taches programmées dont le timestamp de départ ce situe entre les deux
-    * extraire du timestamp de depart le jour du mois, et retourner la liste des jours du mois de manière distincts
-    * */
 
-    //let d = new Date(month?.getFullYear(), month?.getMonth(),0).getDate();
     this.display = false;
+
     this.todoService.getScheduledDaysOfMonthAndYears(month?.getMonth(), month?.getFullYear())
       .subscribe((scheduledDays: Array<number>) => {
+
         this.highLightedDates = new Set(scheduledDays);
+        this.startDate = month;
+        this.selectedDate = month;
         this.display = true;
       })
   }
@@ -85,10 +92,12 @@ export class TodoCalendarComponent implements OnInit {
     if (view === 'month') {
 
       if (this.highLightedDates.has(cellDate.getDate())) {
+
         return 'highlighted-date';
       }
     }
 
     return '';
   };
+
 }
