@@ -1,0 +1,43 @@
+server:
+  port: 12001
+  ssl:
+    enabled: false
+  cors:
+    allowedOrigins: http://localhost:4200,http://localhost,http://localhost:4200/
+  servlet:
+    context-path: /oauth2-server
+logging:
+  level:
+    root: debug
+    org.springframework.web: debug
+    org.springframework.security: debug
+    org.springframework.security.oauth2: debug
+    org:
+      hibernate:
+        cache: info
+        SQL: trace
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
+    jdbc:
+      sqlonly: fatal
+      resultsettable: info
+      sqltiming: info
+      audit: fatal
+      resultset: fatal
+      connection: fatal
+spring:
+  h2:
+    console:
+      enabled: true
+      #accessible via http://localhost:<server.port>/<server.servlet.context-path>/h2.
+      path: /h2
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+    properties:
+      hibernate:
+        #! identation des requetes dans le log
+        format_sql: true

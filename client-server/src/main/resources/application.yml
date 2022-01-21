@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  cors:
+    allowedOrigins: http://localhost:4200,http://localhost,http://localhost:4200/
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    org.springframework.security: info
+    org.springframework.security.oauth2: info
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          client-oidc:
+            provider: spring
+            client-id: client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
+            scope: openid
+            client-name: client-oidc
+          client-authorization-code:
+            provider: spring
+            client-id: client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/authorized"
+            scope: read,write,admin
+            client-name: client-authorization-code
+        provider:
+          spring:
+            issuer-uri: http://localhost:12001/oauth2-server

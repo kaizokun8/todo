@@ -1,0 +1,65 @@
+package com.todo.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.servlet.ModelAndView;
+
+import static org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient;
+
+@RestController
+//@CrossOrigin("http://localhost:4200")
+public class Controller {
+
+    @Autowired
+    private WebClient webClient;
+/*
+    @GetMapping(value = {"/"})
+    public ModelAndView index() {
+
+        return new ModelAndView("redirect:http://localhost:4200");
+
+        return new ModelAndView("redirect:http://localhost:4200");
+    }
+*/
+
+    @GetMapping(value = {"/", "/todos"})
+    public String[] getArticles(
+            @RegisteredOAuth2AuthorizedClient("client-authorization-code")
+                    OAuth2AuthorizedClient authorizedClient
+    ) {
+        return this.webClient
+                .get()
+                .uri("http://127.0.0.1:8090/todo-server/todos?scheduled=true")
+                .attributes(oauth2AuthorizedClient(authorizedClient))
+                .retrieve()
+                .bodyToMono(String[].class)
+                .block();
+    }
+
+
+    @GetMapping(value = "/resource")
+    public String getToken() {
+
+        return "Hello world !";
+    }
+
+    @GetMapping(value = "/token", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String getToken(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
+                                   OAuth2AuthorizedClient authorizedClient) {
+
+        System.out.println("name : " + authorizedClient.getPrincipalName());
+        System.out.println("token type : " + authorizedClient.getAccessToken().getTokenType().getValue());
+        System.out.println("token value : " + authorizedClient.getAccessToken().getTokenValue());
+        System.out.println("refresh token value : " + authorizedClient.getRefreshToken().getTokenValue());
+
+        authorizedClient.getAccessToken().getScopes().forEach(scope -> System.out.println("scope : " + scope));
+
+        return authorizedClient.getAccessToken().getTokenValue();
+    }
+}
