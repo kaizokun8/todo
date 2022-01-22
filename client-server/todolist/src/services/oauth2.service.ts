@@ -1,6 +1,5 @@
 import {HttpClient, HttpContext} from "@angular/common/http";
 import {environment} from "../environments/environment";
-import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 
 @Injectable({
@@ -12,14 +11,5 @@ export class Oauth2Service {
   }
 
   baseUrl = environment.oauth2server;
-
-  getUserInfo(): Observable<object> {
-
-    return this.http.get<object>(`${this.baseUrl}/userinfo`, {
-      withCredentials: true,
-      headers: {'Content-Type': 'application/json'}
-    });
-  }
-
 
 }
