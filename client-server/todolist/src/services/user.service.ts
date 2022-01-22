@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 import {SHOULD_NOT_HANDLE_ERROR, SHOULD_NOT_HANDLE_OAUTH2_SECURITY} from "./Context";
 import {Oauth2Token} from "../app/dto/Oauth2Token";
+import axios from "axios";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,11 @@ export class UserService {
     return this.http.get<string>(`${this.baseUrl}/token`, {context,
       withCredentials: true,
       headers:{'Content-Type': 'application/json'}});
+  }
+
+  getTokenPromise(): Promise<{data:string}> {
+
+    return axios.get(`${this.baseUrl}/token`,{headers:{'Content-Type': 'application/json'},withCredentials:true})
   }
 
 }

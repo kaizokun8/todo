@@ -10,24 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.ModelAndView;
 
-import static org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient;
-
 @RestController
-//@CrossOrigin("http://localhost:4200")
 public class Controller {
 
     @Autowired
     private WebClient webClient;
-/*
+
     @GetMapping(value = {"/"})
-    public ModelAndView index() {
+    public ModelAndView index( @RegisteredOAuth2AuthorizedClient("client-authorization-code")
+                                           OAuth2AuthorizedClient authorizedClient) {
 
-        return new ModelAndView("redirect:http://localhost:4200");
+        return new ModelAndView("redirect:http://127.0.0.1:4200");
 
-        return new ModelAndView("redirect:http://localhost:4200");
+        //return new ModelAndView("redirect:http://localhost:4200");
     }
-*/
 
+    /*
     @GetMapping(value = {"/", "/todos"})
     public String[] getArticles(
             @RegisteredOAuth2AuthorizedClient("client-authorization-code")
@@ -41,13 +39,7 @@ public class Controller {
                 .bodyToMono(String[].class)
                 .block();
     }
-
-
-    @GetMapping(value = "/resource")
-    public String getToken() {
-
-        return "Hello world !";
-    }
+*/
 
     @GetMapping(value = "/token", produces = MediaType.TEXT_PLAIN_VALUE)
     public String getToken(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
