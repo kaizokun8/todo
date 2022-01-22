@@ -12,13 +12,13 @@ import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
 import {LIST} from "../../../../shared/View";
 import {TodoFilters} from "../../../dto/TodoFilters";
 import {Store} from "@ngrx/store";
-import {selectTodos} from "../../../todolists.selector";
 import {
   setScheduledAndUnscheduledTodos,
   setScheduledOrUnscheduledTodos
 } from "../../../store/todo/todo.actions";
 import {TodoStoreState} from "../../../store/todo/todo.reducer";
 import {RouterUtil} from "../../../util/RouterUtil";
+import {selectTodos} from "../../../selectors/todolists.selector";
 
 @Component({
   selector: 'todoList',

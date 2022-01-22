@@ -141,7 +141,7 @@ public class controller {
     }
 
     @DeleteMapping(value = "/todos/{id}")
-    @Validated(value = Views.OnCreate.class)
+    @Validated
     public ResponseEntity<?> deleteTodo(@PathVariable @NotEmpty @TodoIdExist Long id) {
 
         try {
@@ -166,7 +166,7 @@ public class controller {
     }
 
     @GetMapping(value = "/todos/{id}")
-    @Validated(value = Views.OnCreate.class)
+    @Validated
     @JsonView(View.getTodo.class)
     public ResponseEntity<?> getTodo(@PathVariable @NotEmpty @TodoIdExist Long id) {
 
@@ -196,7 +196,7 @@ public class controller {
     }
 
     @GetMapping(value = "/todos")
-    @Validated(value = Views.OnCreate.class)
+    @Validated
     @JsonView(View.getTodos.class)
     public ResponseEntity<?> getTodos(@RequestParam(required = false) String title,
                                       @RequestParam(required = false) String description,

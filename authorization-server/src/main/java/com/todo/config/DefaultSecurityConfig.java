@@ -19,8 +19,6 @@ public class DefaultSecurityConfig {
                 .formLogin(withDefaults())
                 .headers().frameOptions().disable();
 
-        http.cors();
-
         return http.build();
     }
 

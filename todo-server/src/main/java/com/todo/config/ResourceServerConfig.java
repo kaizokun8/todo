@@ -25,8 +25,6 @@ public class ResourceServerConfig {
                 .oauth2ResourceServer()
                 .jwt();
 
-        http.csrf().disable().cors();
-
         return http.build();
     }
 }

@@ -51,6 +51,7 @@ import {QuickSearchComponent} from "./modules/explorer/quickSearch/quickSearch.c
 import {MatListModule} from "@angular/material/list";
 import {MatTabsModule} from "@angular/material/tabs";
 import {LoginComponent} from "./modules/explorer/login/login.component";
+import {userReducer} from "./store/user/user.reducer";
 
 @NgModule({
   declarations: [
@@ -86,7 +87,7 @@ import {LoginComponent} from "./modules/explorer/login/login.component";
     MatDialogModule,
     MatSnackBarModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer}),
+    StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer, user: userReducer}),
     ToastModule,
     ProgressSpinnerModule,
     MatListModule,

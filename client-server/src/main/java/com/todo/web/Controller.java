@@ -2,13 +2,19 @@ package com.todo.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Collections;
+import java.util.Map;
 
 @RestController
 public class Controller {
@@ -54,4 +60,13 @@ public class Controller {
 
         return authorizedClient.getAccessToken().getTokenValue();
     }
+
+    @GetMapping("/user")
+    public Map<String, Object> user(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
+                                                OAuth2AuthorizedClient authorizedClient) {
+
+        return Collections.singletonMap("username", authorizedClient.getPrincipalName());
+    }
+
+
 }

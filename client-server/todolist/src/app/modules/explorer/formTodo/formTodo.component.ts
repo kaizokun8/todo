@@ -15,7 +15,7 @@ import {
   ValidationErrors,
   Validators
 } from "@angular/forms";
-import {Priority, PriorityLabels, Priorities} from "../../../model/priority";
+import {Priority, PriorityLabels, Priorities} from "../../../model/Priority";
 import {CREATE, EDIT} from "../../../../shared/Action";
 import {Store} from "@ngrx/store";
 import {Notification} from "../../../model/Notification";

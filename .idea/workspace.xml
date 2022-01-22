@@ -5,12 +5,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/AuthorizationServerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/TestJwks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/TestKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/selectors/user.selector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/store/user/user.actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/store/user/user.reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/services/client.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/services/oauth2.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/UserApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ErrorHandlingControllerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ResourceServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/SimpleCorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ValidationErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/Violation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/repository/Views.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/validation/UserExist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/validation/UserExistValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/view/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/resources/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/test/java/com/app/todo/UserApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/DefaultSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/DefaultSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/model/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/dto/AllToDoSearchResult.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/dto/AllToDoSearchResult.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/dto/Oauth2Token.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/dto/TodoFilters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/dto/TodoFilters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/Todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/model/Todo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/Todo_cp.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/model/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/priority.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/model/Priority.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoList/todoList.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoList/todoList.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/notifications.selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/selectors/notifications.selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/todolists.selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/selectors/todolists.selector.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/controller/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/controller/controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/resources/messages.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +80,8 @@
         <option value="Angular Component༏ext༏.component.ts.child.0" />
         <option value="Angular Component༏ext༏.component.ts.child.1" />
         <option value="Angular Component" />
-        <option value="Class" />
         <option value="TypeScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -35,6 +92,10 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/user-server/src/main/java/com/user/config/ResourceServerConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/user-server/src/main/resources/application.yaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,7 +126,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client-server/todolist/src/services" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -77,11 +138,20 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\services" />
+      <recent name="D:\IdeaProjects\todo" />
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\store\user" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\selectors" />
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\store" />
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.todo.config" />
+      <recent name="com.user.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,7 +162,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.ng serve">
+  <component name="RunManager" selected="Spring Boot.UserApplication">
     <configuration name="OAuth2AuthorizationServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="authorization-server" />
       <extension name="coverage">
@@ -137,6 +207,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TodoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="todo-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.todo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.TodoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="user-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.user.UserApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ng serve" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client-server/todolist/package.json" />
       <command value="run" />
@@ -152,10 +260,13 @@
       <item itemvalue="npm.ng serve" />
       <item itemvalue="Spring Boot.OAuth2ClientApplication" />
       <item itemvalue="Spring Boot.OAuth2AuthorizationServerApplication" />
+      <item itemvalue="Spring Boot.TodoApplication" />
+      <item itemvalue="Spring Boot.UserApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OAuth2AuthorizationServerApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.TodoApplication" />
         <item itemvalue="Spring Boot.OAuth2AuthorizationServerApplication" />
       </list>
@@ -174,6 +285,7 @@
       <workItem from="1642757454940" duration="23886000" />
       <workItem from="1642781824738" duration="3865000" />
       <workItem from="1642843187972" duration="5414000" />
+      <workItem from="1642858773029" duration="11011000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>

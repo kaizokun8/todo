@@ -2,12 +2,18 @@
   <div class="col-12">
     <header>
       <mat-toolbar>
-        <button hre mat-icon-button aria-label="Main menu" [matMenuTriggerFor]="menu">
+        <!--button hre mat-icon-button aria-label="Main menu" [matMenuTriggerFor]="menu">
           <mat-icon>menu</mat-icon>
+        </button-->
+
+        <button mat-icon-button>
+          <mat-icon>checklist</mat-icon>
         </button>
         <span>TO DO LIST</span>
         <span class="example-spacer"></span>
-
+        <button mat-icon-button routerLink="/">
+          <mat-icon>home</mat-icon>
+        </button>
         <button mat-icon-button routerLink="/form/create" [queryParams]="dateParams"
                 class="favorite-icon" aria-label="Ajout de todo">
           <mat-icon>add_circle</mat-icon>
@@ -24,7 +30,7 @@
           <mat-icon>share</mat-icon>
         </button>
         -->
-        <mat-menu #menu="matMenu">
+        <!--mat-menu #menu="matMenu">
           <button routerLink="/" mat-menu-item>
             <mat-icon>home</mat-icon>
             <span>Home</span>
@@ -37,7 +43,8 @@
             <mat-icon>search</mat-icon>
             <span>Search</span>
           </button>
-        </mat-menu>
+        </mat-menu-->
+
       </mat-toolbar>
     </header>
   </div>
@@ -46,7 +53,7 @@
 
     <router-outlet></router-outlet>
   </div>
-  <div class="col-12 lg:col-3 p-4" >
+  <div class="col-12 lg:col-3 p-4">
     <mat-tab-group>
       <mat-tab>
         <ng-template mat-tab-label>

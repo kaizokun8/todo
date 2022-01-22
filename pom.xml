@@ -102,6 +102,7 @@
     <modules>
         <module>authorization-server</module>
         <module>todo-server</module>
+        <module>user-server</module>
         <module>client-server</module>
     </modules>
 

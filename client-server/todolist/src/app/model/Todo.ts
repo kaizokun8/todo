@@ -1,4 +1,4 @@
-import {Priority} from "./priority";
+import {Priority} from "./Priority";
 
 export interface Todo {
 

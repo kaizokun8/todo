@@ -1,0 +1,53 @@
+server:
+  servlet:
+    context-path: /user-server
+  port: 8091
+  cors:
+    allowedOrigins: http://localhost:4200,http://127.0.0.1:4200,http://localhost,http://127.0.0.1
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:12001/oauth2-server
+
+  h2:
+    console:
+      enabled: true
+      #accessible via http://localhost:<server.port>/<server.servlet.context-path>/h2.
+      path: /h2
+  datasource:
+    url: jdbc:h2:file:~/h2/user
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: embedded
+
+logging:
+  level:
+    jdbc:
+      sqlonly: fatal
+      resultsettable: info
+      sqltiming: info
+      audit: fatal
+      resultset: fatal
+      connection: fatal
+    org:
+      springframework: debug
+      hibernate:
+        cache: info
+        SQL: trace
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace

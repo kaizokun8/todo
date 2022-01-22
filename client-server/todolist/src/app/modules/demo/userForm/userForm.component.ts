@@ -14,10 +14,11 @@ import {NgModel} from "@angular/forms";
 
 export class UserFormComponent {
 
-  user : User = {
-    email:'foo@bar.com',
-    username:'foo',
-    password:'bar'
+  user: User = {
+    id: 0,
+    email: 'foo@bar.com',
+    username: 'foo',
+    password: 'bar'
   }
 
   save(user: User) {

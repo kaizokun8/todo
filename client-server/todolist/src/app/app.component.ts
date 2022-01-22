@@ -1,12 +1,14 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {selectNotifications} from "./notifications.selector";
 import {Message, MessageService} from "primeng/api";
 import {Observable} from "rxjs";
 import {Notification} from "./model/Notification";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../services/user.service";
+import {ClientService} from "../services/client.service";
 import {environment} from "../environments/environment";
+import {selectNotifications} from "./selectors/notifications.selector";
+import {UserService} from "../services/user.service";
+import {Oauth2Service} from "../services/oauth2.service";
 
 @Component({
   selector: 'td-root',
@@ -19,14 +21,35 @@ export class AppComponent {
 
   dateParams: { [k: string]: any } = {};
 
-  loginUrl!:string
+  loginUrl!: string
+
+  title!: string
 
   constructor(private store: Store,
+              private clientService: ClientService,
+              private oauth2Service: Oauth2Service,
               private userService: UserService,
               private messageService: MessageService,
               private route: ActivatedRoute) {
 
     this.loginUrl = environment.clientServer;
+
+
+    this.oauth2Service.getUserInfo().subscribe(user => {
+      console.log("user oauth2")
+      console.log(user)
+    })
+
+
+    this.clientService.getUser().subscribe(user => {
+      console.log("user client")
+      console.log(user)
+    })
+
+    this.userService.getUser().subscribe((user) => {
+      console.log("user rsc")
+      console.log(user)
+    })
 
     route.queryParamMap.subscribe((params) => {
 

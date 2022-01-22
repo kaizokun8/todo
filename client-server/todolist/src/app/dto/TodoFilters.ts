@@ -1,4 +1,4 @@
-import {Priority} from "../model/priority";
+import {Priority} from "../model/Priority";
 
 export class TodoFilters {
 

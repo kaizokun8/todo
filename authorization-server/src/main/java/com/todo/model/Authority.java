@@ -18,4 +18,6 @@ public class Authority {
 
     @ManyToMany(mappedBy = "authorities", fetch = FetchType.LAZY)
     private Collection<Users> users;
+
+
 }

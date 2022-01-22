@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {AbstractControl, Form, FormBuilder, FormGroup, ValidationErrors} from "@angular/forms";
-import {Priorities, Priority, PriorityLabels} from "../../../model/priority";
+import {Priorities, Priority, PriorityLabels} from "../../../model/Priority";
 import {TodoFilters} from "../../../dto/TodoFilters";
 
 @Component({

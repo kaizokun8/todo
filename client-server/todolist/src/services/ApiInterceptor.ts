@@ -2,14 +2,14 @@ import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/com
 import {from, observable, Observable, Subscription, switchMap} from "rxjs";
 import {Injectable} from "@angular/core";
 import {SHOULD_NOT_HANDLE_OAUTH2_SECURITY, SHOULD_NOT_HANDLE_ERROR} from "./Context";
-import {UserService} from "./user.service";
+import {ClientService} from "./client.service";
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
 
   tokenPromise!: Promise<{ data: string }> | null;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: ClientService) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
