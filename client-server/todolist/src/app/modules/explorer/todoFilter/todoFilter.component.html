@@ -72,9 +72,9 @@
               <ngx-mat-datetime-picker #endPickerB></ngx-mat-datetime-picker>
             </mat-form-field>
           </section>
-          <!--section *ngIf="isRangeInvalid()">
+          <section *ngIf="isRangeInvalid()">
             <mat-error *ngFor="let rangeError of getDateRangeErrorMessages()">{{rangeError}}</mat-error>
-          </section-->
+          </section>
         </ng-container>
       </ng-container>
 
