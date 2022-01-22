@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="replace 127.0.0.1 with localhost">
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.html" afterDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.prod.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +173,7 @@
       <workItem from="1642750439739" duration="5901000" />
       <workItem from="1642757454940" duration="23886000" />
       <workItem from="1642781824738" duration="3865000" />
-      <workItem from="1642843187972" duration="4803000" />
+      <workItem from="1642843187972" duration="5414000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -198,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642847888053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit">
+      <created>1642848050595</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642848050595</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,9 +231,9 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
     <MESSAGE value="fix connexion et recuperation token" />
-    <MESSAGE value="commit" />
     <MESSAGE value="replace 127.0.0.1 with localhost" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace 127.0.0.1 with localhost" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

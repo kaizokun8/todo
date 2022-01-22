@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 import {Notification} from "./model/Notification";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../services/user.service";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'td-root',
@@ -18,15 +19,15 @@ export class AppComponent {
 
   dateParams: { [k: string]: any } = {};
 
+  loginUrl!:string
+
   constructor(private store: Store,
               private userService: UserService,
               private messageService: MessageService,
               private route: ActivatedRoute) {
-/*
-    this.userService.getToken().subscribe();
-    this.userService.getResource().subscribe();
-    this.userService.getResource2().subscribe();
-*/
+
+    this.loginUrl = environment.clientServer;
+
     route.queryParamMap.subscribe((params) => {
 
       this.dateParams = {};

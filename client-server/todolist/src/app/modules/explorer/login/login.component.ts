@@ -3,6 +3,7 @@
  */
 
 import {Component} from '@angular/core';
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'login',
@@ -12,5 +13,12 @@ import {Component} from '@angular/core';
 
 
 export class LoginComponent {
+
+  loginUrl!: string
+
+  constructor() {
+    this.loginUrl = environment.clientServer;
+
+  }
 
 }
