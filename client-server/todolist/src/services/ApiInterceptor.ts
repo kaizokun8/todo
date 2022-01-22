@@ -14,33 +14,28 @@ export class ApiInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    //console.log("intercept")
-
     if (req.context.get(SHOULD_NOT_HANDLE_OAUTH2_SECURITY)) {
-      //console.log("do not add token")
+
       return next.handle(req);
     }
-    //si aucune promesse de token n'est sauvegardée
+    //si no promise is saved
     if (this.tokenPromise == null) {
-      //récupère la promesse
+      //retrieve the promise
       this.tokenPromise = this.userService.getTokenPromise()
-        //en cas d'erreur renvoie un token vide
+        //return a empty token in case there is an error
         .catch(() => ({data: ''}))
-        //une fois le token obtenu supprime la promesse sauvegardée
+        //one the token is retrieved the promise is removed
         .finally(() => this.tokenPromise = null);
     }
-    //crée un observable à partir de la promesse.
-    //si plusieurs requetes se font de manière simultanée, la même promesse sera partagée
-    //évitant de récuperer le token coté serveur à chaque fois.
+    //create an observable from the promise.
+    //if several request happen simultaneously, the same promise will be shared.
     return from(this.tokenPromise).pipe(
       switchMap((rs) => {
-        //console.log("adding token for request : " + req.url + " " + rs.data)
         const clone = req.clone({setHeaders: {'Authorization': `bearer ${rs.data}`}})
         return next.handle(clone);
       }));
 
     /*
-
     return this.userService.getToken().pipe(
       switchMap((token) => {
         //console.log("adding token : "+token)

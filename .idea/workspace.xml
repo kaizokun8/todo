@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="">
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="fix connexion et recuperation token">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -195,8 +189,16 @@
       <workItem from="1642750439739" duration="5901000" />
       <workItem from="1642757454940" duration="23886000" />
       <workItem from="1642781824738" duration="3865000" />
-      <workItem from="1642843187972" duration="3722000" />
+      <workItem from="1642843187972" duration="4027000" />
     </task>
+    <task id="LOCAL-00001" summary="fix connexion et recuperation token">
+      <created>1642847058160</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642847058160</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +214,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CODE_SMELLS_PROFILE" value="Project Default" />
+    <MESSAGE value="fix connexion et recuperation token" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix connexion et recuperation token" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
