@@ -2,7 +2,7 @@
  * Created by jbe on 15/01/2022
  */
 
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {Todo} from "../../../model/Todo";
 import {TodoService} from "../../../../services/todo.service";
 import {MatDialog} from "@angular/material/dialog";
@@ -19,17 +19,25 @@ import {removeTodo} from "../../../store/todo/todo.actions";
   styleUrls: ['./todoCommands.component.css']
 })
 
-export class TodoCommandsComponent {
+export class TodoCommandsComponent implements OnChanges {
 
   @Input() todo!: Todo;
   @Input() iconSize!: string;
   @Input() fromList: boolean = false;
   @Output('delete') readonly delete = new EventEmitter<Todo>();
 
+  done!: Boolean;
+
   constructor(private todoService: TodoService,
               private dialog: MatDialog,
               private snackbar: MatSnackBar,
               private store: Store<{ notification: string }>) {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+
+    this.done = this.todo?.done;
   }
 
   onDelete(): void {
@@ -76,7 +84,9 @@ export class TodoCommandsComponent {
   }
 
   onDone() {
-    this.todoService.switchDone(this.todo)
-      .subscribe((done) => this.todo.done = done);
+    this.todoService.switchDone(this.todo, this.done)
+      .subscribe((done) => {
+        this.done = done
+      });
   }
 }

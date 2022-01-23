@@ -9,12 +9,6 @@ f
 6client-server/todolist/src/app/dto/ToDoSearchResult.ts,a\f\af31b327c70bda5e1a24b157b5e338e7f98494cf
 d
 4client-server/todolist/src/app/app.component.spec.ts,8\2\824e66687707a7ba2e291d8f060090bbdffde8b9
-ˆ
-Xclient-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.html,c\c\cc6b0ac9f4985554d0e13174b9737ab0fb1e6bb8
-†
-Vclient-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.ts,2\d\2db76b35084888185572f7a7308647c5ab04728d
-c
-3client-server/todolist/src/services/todo.service.ts,8\0\808b202aa3361822ccd6fbb7d5f25bcb5b711b83
 e
 5client-server/todolist/src/services/ApiInterceptor.ts,f\c\fc7c5ae2ca11e80e0ba6aec8fd54e9dbbd47f491
 D
@@ -55,12 +49,6 @@ y
 Iclient-server/todolist/src/app/store/notification/notification.actions.ts,3\f\3fe31a1f7b82572b161740ddbea43b03f343586f
 r
 Bclient-server/todolist/src/app/selectors/notifications.selector.ts,9\8\980cb3eb5354128f22990741c50fa071d27423df
-i
-9client-server/todolist/src/app/store/todo/todo.actions.ts,9\2\92c28509e0adf889eef1d952f787598b3188fb81
-i
-9client-server/todolist/src/app/store/todo/todo.reducer.ts,a\d\ad7458198f99d9e8c201670439cceb46ea4b7360
-~
-Nclient-server/todolist/src/app/modules/explorer/todoList/todoList.component.ts,b\9\b99f9f26c9f87acf46cee00505d60895c0068f8d
 y
 Iclient-server/todolist/src/app/modules/explorer/login/login.component.css,d\f\df19a70b445e193f2b890fd93a8020bb06609019
 e

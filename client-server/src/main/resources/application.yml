@@ -1,7 +1,7 @@
 server:
   port: 80
   cors:
-    allowedOrigins: http://localhost:4200,http://127.0.0.1:4200,http://localhost,http://127.0.0.1
+    allowedOrigins: http://localhost:4200,http://localhost
 
 logging:
   level:
@@ -32,7 +32,7 @@ spring:
             client-id: client-oidc
             client-secret: ca6cffb8-7e4b-4bdc-9d4a-404ecc11efd6
             authorization-grant-type: authorization_code
-            redirect-uri: "http://127.0.0.1/login/oauth2/code/{registrationId}"
+            redirect-uri: "http://localhost/login/oauth2/code/{registrationId}"
             scope: openid,email,profile,roles
             client-name: client-oidc
           client-authorization-code:
@@ -40,7 +40,7 @@ spring:
             client-id: client-authorization-code
             client-secret: 4295b18f-0439-401f-8b25-d1bb2cfa2cc1
             authorization-grant-type: authorization_code
-            redirect-uri: "http://127.0.0.1/authorized"
+            redirect-uri: "http://localhost/authorized"
             scope: read,write,admin
             client-name: client-authorization-code
         provider:

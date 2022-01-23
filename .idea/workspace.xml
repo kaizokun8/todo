@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="intégration keycloak">
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="test user endpoint">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2db76b35084888185572f7a7308647c5ab04728d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/808b202aa3361822ccd6fbb7d5f25bcb5b711b83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92c28509e0adf889eef1d952f787598b3188fb81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ad7458198f99d9e8c201670439cceb46ea4b7360" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b99f9f26c9f87acf46cee00505d60895c0068f8d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc6b0ac9f4985554d0e13174b9737ab0fb1e6bb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/todo/todo.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/store/todo/todo.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/todo/todo.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/store/todo/todo.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/todo.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,8 +265,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TodoApplication" />
         <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Spring Boot.TodoApplication" />
         <item itemvalue="Spring Boot.Keycloak" />
       </list>
     </recent_temporary>
@@ -349,7 +363,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="keycloak" />
+                        <option value="test-localhost" />
                       </list>
                     </value>
                   </entry>

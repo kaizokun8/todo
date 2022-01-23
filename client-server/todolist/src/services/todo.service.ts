@@ -35,9 +35,9 @@ export class TodoService {
     }
   }
 
-  switchDone(todo: Todo): Observable<Boolean> {
+  switchDone(todo: Todo, done : Boolean): Observable<Boolean> {
 
-    return this.http.put<boolean>(`${this.baseUrl}/todos/${todo.id}/done`, {done: !todo.done});
+    return this.http.put<boolean>(`${this.baseUrl}/todos/${todo.id}/done`, {done: !done});
   }
 
   getTodo(id: string | null): Observable<Todo> {

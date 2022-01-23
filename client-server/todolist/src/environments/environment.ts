@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   todoResourceServerUrl: 'http://localhost:8090/todo-server',
-  clientServer: 'http://127.0.0.1',
+  clientServer: 'http://localhost',
   oauth2server: 'http://localhost:12001/oauth2-server',
   userResourceServer: 'http://localhost:8091/user-server'
 };

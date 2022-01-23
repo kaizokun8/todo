@@ -32,7 +32,7 @@ public class Controller {
     public ModelAndView index(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
                                       OAuth2AuthorizedClient authorizedClient) {
 
-        return new ModelAndView("redirect:http://127.0.0.1:4200");
+        return new ModelAndView("redirect:http://localhost:4200");
 
         //return new ModelAndView("redirect:http://localhost:4200");
     }
@@ -45,7 +45,7 @@ public class Controller {
     ) {
         return this.webClient
                 .get()
-                .uri("http://127.0.0.1:8090/todo-server/todos?scheduled=true")
+                .uri("http://localhost:8090/todo-server/todos?scheduled=true")
                 .attributes(oauth2AuthorizedClient(authorizedClient))
                 .retrieve()
                 .bodyToMono(String[].class)
