@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
@@ -23,7 +24,7 @@ public class ResourceServerConfig {
                 .access("hasAuthority('SCOPE_admin')")
                 .and()
                 .oauth2ResourceServer()
-                .jwt();
+                .jwt().jwtAuthenticationConverter(new JwtAuthenticationConverter());
 
         return http.build();
     }

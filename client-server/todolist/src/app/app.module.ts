@@ -52,11 +52,12 @@ import {MatListModule} from "@angular/material/list";
 import {MatTabsModule} from "@angular/material/tabs";
 import {LoginComponent} from "./modules/explorer/login/login.component";
 import {userReducer} from "./store/user/user.reducer";
+import {NotificationsComponent} from "./modules/explorer/notifications/notifications.component";
 
 @NgModule({
   declarations: [
     AppComponent, FormTodoComponent, TodoComponent, LoginComponent,
-    TodoListComponent, TodoFilterComponent, TodoTableComponent,
+    TodoListComponent, TodoFilterComponent, TodoTableComponent,NotificationsComponent,
     TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent, QuickSearchComponent
   ],
   imports: [

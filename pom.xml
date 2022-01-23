@@ -87,6 +87,13 @@
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -100,10 +107,11 @@
     </build>
 
     <modules>
-        <module>authorization-server</module>
+        <!--module>authorization-server</module-->
         <module>todo-server</module>
         <module>user-server</module>
         <module>client-server</module>
+        <module>oauth-authorization-server</module>
     </modules>
 
 </project>
