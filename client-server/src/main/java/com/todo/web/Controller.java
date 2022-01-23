@@ -16,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Collections;
 import java.util.Map;
 
+import static org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient;
+
 @RestController
 public class Controller {
 
@@ -62,11 +64,18 @@ public class Controller {
     }
 
     @GetMapping("/user")
-    public Map<String, Object> user(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
+    public Object user(@RegisteredOAuth2AuthorizedClient("client-oidc")
                                                 OAuth2AuthorizedClient authorizedClient) {
 
-        return Collections.singletonMap("username", authorizedClient.getPrincipalName());
-    }
+        return this.webClient
+                .get()
+                .uri("http://localhost:8083/auth/realms/SpringBootKeycloak/protocol/openid-connect/userinfo")
+                .attributes(oauth2AuthorizedClient(authorizedClient))
+                .retrieve()
+                .bodyToMono(Object.class)
+                .block();
 
+        //return Collections.singletonMap("username", authorizedClient.getPrincipalName());
+    }
 
 }

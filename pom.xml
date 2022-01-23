@@ -111,7 +111,7 @@
         <module>todo-server</module>
         <module>user-server</module>
         <module>client-server</module>
-        <module>oauth-authorization-server</module>
+        <module>keycloak</module>
     </modules>
 
 </project>

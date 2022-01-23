@@ -9,7 +9,9 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:12001/oauth2-server
+          issuer-uri: http://localhost:8083/auth/realms/SpringBootKeycloak
+          jwk-set-uri: http://localhost:8083/auth/realms/SpringBootKeycloak/protocol/openid-connect/certs
+          userinfo: http://localhost:8083/auth/realms/SpringBootKeycloak/protocol/openid-connect/userinfo
   h2:
     console:
       enabled: true

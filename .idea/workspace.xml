@@ -4,41 +4,144 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="test user endpoint">
-      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/notifications/notifications.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/notifications/notifications.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/notifications/notifications.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/AuthorizationServerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/EmbeddedKeycloakApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/EmbeddedKeycloakConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/EmbeddedKeycloakRequestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/KeycloakServerProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/RegularJsonConfigProviderFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/Resteasy3Provider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/java/com/todo/auth/config/SimplePlatformProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/resources/META-INF/keycloak-server.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/resources/META-INF/services/org.keycloak.common.util.ResteasyProvider" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/resources/META-INF/services/org.keycloak.platform.PlatformProvider" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/main/resources/todo-realm.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oauth-authorization-server/src/test/java/com/todo/auth/ContextIntegrationTest.java" afterDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="test keycloak">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02ae4a3c3e3adc8914c0c09e2fea0d392b853272" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ac32d7ea7bf4245d14f96ecf33d7439784bfc28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ad239b6c1b06e2f3cc9421c28377dbe350d6b5d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0d3494f69cb06b68baf42c1fbf58d60d11e1b838" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e8996ab09b72c7250bb5d5400feda026160d911" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/0/108be62d9b672a80f5e60934a73e7b5db2036ddf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/1967664980ca4368eec8a88fd823bfa68ea4f4ca" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a5b634fda92ca7f5a2acd12bbcee15be678864c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/6/26cb6cb8e37396678b448296fe9c69b69dbb13f3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2db76b35084888185572f7a7308647c5ab04728d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/329fe4db55e5c73a937f89a8f26f6ec7f5df8481" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fe31a1f7b82572b161740ddbea43b03f343586f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/47e19a4d70d8845f9527a613d0a5af4835909288" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b80c303e575febcc76a01d05f6e6cfd4c7d771e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/5633bf6595efeb54ac4b832bb9c1943c80939a1e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5a0c80dac653fb070e3d443ea02f948d026d05a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/6732111b1bc3daaf8b17f81fb7c05504015a72f3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6aa3a88783d702741650a0884487ff796d721660" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73cc7f2caef8a9da59d1876d22daa914876ad494" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/772424517f383bebafbb41b05c85f29255824763" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/808b202aa3361822ccd6fbb7d5f25bcb5b711b83" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/824e66687707a7ba2e291d8f060090bbdffde8b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/82625a472f8a1610693522dda35a807978e67433" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/828bef52b67ee5ced8259485c413202145621a9f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92c28509e0adf889eef1d952f787598b3188fb81" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/949e8c812fee2265a9540f986169688ee8fe79f8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96b2c21e492064c938d35eb565225358cbef7845" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/980cb3eb5354128f22990741c50fa071d27423df" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98fc496677918b85fa106af3245c3f2b64fad0bb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6ab9144eba9272e5d88c771fb17d273aa8896f3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/abf5ba913d5b4493800e49f0394bd9ba778f9722" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ad7458198f99d9e8c201670439cceb46ea4b7360" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af31b327c70bda5e1a24b157b5e338e7f98494cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b99f9f26c9f87acf46cee00505d60895c0068f8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/bad8b5811992e312f9ea41372d16fe560ab55263" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c1d869e2dcc9c27868318f0f6db9db319b03abc0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c26be34e122db15f20e05cfde3ffffab060f9c49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c45da59befb2006fde906d6b57149305f85531e1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc6b0ac9f4985554d0e13174b9737ab0fb1e6bb8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d103ec7f76b189b157e1fea8f630c63c09dddbd3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6107e5070d4d2efdcd3d857ba3dd9303e14b91b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/df19a70b445e193f2b890fd93a8020bb06609019" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e1c9c2a292f2a80f9a5be0f2581a8929afb7a40a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e21f32693e4a1d866c779239f287ec389ea973fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f54e7221471ab839fa4ca13384e8d0bf9137656c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc7c5ae2ca11e80e0ba6aec8fd54e9dbbd47f491" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/src/main/java/com/todo/securitylib/SecurityLibApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/src/main/java/com/todo/securitylib/config/BeansConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/src/main/java/com/todo/securitylib/dto/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/src/main/java/com/todo/securitylib/facade/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-lib/src/test/java/com/todo/securitylib/SecurityLibApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/facade/UserFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/validation/UserOwnTodo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/validation/UserOwnTodoValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/config/ResourceServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/facade/UserFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/AuthorizationServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/AuthorizationServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/DefaultSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/DefaultSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/OAuth2AuthorizationServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/AuthorizationServerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/DefaultSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/config/SimpleCorsFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/model/Authority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/model/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/repository/AuthorityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/repository/UsersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/todo/util/PasswordUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/oauth2-authorization-consent-schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/oauth2-authorization-schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/oauth2-registered-client-schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/oauth2-user-authority-data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/oauth2-user-authority-schema.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/config/SimpleCorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/SimpleCorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/config/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/WebClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/user/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/ServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/TodoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/TodoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/ErrorHandlingControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/config/ErrorHandlingControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/SimpleCorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/config/SimpleCorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/ValidationErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/config/ValidationErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/config/Violation.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/config/Violation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/controller/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/controller/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/dto/ToDoSearchResut.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/dto/ToDoSearchResut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/dto/TodoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/dto/TodoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/dto/TodoFilters.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/dto/TodoFilters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/model/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/model/Priority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/model/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/model/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/repository/TodoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/repository/TodoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/repository/TodoSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/repository/TodoSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/repository/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/repository/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/validation/TodoExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/validation/TodoExist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/validation/TodoExistValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/validation/TodoExistValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/validation/TodoIdExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/validation/TodoIdExist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/validation/TodoIdExistValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/validation/TodoIdExistValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/java/com/todo/todos/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-server/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/ServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/UserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ErrorHandlingControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/config/ErrorHandlingControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ResourceServerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/SimpleCorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/config/SimpleCorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/ValidationErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/config/ValidationErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/config/Violation.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/config/Violation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/repository/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/repository/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/validation/UserExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/validation/UserExist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/validation/UserExistValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/validation/UserExistValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/user/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/view/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +163,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test-userinfo" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +177,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/user-server/src/main/java/com/user/config/ResourceServerConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/user-server/src/main/java/com/todo/user/config/ResourceServerConfig.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/user-server/src/main/resources/application.yaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -98,6 +201,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="h2" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -108,9 +212,9 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/security-lib/src/main/java/com/todo/securitylib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
@@ -121,6 +225,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\todo\security-lib\src\main\java\com\todo\securitylib" />
       <recent name="D:\IdeaProjects\todo" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\services" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\store\user" />
@@ -132,6 +237,8 @@
       <recent name="D:\IdeaProjects\todo\client-server\todolist" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.todo.todos.validation" />
+      <recent name="com.todo.user.facade" />
       <recent name="com.todo.config" />
       <recent name="com.user.config" />
     </key>
@@ -144,7 +251,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Keycloak">
+  <component name="RunManager" selected="Spring Boot.SecurityLibApplication">
     <configuration name="Keycloak" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="keycloak" />
       <extension name="coverage">
@@ -164,30 +271,6 @@
         </ENTRIES>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.auth.AuthorizationServerApp" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OAuth2AuthorizationServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="authorization-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.todo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        </ENTRIES>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.OAuth2AuthorizationServerApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
@@ -213,15 +296,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SecurityLibApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="security-lib" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.securitylib.SecurityLibApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TodoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="todo-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.todo.*" />
+          <option name="PATTERN" value="com.todo.todos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.TodoApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.todos.TodoApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -244,7 +357,7 @@
           <ENTRY IS_ENABLED="true" PARSER="runconfig" />
         </ENTRIES>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.user.UserApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.todo.user.UserApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
@@ -265,18 +378,16 @@
     <list>
       <item itemvalue="npm.ng serve" />
       <item itemvalue="Spring Boot.OAuth2ClientApplication" />
-      <item itemvalue="Spring Boot.OAuth2AuthorizationServerApplication" />
+      <item itemvalue="Spring Boot.SecurityLibApplication" />
       <item itemvalue="Spring Boot.TodoApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.Keycloak" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Keycloak" />
-        <item itemvalue="Spring Boot.OAuth2AuthorizationServerApplication" />
         <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.TodoApplication" />
-        <item itemvalue="Spring Boot.OAuth2AuthorizationServerApplication" />
+        <item itemvalue="Spring Boot.Keycloak" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +407,8 @@
       <workItem from="1642858773029" duration="11011000" />
       <workItem from="1642922174450" duration="11877000" />
       <workItem from="1642935207132" duration="653000" />
-      <workItem from="1642942023252" duration="2932000" />
+      <workItem from="1642942023252" duration="12999000" />
+      <workItem from="1642955138989" duration="4949000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -340,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642872425395</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test keycloak">
+      <created>1642945054507</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642945054507</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +470,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="keycloak" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -365,7 +496,8 @@
     <MESSAGE value="replace 127.0.0.1 with localhost" />
     <MESSAGE value="commit" />
     <MESSAGE value="test user endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="test user endpoint" />
+    <MESSAGE value="test keycloak" />
+    <option name="LAST_COMMIT_MESSAGE" value="test keycloak" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

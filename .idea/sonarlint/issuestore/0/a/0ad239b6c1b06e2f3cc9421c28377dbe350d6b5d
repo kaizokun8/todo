@@ -1,0 +1,10 @@
+
+Ltypescript:S1128"+Remove this unused import of 'FormControl'.(ğ¬ñÊıÿÿÿÿ
+Ttypescript:S1128"3Remove this unused import of 'setNotificationList'.(÷Çñøÿÿÿÿ
+utypescript:S3776~"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(ì×‡Èüÿÿÿÿ
+Jtypescript:S1117¿".'todo' is already declared in the upper scope.(¹†ü^
+]typescript:S1854Ã";Remove this useless assignment to variable "notifications".(ÅÍƒõıÿÿÿÿ
+;typescript:S125É"Remove this commented out code.(¬Õæ
+;typescript:S125Ï"Remove this commented out code.(–±Ù
+Qtypescript:S1135Õ"4Complete the task associated to this "TODO" comment.(îôÜ
+Mtypescript:S1186Û"+Unexpected empty arrow function 'complete'.(×Ïæ”úÿÿÿÿ

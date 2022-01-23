@@ -14,9 +14,9 @@ export class UserService {
 
   baseUrl = environment.userResourceServer;
 
-  getUser(): Observable<User> {
+  getUserConnected(): Observable<User> {
 
-    return this.http.get<User>(`${this.baseUrl}/user`, {
+    return this.http.get<User>(`${this.baseUrl}/users/connected`, {
       withCredentials: true,
       headers: {'Content-Type': 'application/json'}
     });

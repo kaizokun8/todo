@@ -2,12 +2,25 @@ server:
   port: 80
   cors:
     allowedOrigins: http://localhost:4200,http://127.0.0.1:4200,http://localhost,http://127.0.0.1
+
 logging:
   level:
-    root: info
-    org.springframework.web: info
-    org.springframework.security: info
-    org.springframework.security.oauth2: info
+    jdbc:
+      sqlonly: fatal
+      resultsettable: info
+      sqltiming: info
+      audit: fatal
+      resultset: fatal
+      connection: fatal
+    org:
+      springframework: debug
+      hibernate:
+        cache: info
+        SQL: trace
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
 
 spring:
   security:
@@ -16,20 +29,20 @@ spring:
         registration:
           client-oidc:
             provider: spring
-            client-id: client
-            client-secret: secret
+            client-id: client-oidc
+            client-secret: ca6cffb8-7e4b-4bdc-9d4a-404ecc11efd6
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1/login/oauth2/code/{registrationId}"
-            scope: openid
+            scope: openid,email,profile,roles
             client-name: client-oidc
           client-authorization-code:
             provider: spring
-            client-id: client
-            client-secret: secret
+            client-id: client-authorization-code
+            client-secret: 4295b18f-0439-401f-8b25-d1bb2cfa2cc1
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1/authorized"
             scope: read,write,admin
             client-name: client-authorization-code
         provider:
           spring:
-            issuer-uri: http://localhost:12001/oauth2-server
+            issuer-uri: http://localhost:8083/auth/realms/SpringBootKeycloak

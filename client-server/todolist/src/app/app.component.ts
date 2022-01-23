@@ -20,7 +20,7 @@ export class AppComponent {
 
   userState$: Observable<UserStoreState> = this.store.select(selectUser);
 
-  userConnected: boolean = false;
+  userConnected: boolean = true;
 
   loginUrl!: string
 
@@ -28,17 +28,12 @@ export class AppComponent {
 
   constructor(private store: Store,
               private route: ActivatedRoute,
-              private userService : UserService,
-              private clientService: ClientService) {
+              private userService: UserService) {
 
     this.loginUrl = environment.clientServer;
 
-    this.userService.getUser().subscribe((u) => {
-      console.log(u)
-    });
-
-    this.clientService.getUser()
-      .subscribe((user) => this.store.dispatch(setUser({user})))
+    this.userService.getUserConnected().subscribe((user) =>
+      this.store.dispatch(setUser({user})));
 
     this.userState$.subscribe((u) =>
       this.userConnected = u.user != null && u.user != undefined)
