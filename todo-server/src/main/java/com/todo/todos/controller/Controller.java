@@ -120,7 +120,7 @@ public class Controller {
 
     @PutMapping(value = "/todos/{id}/done")
     @Validated
-    public ResponseEntity<?> updateTodoDone(@PathVariable @TodoIdExist @UserOwnTodo Long id,
+    public ResponseEntity<?> updateTodoDone(@PathVariable @TodoIdExist @NotNull @UserOwnTodo Long id,
                                             @RequestBody @NotNull Map<String, Object> done) {
 
         try {
@@ -151,7 +151,7 @@ public class Controller {
 
     @DeleteMapping(value = "/todos/{id}")
     @Validated
-    public ResponseEntity<?> deleteTodo(@PathVariable @NotEmpty @TodoIdExist @UserOwnTodo Long id) {
+    public ResponseEntity<?> deleteTodo(@PathVariable @NotNull @TodoIdExist @UserOwnTodo Long id) {
 
         try {
 
@@ -177,7 +177,7 @@ public class Controller {
     @GetMapping(value = "/todos/{id}")
     @Validated
     @JsonView(View.getTodo.class)
-    public ResponseEntity<?> getTodo(@PathVariable @NotEmpty @TodoIdExist @UserOwnTodo Long id) {
+    public ResponseEntity<?> getTodo(@PathVariable @NotNull @TodoIdExist @UserOwnTodo Long id) {
 
         Optional<Todo> optionalTodo = this.todoRepository.findById(id);
 

@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {ClientService} from "../services/client.service";
 import {environment} from "../environments/environment";
 import {setUser} from "./store/user/user.actions";
 import {selectUser} from "./selectors/user.selector";

@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
 import java.util.Map;
 
@@ -25,8 +29,8 @@ public class Controller {
     private WebClient webClient;
 
     @GetMapping(value = {"/"})
-    public ModelAndView index( @RegisteredOAuth2AuthorizedClient("client-authorization-code")
-                                           OAuth2AuthorizedClient authorizedClient) {
+    public ModelAndView index(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
+                                      OAuth2AuthorizedClient authorizedClient) {
 
         return new ModelAndView("redirect:http://127.0.0.1:4200");
 
@@ -49,23 +53,45 @@ public class Controller {
     }
 */
 
+    private void setRefreshTokenCookie(String refreshToken, HttpServletRequest request,
+                                       HttpServletResponse response) {
+
+        try {
+
+            Cookie cookie = WebUtils.getCookie(request, "REFRESH_TOKEN");
+
+            if (cookie == null && refreshToken != null) {
+                //same-site necessite de définir le cookie
+                response.addHeader("Set-Cookie",
+                        "REFRESH_TOKEN=" + refreshToken + "; HttpOnly;" +
+                                " SameSite=strict; Secure; Max-Age=" + (3600 * 24 * 10) + "; Path=/");
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+    }
+
     @GetMapping(value = "/token", produces = MediaType.TEXT_PLAIN_VALUE)
     public String getToken(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
-                                   OAuth2AuthorizedClient authorizedClient) {
-
+                                   OAuth2AuthorizedClient authorizedClient, HttpServletRequest request, HttpServletResponse response) {
+/*
         System.out.println("name : " + authorizedClient.getPrincipalName());
         System.out.println("token type : " + authorizedClient.getAccessToken().getTokenType().getValue());
         System.out.println("token value : " + authorizedClient.getAccessToken().getTokenValue());
         System.out.println("refresh token value : " + authorizedClient.getRefreshToken().getTokenValue());
 
         authorizedClient.getAccessToken().getScopes().forEach(scope -> System.out.println("scope : " + scope));
+*/
+        this.setRefreshTokenCookie(authorizedClient.getRefreshToken().getTokenValue(), request, response);
 
         return authorizedClient.getAccessToken().getTokenValue();
     }
 
     @GetMapping("/user")
     public Object user(@RegisteredOAuth2AuthorizedClient("client-oidc")
-                                                OAuth2AuthorizedClient authorizedClient) {
+                               OAuth2AuthorizedClient authorizedClient) {
 
         return this.webClient
                 .get()
