@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ui-server" />
         <module name="security-lib" />
         <module name="keycloak" />
         <module name="todo-server" />
@@ -24,6 +25,7 @@
       <module name="keycloak" options="-parameters" />
       <module name="keycloak-client" options="-parameters" />
       <module name="security-lib" options="-parameters" />
+      <module name="ui-server" options="" />
     </option>
   </component>
 </project>

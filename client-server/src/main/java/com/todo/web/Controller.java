@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2Aut
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,28 +33,14 @@ public class Controller {
     @Autowired
     private WebClient webClient;
 
-    @GetMapping(value = {"/"})
-    public ModelAndView index(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
+    @GetMapping(value = {"/login"})
+    public ModelAndView login(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
                                       OAuth2AuthorizedClient authorizedClient) {
 
+        //return new ModelAndView("index");
+        //return new ModelAndView("redirect:/");
         return new ModelAndView("redirect:" + clientUri);
     }
-
-    /*
-    @GetMapping(value = {"/", "/todos"})
-    public String[] getArticles(
-            @RegisteredOAuth2AuthorizedClient("client-authorization-code")
-                    OAuth2AuthorizedClient authorizedClient
-    ) {
-        return this.webClient
-                .get()
-                .uri("http://localhost:8090/todo-server/todos?scheduled=true")
-                .attributes(oauth2AuthorizedClient(authorizedClient))
-                .retrieve()
-                .bodyToMono(String[].class)
-                .block();
-    }
-*/
 
     private void setRefreshTokenCookie(String refreshToken, HttpServletRequest request,
                                        HttpServletResponse response) {

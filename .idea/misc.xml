@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/keyclok-client/pom.xml" />
         <option value="$PROJECT_DIR$/keycloak/pom.xml" />
         <option value="$PROJECT_DIR$/security-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/ui-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

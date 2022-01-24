@@ -1,0 +1,45 @@
+<div class="grid app-background">
+  <div class="col-12">
+    <header>
+      <mat-toolbar>
+
+        <button mat-icon-button>
+          <mat-icon>checklist</mat-icon>
+        </button>
+        <span>TO DO LIST</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button routerLink="/">
+          <mat-icon>home</mat-icon>
+        </button>
+
+        <ng-container *ngIf="userConnected">
+
+          <button mat-icon-button routerLink="todos/form/create" [queryParams]="dateParams"
+                  class="favorite-icon" aria-label="Ajout de todo">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+          <button mat-icon-button routerLink="todos/list/filter" queryParamsHandling="preserve"
+                  class="favorite-icon" aria-label="Search todo">
+            <mat-icon>search</mat-icon>
+          </button>
+
+          <a mat-icon-button class="favorite-icon" [href]="clientUrl+'/logout'">
+            <mat-icon>logout</mat-icon>
+          </a>
+        </ng-container>
+
+        <a *ngIf="!userConnected" mat-icon-button class="favorite-icon" [href]="clientUrl+'/login'">
+          <mat-icon>logins</mat-icon>
+        </a>
+
+      </mat-toolbar>
+    </header>
+  </div>
+  <mat-progress-bar *ngIf="(appState$ | async)?.loading" mode="indeterminate"></mat-progress-bar>
+  <div class="col-12 p-4">
+    <router-outlet></router-outlet>
+  </div>
+
+  <notifications-toast></notifications-toast>
+</div>
+

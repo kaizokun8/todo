@@ -1,0 +1,27 @@
+<div class="grid">
+
+  <div class="col-12">
+    <mat-card *ngIf="todo">
+      <mat-card-title>{{ todo.title }}</mat-card-title>
+      <mat-card-content>
+        <p *ngIf="!fromList && todo.description">{{ todo.description }}</p>
+        <p *ngIf="!fromList && !todo.description">no description</p>
+        <p style="text-align: right">
+          <span>
+            Created : {{ todo.creationTime | date:'dd/MM/yyyy HH:mm' }}
+          </span>
+          <br/>
+          <span *ngIf="!fromList && todo.updateTime">
+            Updated : {{ todo.updateTime | date:'dd/MM/yyyy HH:mm' }}
+          </span>
+        </p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions>
+        <todoCommands [fromList]="fromList" [todo]="todo" (delete)="onDelete()"></todoCommands>
+      </mat-card-actions>
+      <mat-card-footer>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

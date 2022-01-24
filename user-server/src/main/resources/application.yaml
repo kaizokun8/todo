@@ -3,7 +3,7 @@ server:
     context-path: /user-server
   port: 8091
   cors:
-    allowedOrigins: http://localhost:4200,http://localhost
+    allowedOrigins: http://localhost:4200,http://localhost,http://localhost:8080
 spring:
   security:
     oauth2:
