@@ -5,8 +5,8 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {Notification} from "../../../model/Notification";
-import {selectNotifications} from "../../../selectors/notifications.selector";
+import {Notification} from "../../model/Notification";
+import {selectNotifications} from "../../selectors/notifications.selector";
 import {MessageService} from "primeng/api";
 
 @Component({

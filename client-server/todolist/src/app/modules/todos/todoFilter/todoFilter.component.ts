@@ -140,11 +140,11 @@ export class TodoFilterComponent {
     filters.endCreationTime = this.formFilter.value.creationDateRange.endCreationDate?.getTime();
     filters.page = 0;
     filters.pageSize = 10;
-    console.log("FILTER====")
-    console.log(this.formFilter.value);
-    console.log(filters)
+    //console.log("FILTER====")
+    //console.log(this.formFilter.value);
+    //console.log(filters)
 
-    this.router.navigate(["/todos/filter"], {queryParams: filters, queryParamsHandling: 'merge'});
+    this.router.navigate(["/todos/list/filter"], {queryParams: filters, queryParamsHandling: 'merge'});
 
   }
 }

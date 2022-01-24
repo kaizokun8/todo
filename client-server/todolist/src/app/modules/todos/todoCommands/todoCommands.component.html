@@ -1,13 +1,13 @@
-<button *ngIf="fromList" mat-icon-button routerLink="/todos/{{todo.id}}">
+<button *ngIf="fromList" mat-icon-button routerLink="/todos/id/{{todo.id}}">
   <mat-icon [style.font-size]="iconSize">visibility</mat-icon>
 </button>
-<button mat-icon-button routerLink="/form/edit/{{todo.id}}">
+<button mat-icon-button routerLink="/todos/form/edit/{{todo.id}}">
   <mat-icon [style.font-size]="iconSize">edit</mat-icon>
 </button>
 <button (click)="onDelete()" mat-icon-button>
   <mat-icon [style.font-size]="iconSize">delete</mat-icon>
 </button>
-<button  mat-icon-button (click)="onDone()">
+<button mat-icon-button (click)="onDone()">
   <mat-icon [style.font-size]="iconSize">{{done ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
 </button>
 

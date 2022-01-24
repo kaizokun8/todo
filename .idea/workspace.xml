@@ -4,8 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ad239b6c1b06e2f3cc9421c28377dbe350d6b5d" beforeDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="intégration keycloak">
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todos.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todos.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todos.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98fc496677918b85fa106af3245c3f2b64fad0bb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6ab9144eba9272e5d88c771fb17d273aa8896f3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e21f32693e4a1d866c779239f287ec389ea973fb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f54e7221471ab839fa4ca13384e8d0bf9137656c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/confirmDialog/confirmDialog.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/components/confirmDialog/confirmDialog.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/confirmDialog/confirmDialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/components/confirmDialog/confirmDialog.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/confirmDialog/confirmDialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/components/confirmDialog/confirmDialog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/formTodo/formTodo.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/formTodo/formTodo.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/notifications/notifications.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/notifications/notifications.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/notifications/notifications.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/notifications/notifications.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/notifications/notifications.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/notifications/notifications.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/quickSearch/quickSearch.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/quickSearch/quickSearch.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/quickSearch/quickSearch.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todo/todo.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todo/todo.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todo/todo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todo/todo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todo/todo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todo/todo.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCalendar/todoCalendar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCalendar/todoCalendar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCalendar/todoCalendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoCommands/todoCommands.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoList/todoList.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoList/todoList.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoList/todoList.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoList/todoList.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoList/todoList.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoTable/todoTable.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoTable/todoTable.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoTable/todoTable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoTable/todoTable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/todoTable/todoTable.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoTable/todoTable.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +59,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
+        <option value="TypeScript File" />
         <option value="Angular Component༏ext༏.component.ts.child.0" />
         <option value="Angular Component༏ext༏.component.ts.child.1" />
         <option value="Angular Component" />
-        <option value="Class" />
-        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -95,10 +139,11 @@
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\store\user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\modules" />
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\components" />
+      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\modules\todos" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\selectors" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\store" />
-      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app" />
-      <recent name="D:\IdeaProjects\todo\client-server\todolist" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.todo.todos.validation" />

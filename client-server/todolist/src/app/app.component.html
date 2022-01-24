@@ -11,49 +11,33 @@
         <button mat-icon-button routerLink="/">
           <mat-icon>home</mat-icon>
         </button>
-        <button mat-icon-button routerLink="/form/create" [queryParams]="dateParams"
-                class="favorite-icon" aria-label="Ajout de todo">
-          <mat-icon>add_circle</mat-icon>
-        </button>
-        <button mat-icon-button routerLink="todos/filter" queryParamsHandling="preserve"
-                class="favorite-icon" aria-label="Search todo">
-          <mat-icon>search</mat-icon>
-        </button>
+
+        <ng-container *ngIf="userConnected">
+
+          <button mat-icon-button routerLink="todos/form/create" [queryParams]="dateParams"
+                  class="favorite-icon" aria-label="Ajout de todo">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+          <button mat-icon-button routerLink="todos/list/filter" queryParamsHandling="preserve"
+                  class="favorite-icon" aria-label="Search todo">
+            <mat-icon>search</mat-icon>
+          </button>
+
+          <a mat-icon-button class="favorite-icon" [href]="clientUrl+'/logout'">
+            <mat-icon>logout</mat-icon>
+          </a>
+        </ng-container>
 
         <a *ngIf="!userConnected" mat-icon-button class="favorite-icon" [href]="clientUrl">
           <mat-icon>logins</mat-icon>
-        </a>
-
-        <a *ngIf="userConnected" mat-icon-button class="favorite-icon" [href]="clientUrl+'/logout'">
-          <mat-icon>logout</mat-icon>
         </a>
 
       </mat-toolbar>
     </header>
   </div>
 
-  <div class="col-12 lg:col-9 p-4">
+  <div class="col-12 p-4">
     <router-outlet></router-outlet>
-  </div>
-
-  <div class="col-12 lg:col-3 p-4">
-    <mat-tab-group>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">calendar_today</mat-icon>
-          Calendar
-        </ng-template>
-        <todoCalendar></todoCalendar>
-      </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">search</mat-icon>
-          Quick Search
-        </ng-template>
-        <quickSearch></quickSearch>
-      </mat-tab>
-
-    </mat-tab-group>
   </div>
 
   <notifications-toast></notifications-toast>

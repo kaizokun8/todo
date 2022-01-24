@@ -27,7 +27,7 @@ export class QuickSearchComponent {
       debounceTime(400),
       distinctUntilChanged()
     ).subscribe(newValue => {
-      console.log("newValue : " + newValue)
+      //console.log("newValue : " + newValue)
       let params = {title: newValue, scheduled: this.scheduled.value};
       todoService.filterTodos(params).subscribe((rs) => {
         this.todoList = rs.todos;
@@ -35,8 +35,4 @@ export class QuickSearchComponent {
     })
   }
 
-
-  goToToDo(id: number | null) {
-    this.router.navigate([`/todos/${id}`])
-  }
 }

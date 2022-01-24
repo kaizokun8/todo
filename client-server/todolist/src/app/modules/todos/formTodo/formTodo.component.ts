@@ -198,9 +198,9 @@ export class FormTodoComponent {
           detail: `The task "${todo.id}#${todo.title}" has been successfully ${action} ! `
         }];
 
-        //this.store.dispatch(setNotificationList({notifications}));
+        this.store.dispatch(setNotificationList({notifications}));
 
-        window.location.href = `/todos/${todo.id}`;
+        window.location.href = `/todos/id/${todo.id}`;
       },
       error: () => {
         //gestion centralisée dans ErrorHandlerInterceptor

@@ -1,6 +1,4 @@
 
-„
-Tclient-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.html,9\8\98fc496677918b85fa106af3245c3f2b64fad0bb
 x
 Hclient-server/todolist/src/app/modules/explorer/login/login.component.ts,5\6\5633bf6595efeb54ac4b832bb9c1943c80939a1e
 d
@@ -19,8 +17,6 @@ a
 1client-server/todolist/src/app/dto/TodoFilters.ts,d\1\d103ec7f76b189b157e1fea8f630c63c09dddbd3
 \
 ,client-server/todolist/src/app/model/Todo.ts,6\a\6aa3a88783d702741650a0884487ff796d721660
-€
-Pclient-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.html,e\2\e21f32693e4a1d866c779239f287ec389ea973fb
 z
 Jclient-server/todolist/src/app/modules/demo/userForm/userForm.component.ts,4\7\47e19a4d70d8845f9527a613d0a5af4835909288
 \
@@ -31,8 +27,6 @@ p
 @user-server/src/test/java/com/app/todo/UserApplicationTests.java,1\a\1a5b634fda92ca7f5a2acd12bbcee15be678864c
 @
 user-server/mvnw,0\d\0d3494f69cb06b68baf42c1fbf58d60d11e1b838
-‚
-Rclient-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.ts,a\6\a6ab9144eba9272e5d88c771fb17d273aa8896f3
 i
 9client-server/todolist/src/app/dto/AllToDoSearchResult.ts,b\a\bad8b5811992e312f9ea41372d16fe560ab55263
 y
@@ -43,8 +37,6 @@ r
 Bclient-server/todolist/src/app/selectors/notifications.selector.ts,9\8\980cb3eb5354128f22990741c50fa071d27423df
 y
 Iclient-server/todolist/src/app/modules/explorer/login/login.component.css,d\f\df19a70b445e193f2b890fd93a8020bb06609019
-e
-5client-server/todolist/src/services/oauth2.service.ts,f\5\f54e7221471ab839fa4ca13384e8d0bf9137656c
 n
 >client-server/todolist/src/app/selectors/todolists.selector.ts,8\2\828bef52b67ee5ced8259485c413202145621a9f
 D

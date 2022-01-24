@@ -8,13 +8,13 @@
 
   <div class="col-12 text-right ">
 
-    <button routerLink="/todos/{{currentChild}}" [queryParams]="{view:'list'}" queryParamsHandling="merge"
+    <button routerLink="/todos/list/{{currentChild}}" [queryParams]="{view:'list'}" queryParamsHandling="merge"
             mat-mini-fab
             class="m-1" color="primary"
             aria-label="Example icon button with a home icon">
       <mat-icon>view_headline</mat-icon>
     </button>
-    <button routerLink="/todos/{{currentChild}}" [queryParams]="{view:'grid'}" queryParamsHandling="merge"
+    <button routerLink="/todos/list/{{currentChild}}" [queryParams]="{view:'grid'}" queryParamsHandling="merge"
             mat-mini-fab
             class="m-1" color="primary"
             aria-label="Example icon button with a home icon">

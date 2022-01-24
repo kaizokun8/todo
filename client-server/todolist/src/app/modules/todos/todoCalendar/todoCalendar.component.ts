@@ -46,7 +46,7 @@ export class TodoCalendarComponent {
     date?.setSeconds(59);
     date?.setMilliseconds(999);
     let endTime = date?.getTime() ?? new Date().getTime();
-    this.router.navigate(['/todos'], {
+    this.router.navigate(['/todos/list/'], {
       queryParams: {
         startTime: startTime,
         endTime: endTime,

@@ -6,12 +6,12 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '
 import {Todo} from "../../../model/Todo";
 import {TodoService} from "../../../../services/todo.service";
 import {MatDialog} from "@angular/material/dialog";
-import {ConfirmDialogComponent} from "../confirmDialog/confirmDialog.component";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Store} from "@ngrx/store";
 import {setNotificationList} from "../../../store/notification/notification.actions";
 import {Notification} from "../../../model/Notification";
 import {removeTodo} from "../../../store/todo/todo.actions";
+import {ConfirmDialogComponent} from "../../../components/confirmDialog/confirmDialog.component";
 
 @Component({
   selector: 'todoCommands',
