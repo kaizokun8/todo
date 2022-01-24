@@ -7,6 +7,7 @@ import {selectUser} from "./selectors/user.selector";
 import {UserStoreState} from "./store/user/user.reducer";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../services/user.service";
+import {User} from "./model/User";
 
 @Component({
   selector: 'td-root',
@@ -19,23 +20,22 @@ export class AppComponent {
 
   userState$: Observable<UserStoreState> = this.store.select(selectUser);
 
-  userConnected: boolean = true;
-
-  loginUrl!: string
+  clientUrl!: string
 
   dateParams: { [k: string]: any } = {};
+
+  userConnected!: User | null | undefined;
 
   constructor(private store: Store,
               private route: ActivatedRoute,
               private userService: UserService) {
 
-    this.loginUrl = environment.clientServer;
+    this.clientUrl = environment.clientServer;
 
     this.userService.getUserConnected().subscribe((user) =>
       this.store.dispatch(setUser({user})));
 
-    this.userState$.subscribe((u) =>
-      this.userConnected = u.user != null && u.user != undefined)
+    this.userState$.subscribe((userState) => this.userConnected = userState.user)
 
     route.queryParamMap.subscribe((params) => {
 

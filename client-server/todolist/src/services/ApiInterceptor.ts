@@ -14,10 +14,13 @@ export class ApiInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+    req = req.clone({withCredentials: true});
+
     if (req.context.get(SHOULD_NOT_HANDLE_OAUTH2_SECURITY)) {
 
       return next.handle(req);
     }
+
     //si no promise is saved
     if (this.tokenPromise == null) {
       //retrieve the promise

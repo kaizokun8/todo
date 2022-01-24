@@ -16,10 +16,7 @@ export class UserService {
 
   getUserConnected(): Observable<User> {
 
-    return this.http.get<User>(`${this.baseUrl}/users/connected`, {
-      withCredentials: true,
-      headers: {'Content-Type': 'application/json'}
-    });
+    return this.http.get<User>(`${this.baseUrl}/users/connected`);
   }
 
 

@@ -20,21 +20,23 @@ export class ClientService {
 
     const context = new HttpContext().set(SHOULD_NOT_HANDLE_OAUTH2_SECURITY, true);
 
-    return this.http.get<string>(`${this.baseUrl}/token`, {context,
-      withCredentials: true,
-      headers:{'Content-Type': 'application/json'}});
+    return this.http.get<string>(`${this.baseUrl}/token`, {
+      context
+    });
   }
 
   getUser(): Observable<User> {
 
-    return this.http.get<User>(`${this.baseUrl}/user`, {
-      withCredentials: true,
-      headers:{'Content-Type': 'application/json'}});
+    return this.http.get<User>(`${this.baseUrl}/user`);
   }
 
-  getTokenPromise(): Promise<{data:string}> {
+  logout(): Observable<void> {
+    return this.http.post<void>(`${this.baseUrl}/logout`, {})
+  }
 
-    return axios.get(`${this.baseUrl}/token`,{headers:{'Content-Type': 'application/json'},withCredentials:true})
+  getTokenPromise(): Promise<{ data: string }> {
+
+    return axios.get(`${this.baseUrl}/token`, {headers: {'Content-Type': 'application/json'}, withCredentials: true})
   }
 
 }

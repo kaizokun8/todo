@@ -9,8 +9,6 @@ f
 6client-server/todolist/src/app/dto/ToDoSearchResult.ts,a\f\af31b327c70bda5e1a24b157b5e338e7f98494cf
 d
 4client-server/todolist/src/app/app.component.spec.ts,8\2\824e66687707a7ba2e291d8f060090bbdffde8b9
-e
-5client-server/todolist/src/services/ApiInterceptor.ts,f\c\fc7c5ae2ca11e80e0ba6aec8fd54e9dbbd47f491
 D
 user-server/mvnw.cmd,c\4\c45da59befb2006fde906d6b57149305f85531e1
 F
@@ -21,8 +19,6 @@ a
 1client-server/todolist/src/app/dto/TodoFilters.ts,d\1\d103ec7f76b189b157e1fea8f630c63c09dddbd3
 \
 ,client-server/todolist/src/app/model/Todo.ts,6\a\6aa3a88783d702741650a0884487ff796d721660
-~
-Nclient-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.ts,0\a\0ad239b6c1b06e2f3cc9421c28377dbe350d6b5d
 €
 Pclient-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.html,e\2\e21f32693e4a1d866c779239f287ec389ea973fb
 z
@@ -39,10 +35,6 @@ p
 Rclient-server/todolist/src/app/modules/explorer/todoFilter/todoFilter.component.ts,a\6\a6ab9144eba9272e5d88c771fb17d273aa8896f3
 i
 9client-server/todolist/src/app/dto/AllToDoSearchResult.ts,b\a\bad8b5811992e312f9ea41372d16fe560ab55263
-i
-9client-server/todolist/src/app/store/user/user.actions.ts,8\2\82625a472f8a1610693522dda35a807978e67433
-i
-9client-server/todolist/src/app/store/user/user.reducer.ts,7\3\73cc7f2caef8a9da59d1876d22daa914876ad494
 y
 Iclient-server/todolist/src/app/store/notification/notification.reducer.ts,5\a\5a0c80dac653fb070e3d443ea02f948d026d05a5
 y
@@ -57,3 +49,15 @@ n
 >client-server/todolist/src/app/selectors/todolists.selector.ts,8\2\828bef52b67ee5ced8259485c413202145621a9f
 D
 security-lib/HELP.md,a\b\abf5ba913d5b4493800e49f0394bd9ba778f9722
+@
+keycloak/pom.xml,b\2\b22baf4c872e8781c3b9a45973144c0c6d822b50
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+C
+user-server/pom.xml,0\5\057aaec800aad043c38a3330adffa39a2ff516e9
+C
+todo-server/pom.xml,0\8\0865a17c017ce7476fbfb831332a0ebf1101d92e
+~
+Nclient-server/todolist/src/app/modules/explorer/todoList/todoList.component.ts,b\9\b99f9f26c9f87acf46cee00505d60895c0068f8d
+F
+todo-server/.gitignore,0\8\08b6f06abddc9bee0c928019f5046e0a6d6f963c

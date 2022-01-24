@@ -5,7 +5,7 @@
 import {Component} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
 import {ActivatedRoute} from "@angular/router";
-import {Observable, switchMap} from "rxjs";
+import {Observable, of, switchMap} from "rxjs";
 import {Todo} from "../../../model/Todo";
 import {
   AbstractControl,
@@ -144,7 +144,7 @@ export class FormTodoComponent {
               }
             }
 
-            return new Observable<Todo>(o => o.next(this.initTodo));
+            return of(this.initTodo);
           }))
 
         } else if (this.action === EDIT) {

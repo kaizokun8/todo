@@ -1,5 +1,5 @@
 import {HttpClient, HttpContext} from "@angular/common/http";
-import {forkJoin, from, map, Observable, switchMap,} from 'rxjs';
+import {forkJoin, from, map, Observable, of, switchMap,} from 'rxjs';
 import {environment} from '../environments/environment'
 import {Todo} from "../app/model/Todo";
 import {Injectable} from "@angular/core";
@@ -46,20 +46,13 @@ export class TodoService {
       return new Observable<Todo>();
     }
 
-    return this.http.get<Todo>(`${this.baseUrl}/todos/${id}`, {
-      withCredentials: true,
-      headers: {'Content-Type': 'application/json'}
-    });
+    return this.http.get<Todo>(`${this.baseUrl}/todos/${id}`);
   }
 
   filterTodos(params: { [k: string]: any }): Observable<ToDoSearchResult> {
 
 
-    return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {
-      params,
-      withCredentials: true,
-      headers: {'Content-Type': 'application/json'}
-    });
+    return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {params});
   }
 
   getUnscheduledAndTodayScheduledTodos(): Observable<AllToDoSearchResult> {
@@ -71,18 +64,10 @@ export class TodoService {
     todayEnd.setHours(23, 59, 59, 999)
 
     let scheduledTodos = this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`,
-      {
-        params: {scheduled: true, startTime: todayStart.getTime(), endTime: todayEnd.getTime()},
-        withCredentials: true,
-        headers: {'Content-Type': 'application/json'}
-      });
+      {params: {scheduled: true, startTime: todayStart.getTime(), endTime: todayEnd.getTime()}});
 
     let unscheduledTodos = this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`,
-      {
-        params: {scheduled: false},
-        withCredentials: true,
-        headers: {'Content-Type': 'application/json'}
-      })
+      {params: {scheduled: false}})
 
     return forkJoin([scheduledTodos, unscheduledTodos])
       .pipe(map((rs: Array<ToDoSearchResult>) => ({scheduled: rs[0], unscheduled: rs[1]})))
@@ -92,11 +77,10 @@ export class TodoService {
 
     if (month !== undefined && fullYear !== undefined) {
 
-      return this.http.get<Array<number>>(`${this.baseUrl}/todos/scheduled-days/${month}/${fullYear}`,{
-        withCredentials: true,
-        headers:{'Content-Type': 'application/json'}
-      });
+      return this.http.get<Array<number>>(`${this.baseUrl}/todos/scheduled-days/${month}/${fullYear}`);
     }
+
+    return of([]);
 
     return new Observable<Array<number>>(o => o.next([]))
   }

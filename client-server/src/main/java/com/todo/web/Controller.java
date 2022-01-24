@@ -1,6 +1,7 @@
 package com.todo.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -25,6 +26,9 @@ import static org.springframework.security.oauth2.client.web.reactive.function.c
 @RestController
 public class Controller {
 
+    @Value("${client.uri}")
+    private String clientUri;
+
     @Autowired
     private WebClient webClient;
 
@@ -32,9 +36,7 @@ public class Controller {
     public ModelAndView index(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
                                       OAuth2AuthorizedClient authorizedClient) {
 
-        return new ModelAndView("redirect:http://localhost:4200");
-
-        //return new ModelAndView("redirect:http://localhost:4200");
+        return new ModelAndView("redirect:" + clientUri);
     }
 
     /*
@@ -73,6 +75,29 @@ public class Controller {
         }
     }
 
+    @GetMapping(value = "/logout")
+    public ModelAndView logout(@RegisteredOAuth2AuthorizedClient("client-oidc")
+                                       OAuth2AuthorizedClient authorizedClient,
+                               HttpServletRequest request,
+                               HttpServletResponse response) {
+        try {
+            Cookie cookie = WebUtils.getCookie(request, "JSESSIONID");
+
+            if (cookie != null) {
+                response.addHeader(
+                        "Set-Cookie",
+                        "JSESSIONID=; Max-Age=0; Path=/");
+                response.addHeader(
+                        "Set-Cookie",
+                        "REFRESH_TOKEN=; Max-Age=0; Path=/");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return new ModelAndView("redirect:" + clientUri);
+    }
+
     @GetMapping(value = "/token", produces = MediaType.TEXT_PLAIN_VALUE)
     public String getToken(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
                                    OAuth2AuthorizedClient authorizedClient, HttpServletRequest request, HttpServletResponse response) {
@@ -103,5 +128,6 @@ public class Controller {
 
         //return Collections.singletonMap("username", authorizedClient.getPrincipalName());
     }
+
 
 }

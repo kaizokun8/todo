@@ -3,6 +3,9 @@ server:
   cors:
     allowedOrigins: http://localhost:4200,http://localhost
 
+client:
+  uri: http://localhost:4200
+
 logging:
   level:
     jdbc:
