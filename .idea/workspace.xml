@@ -4,29 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="refresh token cookie">
-      <change afterPath="$PROJECT_DIR$/client-server/todolist/src/services/LoggedInGuard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keycloak/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keycloak/src/main/resources/baeldung-realm.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keycloak/src/main/resources/realm-todo-export.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73cc7f2caef8a9da59d1876d22daa914876ad494" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/82625a472f8a1610693522dda35a807978e67433" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc7c5ae2ca11e80e0ba6aec8fd54e9dbbd47f491" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/app/modules/explorer/formTodo/formTodo.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/client.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/client.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/todo.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keycloak/src/main/java/com/todo/auth/config/KeycloakServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/src/main/java/com/todo/auth/config/KeycloakServerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keycloak/src/main/resources/todo-realm.json" beforeDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ad239b6c1b06e2f3cc9421c28377dbe350d6b5d" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +273,7 @@
       <workItem from="1642935207132" duration="653000" />
       <workItem from="1642942023252" duration="12999000" />
       <workItem from="1642955138989" duration="5639000" />
-      <workItem from="1643006536515" duration="5751000" />
+      <workItem from="1643006536515" duration="6064000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -359,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642962636032</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit">
+      <created>1643015009811</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643015009811</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,12 +380,12 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fix connexion et recuperation token" />
     <MESSAGE value="replace 127.0.0.1 with localhost" />
-    <MESSAGE value="commit" />
     <MESSAGE value="test user endpoint" />
     <MESSAGE value="test keycloak" />
     <MESSAGE value="intégration keycloak" />
     <MESSAGE value="refresh token cookie" />
-    <option name="LAST_COMMIT_MESSAGE" value="refresh token cookie" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
