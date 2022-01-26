@@ -3,7 +3,7 @@
 Ce petit projet a été réalisé dans un cadre de l'apprentissage d'Angular. Il permet de gérer une todolist. Les taches peuvent
 être planifiées à une date et heure précise.
 
-## Fonctionalitées
+## Fonctionnalitées
 
 - C.R.U.D. sur les taches.
 - Recherche de taches sur différents critères, (titre, date, statut).
@@ -41,9 +41,9 @@ Restfull + Single page application
 
 ### Back End
 
-- **ui-server** : serveur de resource et de distribution du build Angular, le contenu du build Angular (dist) se trouve dans le répértoire *src/main/resources/public*
+- **ui-server** : serveur de resource et de distribution du build Angular, le contenu du build Angular (dist) se trouve dans le répertoire *src/main/resources/public*
 - **client-server** : client oauth2 servant de point d'entrée à l'authentification, peut servir d'API Gateway pour
-  acceder aux serveurs de resources.
+  accéder aux serveurs de resources.
 - **keycloak** : serveur d'authentification et d'autorisations.
 - **user-server** : serveur de resource utilisateur, séparé de keycloak.
 - **todo-server** : serveur de resource de gestion des taches.
@@ -54,12 +54,15 @@ Restfull + Single page application
 
 Le Serveur keycloak doit être lancé avant les autres services. 
 
-Si vous souhaitez executer le client Angular avec Ng
-serve, utilisez le profil maven **dev-angular-node-js**, dans ce cas là le service ui-server n'a pas besoin d'être
-executé. L'application sera accessible à l'adresse http://localhost:4200.
+Si vous souhaitez exécuter le client Angular avec Ng
+serve, utilisez le profil maven **dev-angular-node-js**, dans ce cas-là le service ui-server n'a pas besoin d'être
+exécuté. L'application sera accessible à l'adresse http://localhost:4200.
 
 Si vous souhaitez accéder au client Angular via le service Spring Boot ui-server, lancez le. 
-Il vous faudra egalement choisir le profil maven  **dev-angular-spring-boot** et relancer le service client-server. L'application sera accessible
+Il vous faudra également choisir le profil maven **dev-angular-spring-boot** et relancer le service client-server. L'application sera accessible
 à l'adresse http://localhost. 
 
-Auteur : Béhi Monsio Jérémie
+## Auteur
+
+Béhi Monsio Jérémie
+
