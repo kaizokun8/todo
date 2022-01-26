@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="ajout d'un serveur de distribution ui">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-server/src/main/resources/env/dev-angular-node-js.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-server/src/main/resources/env/dev-angular-spring-boot.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/main.6ef4b51dff7b4883.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="ajout profile client oauth2 + README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/OAuth2ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/OAuth2ClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keycloak/src/main/resources/baeldung-realm.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/src/main/resources/public/main.93d7922063a4c781.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/model/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/model/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +297,7 @@
       <workItem from="1643006536515" duration="6064000" />
       <workItem from="1643034951406" duration="4931000" />
       <workItem from="1643093218301" duration="31000" />
-      <workItem from="1643183604703" duration="6022000" />
+      <workItem from="1643183604703" duration="6521000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -398,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643038902541</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ajout profile client oauth2 + README">
+      <created>1643189884562</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1643189884562</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +432,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="end rerouting" />
     <MESSAGE value="ajout d'un serveur de distribution ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout d'un serveur de distribution ui" />
+    <MESSAGE value="ajout profile client oauth2 + README" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout profile client oauth2 + README" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

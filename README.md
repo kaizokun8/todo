@@ -1,4 +1,4 @@
-# Gestionnaire de taches planifié Angular + Spring Boot
+# Gestionnaire de taches planifiées Angular + Spring Boot
 
 Ce petit projet a été réalisé dans un cadre de l'apprentissage d'Angular. Il permet de gérer une todolist. Les taches peuvent
 être planifiées à une date et heure précise.
@@ -62,3 +62,4 @@ Si vous souhaitez accéder au client Angular via le service Spring Boot ui-serve
 Il vous faudra egalement choisir le profil maven  **dev-angular-spring-boot** et relancer le service client-server. L'application sera accessible
 à l'adresse http://localhost. 
 
+Auteur : Béhi Monsio Jérémie
