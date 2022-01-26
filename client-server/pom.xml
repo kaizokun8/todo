@@ -40,4 +40,38 @@
         </dependency-->
     </dependencies>
 
+    <profiles>
+
+        <profile>
+            <id>dev-angular-node-js</id>
+            <activation>
+                <!-- this profile is active by default -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>dev-angular-node-js</env>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev-angular-spring-boot</id>
+            <properties>
+                <env>dev-angular-spring-boot</env>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <build>
+        <filters>
+            <filter>src/main/resources/env/${env}.properties</filter>
+        </filters>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
 </project>

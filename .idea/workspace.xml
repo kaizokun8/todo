@@ -4,261 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="end rerouting">
-      <change afterPath="$PROJECT_DIR$/ui-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/java/com/todo/uiserver/UiServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/java/com/todo/uiserver/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/java/com/todo/uiserver/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/3rdpartylicenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/color.dae87a04d07ca92b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/hue.8b1818380241e6ac.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/main.93d7922063a4c781.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/polyfills.f4f6ab2de4b6324d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/primeicons.29151a741d66863a.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/primeicons.5f5d08cd089b4e5d.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/primeicons.76044b1c189cc4d7.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/primeicons.964f445f3ea9db80.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/roboto-v20-latin-ext_latin-500.4ce802079c5e2843.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/roboto-v20-latin-ext_latin-500.de270e01b582cd35.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/roboto-v20-latin-ext_latin-700.c5993c4d788e3ff6.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/roboto-v20-latin-ext_latin-700.fea1ca242b09ae4c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/roboto-v20-latin-ext_latin-regular.5c59b24786083ffe.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/roboto-v20-latin-ext_latin-regular.c9064c1abfc45804.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/runtime.64e807831dbcdc59.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/styles.32ad5c1c1ef90300.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/src/test/java/com/todo/uiserver/UiServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/components/confirmDialog/confirmDialog.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/components/confirmDialog/confirmDialog.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/components/confirmDialog/confirmDialog.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/dto/AllToDoSearchResult.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/dto/ToDoSearchResult.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/dto/TodoFilters.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/model/Notification.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/model/Priority.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/model/Todo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/model/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/notifications/notifications.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/notifications/notifications.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/notifications/notifications.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/resolvers/TodoDelayedResolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/resolvers/TodoResolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todo/todo.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todo/todo.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todo/todo.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoTable/todoTable.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoTable/todoTable.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoTable/todoTable.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todos.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todos.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todos.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/selectors/app.selector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/selectors/notifications.selector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/selectors/todolists.selector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/selectors/user.selector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/app/app.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/app/app.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/notification/notification.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/notification/notification.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/user/user.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/user/user.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/util/RouterUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/validator/DateControlValidator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/environments/environment.spring.dev.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/ApiInterceptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/Context.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/ErrorHandlerInterceptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/LoggedInGuard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/client.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/oauth2.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/todo.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/user.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/shared/Action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/shared/View.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/tsconfig.spec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02ae4a3c3e3adc8914c0c09e2fea0d392b853272" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/1967664980ca4368eec8a88fd823bfa68ea4f4ca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fe31a1f7b82572b161740ddbea43b03f343586f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/47e19a4d70d8845f9527a613d0a5af4835909288" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/5633bf6595efeb54ac4b832bb9c1943c80939a1e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5a0c80dac653fb070e3d443ea02f948d026d05a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6aa3a88783d702741650a0884487ff796d721660" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/824e66687707a7ba2e291d8f060090bbdffde8b9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/828bef52b67ee5ced8259485c413202145621a9f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96b2c21e492064c938d35eb565225358cbef7845" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/980cb3eb5354128f22990741c50fa071d27423df" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af31b327c70bda5e1a24b157b5e338e7f98494cf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/bad8b5811992e312f9ea41372d16fe560ab55263" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d103ec7f76b189b157e1fea8f630c63c09dddbd3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/df19a70b445e193f2b890fd93a8020bb06609019" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e1c9c2a292f2a80f9a5be0f2581a8929afb7a40a" beforeDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="ajout d'un serveur de distribution ui">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/src/main/resources/env/dev-angular-node-js.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-server/src/main/resources/env/dev-angular-spring-boot.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/main.6ef4b51dff7b4883.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/todos/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/web/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-server/src/main/java/com/todo/OAuth2ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/java/com/todo/OAuth2ClientApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/app.state.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/components/confirmDialog/confirmDialog.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/components/confirmDialog/confirmDialog.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/components/confirmDialog/confirmDialog.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/dto/AllToDoSearchResult.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/dto/ToDoSearchResult.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/dto/TodoFilters.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/Notification.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/Priority.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/Todo.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/model/User.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/demo/userForm/userForm.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/demo/userForm/userForm.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/login/login.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/login/login.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/login/login.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/notifications/notifications.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/notifications/notifications.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/notifications/notifications.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/formTodo/formTodo.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/formTodo/formTodo.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/quickSearch/quickSearch.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todo/todo.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todo/todo.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todo/todo.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCalendar/todoCalendar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoCommands/todoCommands.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoList/todoList.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoList/todoList.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoTable/todoTable.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoTable/todoTable.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todoTable/todoTable.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todos.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todos.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/modules/todos/todos.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/selectors/notifications.selector.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/selectors/todolists.selector.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/selectors/user.selector.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/notification/notification.actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/notification/notification.reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/todo/todo.actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/todo/todo.reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/user/user.actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/store/user/user.reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/util/RouterUtil.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/app/validator/DateControlValidator.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/ApiInterceptor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/Context.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/ErrorHandlerInterceptor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/LoggedInGuard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/client.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/oauth2.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/todo.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/services/user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/shared/Action.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/shared/View.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-server/todolist/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak/src/main/resources/baeldung-realm.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-server/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/src/main/resources/public/main.93d7922063a4c781.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/model/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/model/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/demo/userForm/userForm.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,6 +69,16 @@
         <option name="userSettingsFile" value="C:\dev\java\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="dev-angular-spring-boot" />
+      </list>
+    </option>
+    <option name="disabledProfiles">
+      <list>
+        <option value="dev-angular-node-js" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="23zvwSWHBqGVxXsGdddmIs7Pnod" />
   <component name="ProjectLevelVcsManager">
@@ -342,10 +115,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\todo\ui-server\src\main\resources\public" />
+      <recent name="D:\IdeaProjects\todo\client-server\src\main\resources\env" />
       <recent name="D:\IdeaProjects\todo\client-server\src\main\resources\templates" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\environments" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\selectors" />
-      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\store\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\todo\ui-server\src\main\resources\public" />
@@ -537,7 +310,9 @@
       <workItem from="1642942023252" duration="12999000" />
       <workItem from="1642955138989" duration="5639000" />
       <workItem from="1643006536515" duration="6064000" />
-      <workItem from="1643034951406" duration="3882000" />
+      <workItem from="1643034951406" duration="4931000" />
+      <workItem from="1643093218301" duration="31000" />
+      <workItem from="1643183604703" duration="6022000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -616,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643018220341</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ajout d'un serveur de distribution ui">
+      <created>1643038902541</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1643038902541</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +439,8 @@
     <MESSAGE value="refresh token cookie" />
     <MESSAGE value="commit" />
     <MESSAGE value="end rerouting" />
-    <option name="LAST_COMMIT_MESSAGE" value="end rerouting" />
+    <MESSAGE value="ajout d'un serveur de distribution ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout d'un serveur de distribution ui" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

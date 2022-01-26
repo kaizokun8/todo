@@ -23,6 +23,8 @@
             <mat-icon>search</mat-icon>
           </button>
 
+          <span>{{(userState$ |async)?.user?.username}}</span>
+
           <a mat-icon-button class="favorite-icon" [href]="clientUrl+'/logout'">
             <mat-icon>logout</mat-icon>
           </a>
