@@ -64,5 +64,5 @@ Il vous faudra également choisir le profil maven **dev-angular-spring-boot** et
 
 ## Auteur
 
-Béhi Monsio Jérémie
+BEHI Monsio Jérémie
 
