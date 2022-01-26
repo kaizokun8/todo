@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +130,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.ng serve">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Keycloak" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="keycloak" />
       <extension name="coverage">
@@ -247,28 +250,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ng serve" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/ui-server/todolist/package.json" />
       <command value="run" />
       <scripts>
-        <script value="ng" />
+        <script value="start" />
       </scripts>
-      <arguments value="serve" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.ng serve" />
       <item itemvalue="Spring Boot.OAuth2ClientApplication" />
       <item itemvalue="Spring Boot.SecurityLibApplication" />
       <item itemvalue="Spring Boot.UiServerApplication" />
       <item itemvalue="Spring Boot.TodoApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.Keycloak" />
+      <item itemvalue="npm.start" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.TodoApplication" />
         <item itemvalue="Spring Boot.Keycloak" />
@@ -296,7 +299,7 @@
       <workItem from="1643006536515" duration="6064000" />
       <workItem from="1643034951406" duration="4931000" />
       <workItem from="1643093218301" duration="31000" />
-      <workItem from="1643183604703" duration="6807000" />
+      <workItem from="1643183604703" duration="8217000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -403,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643190437861</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commit">
+      <created>1643190463413</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1643190463413</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -45,8 +45,6 @@ m
 =ui-server/todolist/src/app/modules/login/login.component.html,d\3\d31c5cad15e5537fbae0f3d8d46edbec7da65f0d
 k
 ;ui-server/todolist/src/app/modules/login/login.component.ts,2\2\222ff7cad6f491cffd95f91ac83be78b675aff4f
-r
-Bui-server/src/main/java/com/todo/uiserver/UiServerApplication.java,b\d\bd7e6d59de952b9aba764667a0a3454adb72a83c
 l
 <ui-server/todolist/src/app/modules/login/login.component.css,c\a\caf2605b7bb54a84cb37338ba8e72122bed0be44
 w
