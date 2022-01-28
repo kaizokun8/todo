@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="simplification récupération utilisateur dans resources sécurisées + simplification gestion redirection avec les differents serveurs de distribution UI.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,7 +298,7 @@
       <workItem from="1643183604703" duration="8255000" />
       <workItem from="1643272542165" duration="5754000" />
       <workItem from="1643355888823" duration="11891000" />
-      <workItem from="1643375678469" duration="2722000" />
+      <workItem from="1643375678469" duration="2783000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -429,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643377653180</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="commit">
+      <created>1643378425132</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1643378425132</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,9 +475,9 @@
     <MESSAGE value="end rerouting" />
     <MESSAGE value="ajout d'un serveur de distribution ui" />
     <MESSAGE value="ajout profile client oauth2 + README" />
-    <MESSAGE value="commit" />
     <MESSAGE value="simplification récupération utilisateur dans resources sécurisées + simplification gestion redirection avec les differents serveurs de distribution UI." />
-    <option name="LAST_COMMIT_MESSAGE" value="simplification récupération utilisateur dans resources sécurisées + simplification gestion redirection avec les differents serveurs de distribution UI." />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
