@@ -8,7 +8,7 @@ en combinaison avec un serveur d'authorisation/authentification OpenAPI/Oauth2 K
 
 Cela peut être un bon point de départ si vous souhaitez apprendre à utiliser ces technologies.
 
-## Fonctionnalitées
+## Fonctionnalités
 
 - C.R.U.D. sur les taches.
 - Recherche de taches sur différents critères, (titre, date, statut).
@@ -87,7 +87,6 @@ réel comme c'est le cas avec ng serve. Il vous faudra la reconstruire avec **ng
 et déplacer le contenu du build dans le dossier de resources public */src/main/resources/public*.
 Le plus simple et de copier le dossier généré dans *dist* (*todolist*) dans *resources* et de renommer en *public*.
 Des moyens automatisés avec Maven existent également pour réaliser cette étape lors du build.
-
 
 ## Auteur
 
