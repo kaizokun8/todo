@@ -1,9 +1,9 @@
 package com.todo.todos.controller;
 
 import com.todo.securitylib.dto.UserInfo;
+import com.todo.securitylib.facade.UserService;
 import com.todo.todos.dto.TodoDto;
 import com.todo.todos.dto.TodoFilters;
-import com.todo.todos.facade.UserFacade;
 import com.todo.todos.model.Priority;
 import com.todo.todos.dto.ToDoSearchResut;
 import com.todo.todos.model.Todo;
@@ -32,7 +32,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.Collection;
@@ -52,7 +51,7 @@ public class Controller {
     private TodoSearchService todoSearchService;
 
     @Autowired
-    private UserFacade userFacade;
+    private UserService userService;
 
     private void throwException() throws Exception {
         if (true) {
@@ -66,7 +65,7 @@ public class Controller {
 
         try {
 
-            UserInfo userInfo = this.userFacade.getUserInfo();
+            UserInfo userInfo = this.userService.getUserInfo();
 
             Todo todo = TodoDto.toEntity(todoDto);
 
@@ -192,7 +191,7 @@ public class Controller {
     public ResponseEntity<?> getScheduledDaysOfMonthAndYear(@PathVariable @NotNull @Min(0) @Max(11) Integer month,
                                                             @PathVariable @NotNull @Min(1980) Integer year) {
 
-        UserInfo userInfo = this.userFacade.getUserInfo();
+        UserInfo userInfo = this.userService.getUserInfo();
 
         Calendar cal = Calendar.getInstance();
         cal.set(year, month, 1, 0, 0, 0);
@@ -225,7 +224,7 @@ public class Controller {
         Date startDate = startTime != null ? new Date(startTime) : null;
         Date endDate = endTime != null ? new Date(endTime) : null;
 
-        UserInfo userInfo = this.userFacade.getUserInfo();
+        UserInfo userInfo = this.userService.getUserInfo();
 
         TodoFilters todoFilters = new TodoFilters(title, description,
                 priority, startCreationDate, endCreationDate,

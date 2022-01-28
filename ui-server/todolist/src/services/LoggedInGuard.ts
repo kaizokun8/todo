@@ -2,6 +2,7 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTre
 import {Observable, of, switchMap} from "rxjs";
 import {UserService} from "./user.service";
 import {Injectable} from "@angular/core";
+import {ClientService} from "./client.service";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,6 @@ export class LoggedInGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     return this.userService.getUserConnected().pipe(switchMap((rs) => of(true))) || this.router.parseUrl('login');
-
   }
 
 }

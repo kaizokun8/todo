@@ -8,7 +8,8 @@ export const environment = {
   clientServer: 'http://localhost:8080',
   oauth2server: 'http://localhost:8083/auth',
   userResourceServer: 'http://localhost:8091/user-server',
-  keycloakLogout: 'http://localhost:8083/auth/realms/SpringBootKeycloak/protocol/openid-connect/logout'
+  keycloakLogout: 'http://localhost:8083/auth/realms/SpringBootKeycloak/protocol/openid-connect/logout?redirect_uri=http://localhost:4200/login',
+  loginUrl: 'http://localhost:8080/login?redirect=http://localhost:4200'
 };
 
 /*

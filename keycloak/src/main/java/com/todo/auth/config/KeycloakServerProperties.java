@@ -46,7 +46,6 @@ public class KeycloakServerProperties {
         }
 
         public void setUsername(String username) {
-            System.out.println("username : " + username);
             this.username = username;
         }
 
@@ -55,7 +54,6 @@ public class KeycloakServerProperties {
         }
 
         public void setPassword(String password) {
-            System.out.println("password : " + password);
             this.password = password;
         }
     }

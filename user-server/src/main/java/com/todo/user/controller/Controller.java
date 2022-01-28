@@ -1,7 +1,6 @@
 package com.todo.user.controller;
 
-import com.todo.securitylib.dto.UserInfo;
-import com.todo.user.facade.UserFacade;
+import com.todo.securitylib.facade.UserService;
 import com.todo.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @Validated
@@ -20,14 +20,15 @@ public class Controller {
     private UserRepository userRepository;
 
     @Autowired
-    private UserFacade userFacade;
+    HttpServletRequest request;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping(value = "/users/connected")
-    public ResponseEntity<?> getUser() {
+    public ResponseEntity<?> getUser(/*@AuthenticationPrincipal Jwt principal*/) {
 
-        UserInfo userInfo = this.userFacade.getUserInfo();
-
-        return new ResponseEntity<>(userInfo, HttpStatus.OK);
+        return new ResponseEntity<>(this.userService.getUserInfo(), HttpStatus.OK);
     }
 
 }

@@ -2,6 +2,7 @@ import {HttpClient, HttpContext} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
+import {SHOULD_NOT_HANDLE_OAUTH2_SECURITY} from "./Context";
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,5 @@ export class Oauth2Service {
   }
 
   baseUrl = environment.oauth2server;
-
-  logoutUrl = environment.keycloakLogout;
-
-  public logout(): Observable<any> {
-
-    return this.http.get<Observable<any>>(this.logoutUrl);
-  }
 
 }

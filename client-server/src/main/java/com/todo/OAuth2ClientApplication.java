@@ -15,9 +15,7 @@ public class OAuth2ClientApplication {
     }
 
     public static void main(String[] args) {
-        System.out.println("client uri : " + clientUri);
         SpringApplication.run(OAuth2ClientApplication.class, args);
     }
-
 
 }

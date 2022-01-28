@@ -3,15 +3,8 @@ import {environment} from "../environments/environment";
 import {Observable, of, switchMap} from "rxjs";
 import {Injectable} from "@angular/core";
 import {User} from "../app/model/User";
+import {ConnectedUser} from "../app/dto/ConnectedUser";
 
-interface ConnectedUser {
-  sub: string
-  email: string
-  email_verified: boolean
-  preferred_username: string
-  given_name: string
-  family_name: string
-}
 
 @Injectable({
   providedIn: 'root'

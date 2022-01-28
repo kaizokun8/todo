@@ -693,7 +693,7 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://localhost/*"
+        "http://localhost:8080/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -795,8 +795,7 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://localhost/*",
-        "http://127.0.0.1/*"
+        "http://localhost:8080/*"
       ],
       "webOrigins": [],
       "notBefore": 0,

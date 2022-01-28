@@ -1,16 +1,13 @@
 package com.todo.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
-import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,27 +16,29 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Collections;
-import java.util.Map;
 
 import static org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient;
 
 @RestController
 public class Controller {
 
-    @Value("${client.uri}")
-    private String clientUri;
-
     @Autowired
     private WebClient webClient;
 
     @GetMapping(value = {"/login"})
-    public ModelAndView login(@RegisteredOAuth2AuthorizedClient("client-authorization-code")
+    public ModelAndView login(@RequestParam String redirect,
+                              @RegisteredOAuth2AuthorizedClient("client-authorization-code")
                                       OAuth2AuthorizedClient authorizedClient) {
+        /*
+        System.out.println("logged in");
+        System.out.println("name : " + authorizedClient.getPrincipalName());
+        System.out.println("token type : " + authorizedClient.getAccessToken().getTokenType().getValue());
+        System.out.println("token value : " + authorizedClient.getAccessToken().getTokenValue());
+        System.out.println("refresh token value : " + authorizedClient.getRefreshToken().getTokenValue());
+        authorizedClient.getAccessToken().getScopes().forEach(scope -> System.out.println("scope : " + scope));
+        */
 
-        //return new ModelAndView("index");
-        //return new ModelAndView("redirect:/");
-        return new ModelAndView("redirect:" + clientUri);
+        return new ModelAndView("redirect:" + redirect);
     }
 
     private void setRefreshTokenCookie(String refreshToken, HttpServletRequest request,
@@ -63,10 +62,10 @@ public class Controller {
     }
 
     @GetMapping(value = "/logout")
-    public ModelAndView logout(@RegisteredOAuth2AuthorizedClient("client-oidc")
-                                       OAuth2AuthorizedClient authorizedClient,
-                               HttpServletRequest request,
-                               HttpServletResponse response) {
+    public ResponseEntity logout(@RegisteredOAuth2AuthorizedClient("client-oidc")
+                                         OAuth2AuthorizedClient authorizedClient,
+                                 HttpServletRequest request,
+                                 HttpServletResponse response) {
         try {
             Cookie cookie = WebUtils.getCookie(request, "JSESSIONID");
 
@@ -82,7 +81,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        return new ModelAndView("redirect:" + clientUri);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping(value = "/token", produces = MediaType.TEXT_PLAIN_VALUE)
@@ -113,7 +112,6 @@ public class Controller {
                 .bodyToMono(Object.class)
                 .block();
 
-        //return Collections.singletonMap("username", authorizedClient.getPrincipalName());
     }
 
 

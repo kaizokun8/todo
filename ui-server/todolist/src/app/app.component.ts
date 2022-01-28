@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {Observable} from "rxjs";
+import {Observable, switchMap} from "rxjs";
 import {environment} from "../environments/environment";
 import {setUser} from "./store/user/user.actions";
 import {selectUser} from "./selectors/user.selector";
@@ -17,9 +17,10 @@ import {UserService} from "../services/user.service";
 import {User} from "./model/User";
 import {AppState} from "./store/app/app.reducer";
 import {selectApp} from "./selectors/app.selector";
-import {setNotificationList} from "./store/notification/notification.actions";
 import {setLoading} from "./store/app/app.actions";
 import {RouterUtil} from "./util/RouterUtil";
+import {Oauth2Service} from "../services/oauth2.service";
+import {ClientService} from "../services/client.service";
 
 @Component({
   selector: 'td-root',
@@ -36,7 +37,7 @@ export class AppComponent {
 
   //loading: boolean = false;
 
-  clientUrl!: string;
+  loginUrl!: string;
 
   dateParams: { [k: string]: any } = {};
 
@@ -45,11 +46,11 @@ export class AppComponent {
   constructor(private store: Store,
               private route: ActivatedRoute,
               private router: Router,
+              private oauth2Service: Oauth2Service,
+              private clientService: ClientService,
               private userService: UserService) {
 
-    this.clientUrl = environment.clientServer;
-
-    //this.appState$.subscribe((appState) => this.loading = appState.loading)
+    this.loginUrl = environment.loginUrl;
 
     this.userService.getUserConnected().subscribe((user) =>
       this.store.dispatch(setUser({user})));
@@ -91,4 +92,13 @@ export class AppComponent {
     })
   }
 
+  /**
+   * Supprime la session coté client en supprimer le cookie jsessionid de la session client-server
+   * Ensuite se déconnecte de keycloak
+   * */
+  logout() {
+
+    this.clientService.logout()
+      .subscribe(() => window.location.href = environment.keycloakLogout);
+  }
 }

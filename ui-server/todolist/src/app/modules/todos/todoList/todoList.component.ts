@@ -18,7 +18,8 @@ import {
 } from "../../../store/todo/todo.actions";
 import {TodoStoreState} from "../../../store/todo/todo.reducer";
 import {RouterUtil} from "../../../util/RouterUtil";
-import {selectTodos} from "../../../selectors/todolists.selector";
+import {selectTodos, selectTodosScheduled, selectTodosUnscheduled} from "../../../selectors/todolists.selector";
+import {AsyncPipe} from "@angular/common";
 
 @Component({
   selector: 'todoList',
@@ -40,6 +41,10 @@ export class TodoListComponent {
 
   todoStoreState$: Observable<TodoStoreState> = this.store.select(selectTodos);
 
+  todosScheduled$: Observable<ReadonlyArray<Todo>> = this.store.select(selectTodosScheduled);
+
+  todosUnScheduled$: Observable<ReadonlyArray<Todo>> = this.store.select(selectTodosUnscheduled);
+
   constructor(private todoService: TodoService,
               private route: ActivatedRoute,
               private store: Store) {
@@ -47,9 +52,14 @@ export class TodoListComponent {
     this.todoStoreState$.subscribe((s) => {
       this.totalScheduled = s.totalScheduled;
       this.totalUnscheduled = s.totalUnscheduled;
-      this.todosScheduled = s.scheduled;
-      this.todosUnscheduled = s.unscheduled;
+      //this.todosScheduled = s.scheduled;
+      //this.todosUnscheduled = s.unscheduled;
     })
+
+    //not working...
+
+    this.todosScheduled$.subscribe(scheduled => this.todosScheduled = scheduled);
+    this.todosUnScheduled$.subscribe(unscheduled => this.todosUnscheduled = unscheduled);
 
     this.route.url.subscribe((v) => {
       //au changement d'url recupere le chemin enfant courant pour l'attacher dynamiquement

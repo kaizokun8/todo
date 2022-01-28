@@ -2,8 +2,6 @@ server:
   port: 8080
   cors:
     allowedOrigins: http://localhost:4200,http://localhost,http://localhost:8080
-client:
-  uri: @clientUri@
 logging:
   level:
     jdbc:

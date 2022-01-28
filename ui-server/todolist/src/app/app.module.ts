@@ -56,6 +56,7 @@ import {NotificationsComponent} from "./modules/notifications/notifications.comp
 import {LoginComponent} from "./modules/login/login.component";
 import {appReducer} from "./store/app/app.reducer";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {AsyncPipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -91,14 +92,19 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     MatDialogModule,
     MatSnackBarModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    StoreModule.forRoot({notifications: notificationReducer, todos: todoReducer, user: userReducer, app: appReducer}),
+    StoreModule.forRoot({
+      notifications: notificationReducer,
+      todos: todoReducer,
+      user: userReducer,
+      app: appReducer
+    }),
     ToastModule,
     ProgressSpinnerModule,
     MatListModule,
     MatTabsModule,
     MatProgressBarModule
   ],
-  providers: [MessageService,
+  providers: [MessageService, AsyncPipe,
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true}],
   bootstrap: [AppComponent]

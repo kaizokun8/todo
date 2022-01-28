@@ -1,9 +1,10 @@
 package com.todo.securitylib.facade;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import com.todo.securitylib.dto.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -27,7 +28,21 @@ public class UserService {
                 .retrieve()
                 .bodyToMono(UserInfo.class)
                 .block();
+    }
 
+    public UserInfo getUserInfo() {
+
+        UserInfo userInfo = new UserInfo();
+
+        Jwt principal = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        userInfo.setEmail(principal.getClaim("email"));
+        userInfo.setSub(principal.getClaim("sub"));
+        userInfo.setFamily_name(principal.getClaim("family_name"));
+        userInfo.setGiven_name(principal.getClaim("given_name"));
+        userInfo.setPreferred_username(principal.getClaim("preferred_username"));
+
+        return userInfo;
     }
 
     @Autowired

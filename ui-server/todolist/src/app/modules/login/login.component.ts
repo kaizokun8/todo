@@ -16,7 +16,7 @@ export class LoginComponent {
   loginUrl!: string
 
   constructor() {
-    this.loginUrl = environment.clientServer;
+    this.loginUrl = environment.loginUrl;
   }
 
 }

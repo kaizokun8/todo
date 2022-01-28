@@ -15,6 +15,7 @@ public class Controller {
     }
 
     @GetMapping(value = {
+            "/login",
             "/todos/list",
             "/todos/list/filter",
             "/todos/id/{idTodo}",

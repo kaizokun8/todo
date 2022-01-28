@@ -25,12 +25,12 @@
 
           <span>{{(userState$ |async)?.user?.username}}</span>
 
-          <a mat-icon-button class="favorite-icon" [href]="clientUrl+'/logout'">
+          <a mat-icon-button class="favorite-icon" [href]="" (click)="logout()">
             <mat-icon>logout</mat-icon>
           </a>
         </ng-container>
 
-        <a *ngIf="!userConnected" mat-icon-button class="favorite-icon" [href]="clientUrl+'/login'">
+        <a *ngIf="!userConnected" mat-icon-button class="favorite-icon" [href]="loginUrl">
           <mat-icon>logins</mat-icon>
         </a>
 

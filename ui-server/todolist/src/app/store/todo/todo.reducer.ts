@@ -3,9 +3,8 @@ import {Todo} from "../../model/Todo";
 import {
   removeTodo,
   setScheduledAndUnscheduledTodos,
-  setScheduledOrUnscheduledTodos, updateTodo,
+  setScheduledOrUnscheduledTodos
 } from "./todo.actions";
-import {state} from "@angular/animations";
 
 export interface TodoStoreState {
   scheduled: ReadonlyArray<Todo>,

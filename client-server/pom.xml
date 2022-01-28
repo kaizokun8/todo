@@ -43,20 +43,20 @@
     <profiles>
 
         <profile>
-            <id>dev-angular-node-js</id>
+            <id>dev</id>
             <activation>
                 <!-- this profile is active by default -->
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <env>dev-angular-node-js</env>
+                <env>dev</env>
             </properties>
         </profile>
 
         <profile>
-            <id>dev-angular-spring-boot</id>
+            <id>prod</id>
             <properties>
-                <env>dev-angular-spring-boot</env>
+                <env>prod</env>
             </properties>
         </profile>
 
