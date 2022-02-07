@@ -4,26 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/resolvers/TodoListResolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.effects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="effects + resolvers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/services/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/todo.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/validation/UserExistValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/validation/UserExistValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,7 +293,7 @@
       <workItem from="1643699117570" duration="2932000" />
       <workItem from="1643812417461" duration="683000" />
       <workItem from="1644218134668" duration="434000" />
-      <workItem from="1644227311475" duration="14430000" />
+      <workItem from="1644227311475" duration="15507000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -453,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643378482742</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="effects + resolvers">
+      <created>1644244263972</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1644244263972</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +486,8 @@
     <MESSAGE value="ajout profile client oauth2 + README" />
     <MESSAGE value="simplification récupération utilisateur dans resources sécurisées + simplification gestion redirection avec les differents serveurs de distribution UI." />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="effects + resolvers" />
+    <option name="LAST_COMMIT_MESSAGE" value="effects + resolvers" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

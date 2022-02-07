@@ -1,0 +1,47 @@
+
+r
+Buser-server/src/main/java/com/todo/user/controller/Controller.java,5\b\5bab4b2f1841ea99aa816162b4b17d792d7bc7a4
+v
+Fuser-server/src/main/java/com/todo/user/repository/UserRepository.java,6\7\6732111b1bc3daaf8b17f81fb7c05504015a72f3
+q
+Auser-server/src/main/java/com/todo/user/validation/UserExist.java,3\2\329fe4db55e5c73a937f89a8f26f6ec7f5df8481
+w
+Gsecurity-lib/src/main/java/com/todo/securitylib/facade/UserService.java,a\9\a9bacd6bd6073d8a146588493651063f3d2c76fe
+[
++ui-server/todolist/src/app/app.component.ts,5\2\5216ae47bea23a84ba1f1e0b1bf8ab62d8cc7ac8
+c
+3ui-server/todolist/src/app/store/app/app.actions.ts,b\7\b736389d3fb5814e127fd13dc70970c647ceb5b5
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+d
+4ui-server/todolist/src/app/selectors/app.selector.ts,0\6\06528cc73fe0da1210fa9004510127b1789ac9c5
+n
+>ui-server/todolist/src/app/selectors/notifications.selector.ts,c\f\cf6cece29b4da7bed73f83660a0626303022b93a
+j
+:ui-server/todolist/src/app/selectors/todolists.selector.ts,c\6\c6550b7cba08a8196641460663358c3fec0437c5
+e
+5ui-server/todolist/src/app/selectors/user.selector.ts,a\e\ae20a6b4e6ba7308f9ffefbb4b6d5702ce0d70b4
+O
+ui-server/todolist/angular.json,2\6\26d661ce624d5e5c45d7ba4b9c22e585144edc77
+y
+Iui-server/todolist/src/app/modules/todos/resolvers/TodoDelayedResolver.ts,c\d\cdd518724b47e6570fd6892a8574b8cb3e5a730f
+O
+ui-server/todolist/package.json,7\4\7443e8ed4842106d4acfad2901ef710b2306b4ff
+T
+$ui-server/todolist/package-lock.json,5\1\5155ea5e59a8de5621c80a1b0409d71af17e24e5
+g
+7user-server/src/main/java/com/todo/user/model/User.java,d\6\d6107e5070d4d2efdcd3d857ba3dd9303e14b91b
+}
+Mui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html,4\d\4d0c1f36f4ec93ecdb8aafdc3c790193e79dc1b6
+y
+Iui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html,2\6\26a87dbd2762b55f96e227e915dbea323c7fcf1a
+‚
+Rui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.ts,5\c\5ce29a5dbac32479908d35912badd3712ba8f1e9
+ƒ
+Sui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.css,7\0\70e6cbe9f78a4a6cf0164849ec743da91fefd84c
+e
+5ui-server/todolist/src/app/store/todo/todo.effects.ts,4\9\49bd497b8c45929c4f3ca5f4b174e89a77eba972
+„
+Tui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.html,9\9\99b96195ef89924e9679e7411a903389e8bd7e86
+z
+Juser-server/src/main/java/com/todo/user/validation/UserExistValidator.java,1\0\108be62d9b672a80f5e60934a73e7b5db2036ddf
