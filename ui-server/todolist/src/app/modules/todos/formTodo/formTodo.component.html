@@ -20,7 +20,7 @@
 
       <mat-form-field class="full-width" appearance="fill">
         <mat-label>Title</mat-label>
-        <input matInput placeholder="Title of the task" formControlName="title">
+        <input matInput placeholder="Title of the task" formControlName="title" myFocus>
         <mat-error *ngIf="isTitleInvalid()">{{getTitleErrorMessage()}}</mat-error>
       </mat-form-field>
 

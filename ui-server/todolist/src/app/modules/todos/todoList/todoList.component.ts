@@ -2,24 +2,16 @@
  * Created by jbe on 14/01/2022
  */
 
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TodoService} from "../../../../services/todo.service";
-import {Observable, switchMap} from "rxjs";
-import {ToDoSearchResult} from "../../../dto/ToDoSearchResult";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {Observable} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 import {Todo} from "../../../model/Todo";
-import {AllToDoSearchResult} from "../../../dto/AllToDoSearchResult";
 import {LIST} from "../../../../shared/View";
-import {TodoFilters} from "../../../dto/TodoFilters";
 import {Store} from "@ngrx/store";
-import {
-  setScheduledAndUnscheduledTodos,
-  setScheduledOrUnscheduledTodos
-} from "../../../store/todo/todo.actions";
 import {TodoStoreState} from "../../../store/todo/todo.reducer";
-import {RouterUtil} from "../../../util/RouterUtil";
 import {selectTodos, selectTodosScheduled, selectTodosUnscheduled} from "../../../selectors/todolists.selector";
-import {AsyncPipe} from "@angular/common";
+
 
 @Component({
   selector: 'todoList',
@@ -27,7 +19,7 @@ import {AsyncPipe} from "@angular/common";
   styleUrls: ['./todoList.component.css']
 })
 
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
 
   todosScheduled!: ReadonlyArray<Todo>;
   totalScheduled!: number;
@@ -49,15 +41,17 @@ export class TodoListComponent {
               private route: ActivatedRoute,
               private store: Store) {
 
+
+  }
+
+  ngOnInit(): void {
+
     this.todoStoreState$.subscribe((s) => {
       this.totalScheduled = s.totalScheduled;
       this.totalUnscheduled = s.totalUnscheduled;
-      //this.todosScheduled = s.scheduled;
-      //this.todosUnscheduled = s.unscheduled;
     })
 
     //not working...
-
     this.todosScheduled$.subscribe(scheduled => this.todosScheduled = scheduled);
     this.todosUnScheduled$.subscribe(unscheduled => this.todosUnscheduled = unscheduled);
 
@@ -67,42 +61,28 @@ export class TodoListComponent {
       this.currentChild = this.route.snapshot.firstChild?.routeConfig?.path;
     })
     this.route.queryParamMap.subscribe((params) => this.viewType = params.get('view') ?? LIST);
-    //recherche de todos par parametre de requete
-    this.route.queryParamMap
-      //transforme l'observable retourné par paramMap
-      .pipe(
-        //switch vers un autre observable retourné par le service
-        switchMap(paramMap => {
-            let params = RouterUtil.fromParamMapToObject(paramMap);
-            return this.getFilterKeysLength(paramMap) > 0 ?
-              this.todoService.filterTodos(params) :
-              new Observable<ToDoSearchResult>()
-          }
-        )
-        //s'inscrit à l'observable final
-      ).subscribe((todoSearchResult) =>
-      this.store.dispatch(setScheduledOrUnscheduledTodos({todoSearchResult})));
-    //recherche par default sans parametres, todos du jour plus non programmés
+
+    //recherche par default sans parametres, todos du jour plus non programés
+    //comparaison recuperation directe vs recuperation via effect
+    /*
     this.route.queryParamMap
       .pipe(switchMap((paramMap) =>
         this.getFilterKeysLength(paramMap) === 0 ?
           this.todoService.getUnscheduledAndTodayScheduledTodos() :
           new Observable<AllToDoSearchResult>()
       )).subscribe((allTodoSearchResult) =>
-      this.store.dispatch(setScheduledAndUnscheduledTodos({allTodoSearchResult})));
+      this.store.dispatch(loadScheduledAndUnscheduledTodosSuccess({allTodoSearchResult})));
+*/
+    //deplacé vers le resolver, le composant est ainsi davantage découplé du store.
+    /*
+    this.route.queryParamMap.subscribe(
+      ((paramMap) => {
+          if (this.getFilterKeysLength(paramMap) === 0) {
+            this.store.dispatch(loadScheduledAndUnscheduledTodos())
+          }
+        }
+      ))
+    */
   }
 
-  /**
-   * compte le nombre de parametres utilisés pour filtrer les todos.
-   * */
-  private getFilterKeysLength(paramMap: ParamMap): number {
-
-    let todoFilters = new TodoFilters();
-
-    let keys = Object.keys(todoFilters)
-
-    let paramsInMap = keys.filter(key => paramMap.has(key));
-
-    return paramsInMap.length;
-  }
 }

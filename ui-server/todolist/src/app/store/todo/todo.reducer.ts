@@ -2,8 +2,8 @@ import {createReducer, on} from "@ngrx/store";
 import {Todo} from "../../model/Todo";
 import {
   removeTodo,
-  setScheduledAndUnscheduledTodos,
-  setScheduledOrUnscheduledTodos
+  loadScheduledAndUnscheduledTodosSuccess,
+  loadScheduledOrUnscheduledTodosSuccess
 } from "./todo.actions";
 
 export interface TodoStoreState {
@@ -22,7 +22,7 @@ export const initialState: TodoStoreState = {
 
 export const todoReducer = createReducer(
   initialState,
-  on(setScheduledOrUnscheduledTodos, (state, {todoSearchResult}) => {
+  on(loadScheduledOrUnscheduledTodosSuccess, (state, {todoSearchResult}) => {
     if (todoSearchResult.scheduled) {
       return {
         totalScheduled: todoSearchResult.total,
@@ -39,7 +39,7 @@ export const todoReducer = createReducer(
       };
     }
   }),
-  on(setScheduledAndUnscheduledTodos, (state, {allTodoSearchResult}) =>
+  on(loadScheduledAndUnscheduledTodosSuccess, (state, {allTodoSearchResult}) =>
     ({
       scheduled: allTodoSearchResult.scheduled.todos,
       unscheduled: allTodoSearchResult.unscheduled.todos,

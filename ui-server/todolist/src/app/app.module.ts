@@ -57,12 +57,16 @@ import {LoginComponent} from "./modules/login/login.component";
 import {appReducer} from "./store/app/app.reducer";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {AsyncPipe} from "@angular/common";
+import {InputFocusDirective} from "./directive/InputFocus/input-focus-directive.component";
+import {EffectsModule} from "@ngrx/effects";
+import {TodoEffects} from "./store/todo/todo.effects";
 
 @NgModule({
   declarations: [
     AppComponent, FormTodoComponent, TodoComponent, LoginComponent, TodosComponent,
     TodoListComponent, TodoFilterComponent, TodoTableComponent, NotificationsComponent,
-    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent, QuickSearchComponent
+    TodoCommandsComponent, UserFormComponent, ConfirmDialogComponent, TodoCalendarComponent, QuickSearchComponent,
+    InputFocusDirective
   ],
   imports: [
     BrowserModule,
@@ -98,6 +102,7 @@ import {AsyncPipe} from "@angular/common";
       user: userReducer,
       app: appReducer
     }),
+    EffectsModule.forRoot([TodoEffects]),
     ToastModule,
     ProgressSpinnerModule,
     MatListModule,

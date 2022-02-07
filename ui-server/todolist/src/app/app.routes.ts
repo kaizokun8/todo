@@ -8,6 +8,7 @@ import {FormTodoComponent} from "./modules/todos/formTodo/formTodo.component";
 import {LoginComponent} from "./modules/login/login.component";
 import {TodoResolver} from "./modules/todos/resolvers/TodoResolver";
 import {TodoDelayedResolver} from "./modules/todos/resolvers/TodoDelayedResolver";
+import {TodoListResolver} from "./modules/todos/resolvers/TodoListResolver";
 
 export const ROUTES: Routes = [
 
@@ -18,6 +19,8 @@ export const ROUTES: Routes = [
     children: [
       {
         path: 'list', component: TodoListComponent,
+        resolve: {todo: TodoListResolver},
+        runGuardsAndResolvers: 'paramsOrQueryParamsChange',
         children: [
           {path: 'filter', component: TodoFilterComponent}
         ]

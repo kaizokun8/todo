@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit" />
+    <list default="true" id="6626a612-8b74-4b90-aac2-de160e5f5119" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/directive/InputFocus/input-focus-directive.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/resolvers/TodoListResolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.effects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/formTodo/formTodo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoFilter/todoFilter.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/modules/todos/todoList/todoList.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/app/store/todo/todo.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-server/todolist/src/services/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-server/todolist/src/services/todo.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/validation/UserExistValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/com/todo/user/validation/UserExistValidator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +33,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Angular Component༏ext༏.component.ts.child.0" />
         <option value="Angular Component༏ext༏.component.ts.child.1" />
         <option value="Angular Component" />
-        <option value="Class" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -24,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="re-routing" />
+        <entry key="$PROJECT_DIR$" value="backup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,11 +113,11 @@
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\environments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\todo\ui-server\todolist\src\app\store\todo" />
       <recent name="D:\IdeaProjects\todo\keycloak\src\main\resources" />
       <recent name="D:\IdeaProjects\todo\ui-server\src\main\resources\public" />
       <recent name="D:\IdeaProjects\todo\ui-server" />
       <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\modules" />
-      <recent name="D:\IdeaProjects\todo\client-server\todolist\src\app\components" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.todo.uiserver.config" />
@@ -113,17 +133,6 @@
         <option value="SpringBootApplicationConfigurationType" />
         <option value="js.build_tools.npm" />
       </set>
-    </option>
-    <option name="hiddenConfigurations">
-      <map>
-        <entry key="SpringBootApplicationConfigurationType">
-          <value>
-            <set>
-              <option value="SecurityLibApplication" />
-            </set>
-          </value>
-        </entry>
-      </map>
     </option>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -267,10 +276,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.TodoApplication" />
         <item itemvalue="Spring Boot.Keycloak" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +307,11 @@
       <workItem from="1643183604703" duration="8255000" />
       <workItem from="1643272542165" duration="5754000" />
       <workItem from="1643355888823" duration="11891000" />
-      <workItem from="1643375678469" duration="2783000" />
+      <workItem from="1643375678469" duration="2818000" />
+      <workItem from="1643699117570" duration="2932000" />
+      <workItem from="1643812417461" duration="683000" />
+      <workItem from="1644218134668" duration="434000" />
+      <workItem from="1644227311475" duration="14430000" />
     </task>
     <task id="LOCAL-00001" summary="fix connexion et recuperation token">
       <created>1642847058160</created>
@@ -433,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643378425132</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit">
+      <created>1643378482742</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1643378482742</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,7 +15,7 @@ public class UserExistValidator implements ConstraintValidator<UserExist, User> 
     @Override
     public boolean isValid(User user, ConstraintValidatorContext constraintValidatorContext) {
 
-        return user != null && this.userRepository.findById(user.getId()).isPresent();
+        return user != null && this.userRepository.findById(user.getSub()).isPresent();
     }
 
 }

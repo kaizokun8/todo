@@ -1,6 +1,6 @@
 <form *ngIf="formFilter" (ngSubmit)="filter()" [formGroup]="formFilter">
 
-  <mat-card style="max-width: 100%">
+  <mat-card style="max-width: 100%" >
 
     <mat-card-title>Filter tasks</mat-card-title>
 
@@ -17,7 +17,7 @@
 
       <mat-form-field class="full-width" appearance="fill">
         <mat-label>Title</mat-label>
-        <input matInput placeholder="Title of the task" formControlName="title">
+        <input matInput placeholder="Title of the task" formControlName="title" myFocus>
       </mat-form-field>
 
       <mat-form-field class="full-width" appearance="fill">

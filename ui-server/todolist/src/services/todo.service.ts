@@ -51,7 +51,6 @@ export class TodoService {
 
   filterTodos(params: { [k: string]: any }): Observable<ToDoSearchResult> {
 
-
     return this.http.get<ToDoSearchResult>(`${this.baseUrl}/todos`, {params});
   }
 
